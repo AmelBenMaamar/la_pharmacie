@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /la_pharmacie/public/
+
+# Laisse passer les fichiers et dossiers existants (css, js, images)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Tout le reste → index.php
+RewriteRule ^(.*)$ /la_pharmacie/index.php [QSA,L]

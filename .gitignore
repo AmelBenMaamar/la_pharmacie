@@ -1,0 +1,16 @@
+# Environnement (contient les mots de passe !)
+.env
+
+# Uploads (trop lourds pour Git)
+public/uploads/
+
+# Logs et cache
+data/logs/
+data/cache/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# PHP
+*.log
