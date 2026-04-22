@@ -15,8 +15,9 @@
 
     <main class="admin-main">
 
-        <?php if (!empty($flash_success = $_SESSION['flash']['success'] ?? null) && !unset($_SESSION['flash']['success'])): ?>
-            <div class="alert alert-success"><?= htmlspecialchars($flash_success) ?></div>
+        <?php $flash = $_SESSION['flash']['success'] ?? null; unset($_SESSION['flash']['success']); ?>
+        <?php if ($flash): ?>
+            <div class="alert alert-success"><?= htmlspecialchars($flash) ?></div>
         <?php endif; ?>
 
         <div class="page-header">
@@ -72,7 +73,7 @@
                                   action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/supprimer"
                                   style="display:inline;"
                                   onsubmit="return confirm('Supprimer cette plante ?')">
-                                <input type="hidden" name="csrf_token" value="<?= $token ?? '' ?>">
+                                <input type="hidden" name="csrf_token" value="<?= $this->csrfToken() ?>">
                                 <button class="btn btn-sm btn-danger">🗑</button>
                             </form>
                         </td>
