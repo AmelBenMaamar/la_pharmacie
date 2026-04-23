@@ -254,10 +254,19 @@ class AdminController extends Controller {
     private function uploadImage(array $file, string $folder): ?string {
         if ($file['error'] !== UPLOAD_ERR_OK) return null;
         if ($file['size'] > UPLOAD_MAX_SIZE) return null;
-        $ext      = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $filename = uniqid() . '.' . $ext;
+
+        // Validation MIME réelle (pas l'extension déclarée)
+        $finfo    = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($file['tmp_name']);
+        if (!in_array($mimeType, UPLOAD_TYPES, true)) return null;
+
+        // Extension basée sur le MIME, pas sur le nom du fichier
+        $extMap   = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+        $ext      = $extMap[$mimeType];
+        $filename = uniqid('img_', true) . '.' . $ext;
         $dest     = UPLOAD_DIR . $folder . '/' . $filename;
-        move_uploaded_file($file['tmp_name'], $dest);
+
+        if (!move_uploaded_file($file['tmp_name'], $dest)) return null;
         return $folder . '/' . $filename;
     }
 
