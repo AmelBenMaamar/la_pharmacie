@@ -204,8 +204,9 @@ class AdminController extends Controller {
 
     public function categories(): void {
         $this->requireAdmin();
-        $categories = $this->query('SELECT * FROM categories ORDER BY nom');
-        $this->view('admin/categories', ['categories' => $categories, 'user' => $_SESSION['user']]);
+        $db = Database::getInstance();
+        $categories = $db->query("SELECT * FROM categories ORDER BY nom")->fetchAll();
+        $this->view("admin/categories", ["categories" => $categories, "user" => $_SESSION["user"]]);
     }
 
     public function categorieCreer(): void {
