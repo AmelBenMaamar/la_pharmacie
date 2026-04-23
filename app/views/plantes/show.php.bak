@@ -29,7 +29,7 @@ function renderMarkdown(string $text): string {
     <div class="fiche-header-inner">
 
         <?php if (!empty($plante['image'])): ?>
-            <img src="<?= APP_URL ?>/uploads/<?= htmlspecialchars($plante['image']) ?>"
+            <img src="<?= APP_URL ?>/uploads/plantes/<?= htmlspecialchars($plante['image']) ?>"
                  alt="<?= htmlspecialchars($plante['nom']) ?>"
                  class="fiche-img">
         <?php else: ?>
