@@ -65,3 +65,10 @@ $router->post('/admin/categories/creer',          'AdminController', 'categorieS
 $router->get( '/admin/categories/{id}/editer',    'AdminController', 'categorieEditer');
 $router->post('/admin/categories/{id}/editer',    'AdminController', 'categorieUpdater');
 $router->post('/admin/categories/{id}/supprimer', 'AdminController', 'categorieSupprimer');
+
+// ------------------------------------------------
+// PUBLIC — Fiches
+// ------------------------------------------------
+$router->get('/plantes/{slug}',    'PlanteController',    'show');
+$router->get('/composants/{slug}', 'ComposantController', 'show');
+$router->get('/vertus/{slug}',     'VertusController',    'show');
