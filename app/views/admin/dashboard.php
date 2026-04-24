@@ -1,3 +1,4 @@
+<?php require_once APP_ROOT . '/app/views/layouts/icons.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,82 +12,68 @@
 <body>
 <div class="admin-layout">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-logo">
-            <h1>🌿 La Pharmacie</h1>
-            <span>Administration</span>
-        </div>
-        <nav class="sidebar-nav">
-            <div class="sidebar-section">Contenu</div>
-            <a href="<?= APP_URL ?>/admin" class="active">
-                <span class="icon">🏠</span> Dashboard
-            </a>
-            <a href="<?= APP_URL ?>/admin/plantes">
-                <span class="icon">🌿</span> Plantes
-            </a>
-            <a href="<?= APP_URL ?>/admin/composants">
-                <span class="icon">🔬</span> Composants
-            </a>
-            <a href="<?= APP_URL ?>/admin/vertus">
-                <span class="icon">✨</span> Vertus
-            </a>
-            <a href="<?= APP_URL ?>/admin/categories">
-                <span class="icon">📂</span> Catégories
-            </a>
-            <div class="sidebar-section">Compte</div>
-            <a href="<?= APP_URL ?>/logout">
-                <span class="icon">🚪</span> Déconnexion
-            </a>
-        </nav>
-        <div class="sidebar-footer">
-            <small>Connecté : <?= htmlspecialchars($user['nom']) ?></small>
-        </div>
-    </aside>
+    <?php include __DIR__ . '/../layouts/sidebar.php'; ?>
 
-    <!-- Contenu principal -->
     <main class="admin-main">
+
         <div class="page-header">
-            <h2>Dashboard</h2>
+            <div>
+                <h2>Dashboard</h2>
+                <p style="color:var(--texte-light);font-size:0.85rem;margin-top:0.25rem;">
+                    Bonjour <?= htmlspecialchars($user['nom']) ?> — <?= date('d/m/Y') ?>
+                </p>
+            </div>
+            <a href="<?= APP_URL ?>/" class="btn btn-secondary btn-sm" target="_blank">
+                Voir le site →
+            </a>
         </div>
 
         <!-- Stats -->
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">🌿</div>
+            <a href="<?= APP_URL ?>/admin/plantes" class="stat-card stat-card-link">
+                <div class="stat-icon"><?= icon('plante', 28, 'stat-svg plante') ?></div>
                 <div class="stat-number"><?= $counts['plantes'] ?></div>
                 <div class="stat-label">Plantes</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🔬</div>
+            </a>
+            <a href="<?= APP_URL ?>/admin/composants" class="stat-card stat-card-link">
+                <div class="stat-icon"><?= icon('composant', 28, 'stat-svg composant') ?></div>
                 <div class="stat-number"><?= $counts['composants'] ?></div>
                 <div class="stat-label">Composants</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">✨</div>
+            </a>
+            <a href="<?= APP_URL ?>/admin/vertus" class="stat-card stat-card-link">
+                <div class="stat-icon"><?= icon('vertu', 28, 'stat-svg vertu') ?></div>
                 <div class="stat-number"><?= $counts['vertus'] ?></div>
                 <div class="stat-label">Vertus</div>
-            </div>
+            </a>
         </div>
 
         <!-- Actions rapides -->
-        <h3 style="font-family: var(--font-serif); margin-bottom: 1rem;">Actions rapides</h3>
-        <div class="stats-grid">
-            <a href="<?= APP_URL ?>/admin/plantes/creer" class="stat-card" style="text-decoration:none;">
-                <div class="stat-icon">➕</div>
-                <div class="stat-label">Ajouter une plante</div>
+        <div class="admin-section-title">Actions rapides</div>
+        <div class="quick-actions">
+            <a href="<?= APP_URL ?>/admin/plantes/creer" class="quick-action">
+                <div class="quick-action-icon"><?= icon('plante', 22, 'plante') ?></div>
+                <div>
+                    <div class="quick-action-title">Nouvelle plante</div>
+                    <div class="quick-action-sub">Ajouter à l'herbier</div>
+                </div>
             </a>
-            <a href="<?= APP_URL ?>/admin/composants/creer" class="stat-card" style="text-decoration:none;">
-                <div class="stat-icon">➕</div>
-                <div class="stat-label">Ajouter un composant</div>
+            <a href="<?= APP_URL ?>/admin/composants/creer" class="quick-action">
+                <div class="quick-action-icon"><?= icon('composant', 22, 'composant') ?></div>
+                <div>
+                    <div class="quick-action-title">Nouveau composant</div>
+                    <div class="quick-action-sub">Ajouter un actif</div>
+                </div>
             </a>
-            <a href="<?= APP_URL ?>/admin/vertus/creer" class="stat-card" style="text-decoration:none;">
-                <div class="stat-icon">➕</div>
-                <div class="stat-label">Ajouter une vertu</div>
+            <a href="<?= APP_URL ?>/admin/vertus/creer" class="quick-action">
+                <div class="quick-action-icon"><?= icon('vertu', 22, 'vertu') ?></div>
+                <div>
+                    <div class="quick-action-title">Nouvelle vertu</div>
+                    <div class="quick-action-sub">Ajouter un bienfait</div>
+                </div>
             </a>
         </div>
-    </main>
 
+    </main>
 </div>
 </body>
 </html>

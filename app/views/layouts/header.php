@@ -1,3 +1,4 @@
+<?php require APP_ROOT . '/app/views/layouts/icons.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +14,8 @@
     <header class="public-header">
         <div class="public-header-inner">
             <a href="<?= APP_URL ?>/" class="public-logo">
-                🌿 <span>La Pharmacie</span>
+                <?= icon('plante', 22, 'logo-icon') ?>
+                <span>La Pharmacie</span>
             </a>
             <nav class="public-nav">
                 <a href="<?= APP_URL ?>/#plantes">Plantes</a>

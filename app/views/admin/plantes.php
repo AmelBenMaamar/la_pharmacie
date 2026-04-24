@@ -1,3 +1,4 @@
+<?php require_once APP_ROOT . '/app/views/layouts/icons.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +22,12 @@
         <?php endif; ?>
 
         <div class="page-header">
-            <h2>🌿 Plantes</h2>
+            <div>
+                <h2><?= icon('plante', 22, 'section-icon plante') ?> Plantes</h2>
+                <p style="color:var(--texte-light);font-size:0.85rem;margin-top:0.25rem;">
+                    <?= count($plantes) ?> plante<?= count($plantes) > 1 ? 's' : '' ?> au total
+                </p>
+            </div>
             <a href="<?= APP_URL ?>/admin/plantes/creer" class="btn btn-primary">
                 + Ajouter une plante
             </a>
@@ -31,18 +37,21 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Image</th>
+                        <th style="width:70px">Image</th>
                         <th>Nom</th>
                         <th>Nom latin</th>
-                        <th>Statut</th>
-                        <th>Actions</th>
+                        <th style="width:100px">Statut</th>
+                        <th style="width:200px">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php if (empty($plantes)): ?>
                     <tr>
-                        <td colspan="5" style="text-align:center; color: var(--texte-light); padding: 2rem;">
-                            Aucune plante pour l'instant — <a href="<?= APP_URL ?>/admin/plantes/creer">Ajouter la première</a>
+                        <td colspan="5" style="text-align:center; color:var(--texte-light); padding:3rem;">
+                            <?= icon('plante', 32, 'placeholder-icon') ?>
+                            <p style="margin-top:0.75rem;">Aucune plante —
+                                <a href="<?= APP_URL ?>/admin/plantes/creer">Ajouter la première</a>
+                            </p>
                         </td>
                     </tr>
                 <?php else: ?>
@@ -52,29 +61,36 @@
                             <?php if ($plante['image']): ?>
                                 <img src="<?= APP_URL ?>/uploads/<?= htmlspecialchars($plante['image']) ?>"
                                      alt="<?= htmlspecialchars($plante['nom']) ?>"
-                                     style="width:50px;height:50px;object-fit:cover;border-radius:8px;">
+                                     class="table-thumb">
                             <?php else: ?>
-                                <div style="width:50px;height:50px;background:var(--creme-dark);border-radius:8px;display:flex;align-items:center;justify-content:center;">🌿</div>
+                                <div class="table-thumb-placeholder">
+                                    <?= icon('plante', 20, 'placeholder-icon') ?>
+                                </div>
                             <?php endif; ?>
                         </td>
                         <td><strong><?= htmlspecialchars($plante['nom']) ?></strong></td>
-                        <td><em style="color:var(--texte-light)"><?= htmlspecialchars($plante['nom_latin'] ?? '') ?></em></td>
+                        <td><em style="color:var(--texte-light); font-size:0.85rem"><?= htmlspecialchars($plante['nom_latin'] ?? '') ?></em></td>
                         <td>
                             <span class="badge <?= $plante['actif'] ? 'badge-actif' : 'badge-inactif' ?>">
                                 <?= $plante['actif'] ? 'Publié' : 'Masqué' ?>
                             </span>
                         </td>
-                        <td>
+                        <td class="table-actions">
                             <a href="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens"
-                               class="btn btn-sm btn-primary">🔗 Liens</a>
+                               class="btn btn-sm btn-primary">Liens</a>
                             <a href="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/editer"
-                               class="btn btn-sm btn-secondary">✏️ Éditer</a>
+                               class="btn btn-sm btn-secondary">Éditer</a>
                             <form method="POST"
                                   action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/supprimer"
                                   style="display:inline;"
                                   onsubmit="return confirm('Supprimer cette plante ?')">
                                 <input type="hidden" name="csrf_token" value="<?= $this->csrfToken() ?>">
-                                <button class="btn btn-sm btn-danger">🗑</button>
+                                <button class="btn btn-sm btn-danger" title="Supprimer">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/>
+                                        <path d="M10 11v6M14 11v6M9 6V4h6v2"/>
+                                    </svg>
+                                </button>
                             </form>
                         </td>
                     </tr>
