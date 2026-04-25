@@ -33,7 +33,7 @@
                 <a href="<?= APP_URL ?>/plantes/<?= htmlspecialchars($p['slug']) ?>" class="public-card">
                     <div class="public-card-img">
                         <?php if (!empty($p['image'])): ?>
-                            <img src="<?= APP_URL ?>/uploads/plantes/<?= htmlspecialchars($p['image']) ?>"
+                            <img src="<?= APP_URL ?>/uploads/<?= htmlspecialchars($p['image']) ?>"
                                  alt="<?= htmlspecialchars($p['nom']) ?>">
                         <?php else: ?>
                             <div class="public-card-placeholder">🌿</div>

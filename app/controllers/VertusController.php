@@ -1,9 +1,16 @@
 <?php
 // ================================================
-// VertusController — fiche publique d'une vertu
+// VertusController — liste + fiche publique d'une vertu
 // ================================================
 
 class VertusController extends Controller {
+
+    // Liste toutes les vertus → roue interactive
+    public function index(): void {
+        $model  = new Vertu();
+        $vertus = $model->all('nom', 'ASC');
+        $this->view('vertus/index', compact('vertus'));
+    }
 
     public function show(string $slug): void {
         $model = new Vertu();

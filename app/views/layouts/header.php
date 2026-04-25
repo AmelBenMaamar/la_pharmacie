@@ -18,9 +18,9 @@
                 <span>La Pharmacie</span>
             </a>
             <nav class="public-nav">
-                <a href="<?= APP_URL ?>/#plantes">Plantes</a>
-                <a href="<?= APP_URL ?>/#composants">Composants</a>
-                <a href="<?= APP_URL ?>/#vertus">Vertus</a>
+                <a href="<?= APP_URL ?>/plantes">Plantes</a>
+                <a href="<?= APP_URL ?>/composants">Composants</a>
+                <a href="<?= APP_URL ?>/vertus">Vertus</a>
                 <?php $user = $_SESSION['user'] ?? null; ?>
                 <?php if ($user): ?>
                     <?php if ($user['role'] === 'admin'): ?>
