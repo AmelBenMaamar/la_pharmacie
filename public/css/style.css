@@ -628,12 +628,12 @@ a.sidebar-logo:hover h1 {
     border-radius: 50%;
     display: inline-block;
 }
-.legende-plante::before    { background: #6BD1D6; }
-.legende-composant::before { background: #6B94D6; }
-.legende-vertu::before     { background: #A68B5B; }
-.legende-plante    { background: rgba(107,209,214,0.1); color: #2a8a8f; }
-.legende-composant { background: rgba(107,148,214,0.1); color: #2a4a8f; }
-.legende-vertu     { background: rgba(166,139,91,0.1);  color: #5c3d0a; }
+.legende-plante::before    { background: #a0ead8; }
+.legende-composant::before { background: #c4a0e8; }
+.legende-vertu::before     { background: #d8e8a0; }
+.legende-plante    { background: rgba(220,252,242,0.6); color: #2a8a8f; }
+.legende-composant { background: rgba(232,220,252,0.6); color: #6a3a9a; }
+.legende-vertu     { background: rgba(249,252,220,0.6); color: #6a7a2a; }
 
 .graphe-wrap {
     position: relative;
@@ -796,6 +796,4 @@ a.sidebar-logo:hover h1 {
     padding: 1rem 0;
 }
 
-/* Légende graphe — vertus */
-.legende-vertu { background: rgba(173,109,191,0.15); color: #7a4a9a; }
-.legende-vertu::before { background: #AD6DBF; }
+/* Légende graphe — couleurs alignées sur le canvas JS */
