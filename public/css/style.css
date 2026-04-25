@@ -601,3 +601,201 @@ a.sidebar-logo:hover h1 {
     margin-top: 0.1rem;
     line-height: 1.2;
 }
+
+/* ================================================
+   GRAPHE INTERACTIF
+   ================================================ */
+.graphe-section h3 { margin-bottom: 0.75rem; }
+.graphe-legende {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.legende-item {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.75rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.legende-item::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.legende-plante::before    { background: #6BD1D6; }
+.legende-composant::before { background: #6B94D6; }
+.legende-vertu::before     { background: #A68B5B; }
+.legende-plante    { background: rgba(107,209,214,0.1); color: #2a8a8f; }
+.legende-composant { background: rgba(107,148,214,0.1); color: #2a4a8f; }
+.legende-vertu     { background: rgba(166,139,91,0.1);  color: #5c3d0a; }
+
+.graphe-wrap {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+#graphe-canvas {
+    display: block;
+    /* ⚠️ JAMAIS de width/height/min-height ici — le JS s'en charge */
+    border-radius: var(--radius);
+}
+.graphe-tooltip {
+    position: absolute;
+    background: var(--brun-dark);
+    color: var(--blanc);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-full);
+    pointer-events: none;
+    display: none;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* ================================================
+   ROUE DES VERTUS
+   ================================================ */
+
+.wheel-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-svg {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    overflow: visible;
+}
+
+/* Segments */
+.wheel-segment {
+    transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+    transform-origin: 200px 200px;
+    cursor: pointer;
+    stroke: #F5F0E8;
+    stroke-width: 2;
+}
+
+.wheel-segment-link:hover .wheel-segment {
+    transform: scale(1.06);
+    filter: url(#shadow-hover);
+    opacity: 0.92;
+}
+
+/* Labels dans les segments */
+.wheel-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+/* Centre */
+.wheel-center-title {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.wheel-center-count {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+/* Légende */
+.wheel-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.wheel-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radius);
+    border: 1.5px solid transparent;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: var(--texte);
+}
+
+.wheel-legend-item:hover {
+    background: var(--blanc);
+    border-color: var(--border);
+    transform: translateX(4px);
+    color: var(--texte);
+}
+
+.wheel-legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.6);
+    box-shadow: 0 1px 4px rgba(61,48,40,0.15);
+}
+
+.wheel-legend-nom {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brun-dark);
+    flex: 1;
+}
+
+.wheel-legend-cat {
+    font-size: 0.72rem;
+    color: var(--texte-light);
+    background: var(--creme-dark);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .wheel-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .wheel-svg {
+        max-width: 320px;
+    }
+}
+
+/* Graphe — hauteur gérée par JS */
+/* min-height retiré : causait un étirement du buffer canvas → flou */
+
+/* Graphe — padding interne */
+.graphe-wrap {
+    padding: 1rem 0;
+}
+
+/* Légende graphe — vertus */
+.legende-vertu { background: rgba(173,109,191,0.15); color: #7a4a9a; }
+.legende-vertu::before { background: #AD6DBF; }
