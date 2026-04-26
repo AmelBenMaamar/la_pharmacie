@@ -45,15 +45,8 @@
                 <?php foreach ($plantes as $p): ?>
                     <?php if (!$p['actif']) continue; ?>
                     <?php
-                        $db   = Database::getInstance();
-                        $stmt = $db->prepare(
-                            "SELECT c.nom FROM categories c
-                             JOIN plante_categorie pc ON pc.categorie_id = c.id
-                             WHERE pc.plante_id = ?"
-                        );
-                        $stmt->execute([$p['id']]);
-                        $cats    = $stmt->fetchAll(PDO::FETCH_COLUMN);
-                        $dataCats = implode(',', $cats);
+                        $cats     = $cats_par_plante[$p['id']] ?? [];
+                        $dataCats = implode(',', array_column($cats, 'nom'));
                     ?>
                     <a href="<?= APP_URL ?>/plantes/<?= htmlspecialchars($p['slug']) ?>"
                        class="public-card"
@@ -77,8 +70,8 @@
                             <?php endif; ?>
                             <?php if (!empty($cats)): ?>
                                 <div class="card-cats">
-                                    <?php foreach ($cats as $cn): ?>
-                                        <span class="card-cat-tag"><?= htmlspecialchars($cn) ?></span>
+                                    <?php foreach ($cats as $cat): ?>
+                                        <span class="card-cat-tag"><?= htmlspecialchars($cat['nom']) ?></span>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>

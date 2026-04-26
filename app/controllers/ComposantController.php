@@ -4,7 +4,7 @@ class ComposantController extends Controller {
     public function index(): void {
         $model      = new Composant();
         $composants = $model->all();
-        $this->view('composants/index', compact('composants'));
+        $this->view('composants/index', compact('composants') + ['pageTitle' => 'Composants actifs']);
     }
 
     public function show(string $slug): void {
@@ -19,6 +19,6 @@ class ComposantController extends Controller {
 
         $plantes = $model->plantes($composant['id']);
         $vertus  = $model->vertus($composant['id']);
-        $this->view('composants/show', compact('composant', 'plantes', 'vertus'));
+        $this->view('composants/show', compact('composant', 'plantes', 'vertus') + ['pageTitle' => $composant['nom']]);
     }
 }

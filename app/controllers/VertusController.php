@@ -9,7 +9,7 @@ class VertusController extends Controller {
     public function index(): void {
         $model  = new Vertu();
         $vertus = $model->all('nom', 'ASC');
-        $this->view('vertus/index', compact('vertus'));
+        $this->view('vertus/index', compact('vertus') + ['pageTitle' => 'Vertus thérapeutiques']);
     }
 
     public function show(string $slug): void {
@@ -25,6 +25,6 @@ class VertusController extends Controller {
         $plantes    = $model->plantes($vertu['id']);
         $composants = $model->composants($vertu['id']);
 
-        $this->view('vertus/show', compact('vertu', 'plantes', 'composants'));
+        $this->view('vertus/show', compact('vertu', 'plantes', 'composants') + ['pageTitle' => $vertu['nom']]);
     }
 }

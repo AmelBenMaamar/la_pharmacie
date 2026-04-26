@@ -295,11 +295,6 @@ tbody td { padding: 0.85rem 1.25rem; font-size: 0.9rem; color: var(--texte); }
     box-shadow: 0 4px 12px var(--shadow);
 }
 
-/* Suppression du grossissement des cartes au hover */
-.public-card:hover {
-    transform: none;
-    box-shadow: 0 4px 12px var(--shadow);
-}
 
 /* ================================================
    ICÔNES SVG
@@ -854,3 +849,88 @@ a.sidebar-logo:hover h1 {
     margin-bottom: 0.75rem;
 }
 
+
+/* ================================================
+   HAMBURGER MENU — CSS only
+   ================================================ */
+
+/* Input caché — sert uniquement de toggle */
+.nav-toggle { display: none; }
+
+/* Bouton hamburger — 3 barres */
+.nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius);
+    transition: background 0.15s;
+    order: 3; /* pousse après le logo */
+}
+.nav-burger:hover { background: var(--creme-dark); }
+.nav-burger span {
+    display: block;
+    height: 2px;
+    background: var(--brun-dark);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+    transform-origin: center;
+}
+
+/* Animation ✕ quand ouvert */
+.nav-toggle:checked ~ .public-header-inner .nav-burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle:checked ~ .public-header-inner .nav-burger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-toggle:checked ~ .public-header-inner .nav-burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .nav-burger { display: flex; }
+
+    .public-header-inner {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* Logo prend tout l'espace disponible à gauche */
+    .public-logo { flex: 1; }
+
+    .public-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 0.5rem 0 1rem;
+        border-top: 1px solid var(--border);
+        margin-top: 0.75rem;
+    }
+
+    /* Menu visible quand checkbox cochée */
+    .nav-toggle:checked ~ .public-header-inner .public-nav {
+        display: flex;
+    }
+
+    .public-nav a {
+        padding: 0.65rem 0;
+        font-size: 1rem;
+        border-bottom: 1px solid var(--border);
+        width: 100%;
+    }
+    .public-nav a:last-child { border-bottom: none; }
+
+    /* Les boutons (Admin / Connexion) s'adaptent */
+    .public-nav .btn {
+        margin-top: 0.5rem;
+        align-self: flex-start;
+    }
+}

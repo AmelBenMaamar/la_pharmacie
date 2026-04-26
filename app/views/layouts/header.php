@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle ?? 'La Pharmacie') ?> — La Pharmacie</title>
+    <meta name="description" content="<?= htmlspecialchars($metaDesc ?? 'Herbier interactif : explorez les plantes médicinales, leurs composants actifs et leurs vertus thérapeutiques.') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= APP_URL ?>/css/style.css">
@@ -12,7 +13,11 @@
 <body class="public-page">
 
     <header class="public-header">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <div class="public-header-inner">
+            <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </label>
             <a href="<?= APP_URL ?>/" class="public-logo">
                 <?= icon('plante', 22, 'logo-icon') ?>
                 <span>La Pharmacie</span>

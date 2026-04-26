@@ -33,7 +33,8 @@
                 'default'                => ['fill' => '#B8D4C8', 'text' => '#1a4a35'],
             ];
 
-            $n          = count($vertus);
+            $vertus     = array_values(array_filter($vertus, fn($v) => $v['actif']));
+        $n          = count($vertus);
             $cx         = 200;
             $cy         = 200;
             $rOuter     = 178;
