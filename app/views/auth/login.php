@@ -1,3 +1,4 @@
+<?php require_once dirname(__DIR__) . "/layouts/icons.php"; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

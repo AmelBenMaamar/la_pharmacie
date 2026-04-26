@@ -58,3 +58,6 @@ $router->get('/vertus',     'VertusController',    'index');
 $router->get('/plantes/{slug}',    'PlanteController',    'show');
 $router->get('/composants/{slug}', 'ComposantController', 'show');
 $router->get('/vertus/{slug}',     'VertusController',    'show');
+
+// ADMIN — Liens bulk
+$router->post('/admin/plantes/{id}/liens/bulk', 'AdminController', 'planteLiensBulk');

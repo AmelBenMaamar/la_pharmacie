@@ -12,7 +12,7 @@ class Vertu extends Model {
     // Liste toutes les vertus
     public function all(string $orderBy = 'nom', string $dir = 'ASC'): array {
         return $this->query(
-            "SELECT * FROM vertus ORDER BY {$orderBy} {$dir}"
+            "SELECT * FROM vertus WHERE actif = 1 ORDER BY {$orderBy} {$dir}"
         );
     }
 

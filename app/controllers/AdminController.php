@@ -288,4 +288,51 @@ class AdminController extends Controller {
         $str = preg_replace('/[^a-z0-9]+/', '-', $str);
         return trim($str, '-');
     }
+
+
+    public function planteLiensBulk(string $id): void {
+        $this->requireAdmin();
+        $this->verifyCsrf();
+        $planteId = (int)$id;
+        $model    = new Plante();
+        $section  = $_POST['section'] ?? '';
+        $db       = Database::getInstance();
+
+        if ($section === 'composants') {
+            $db->prepare("DELETE FROM plante_composant WHERE plante_id = ?")->execute([$planteId]);
+            foreach ($_POST['composants'] ?? [] as $composantId => $data) {
+                if (!empty($data['actif'])) {
+                    $model->linkComposant($planteId, (int)$composantId, trim($data['concentration'] ?? ''), '');
+                }
+            }
+            $this->flash('success', 'Composants mis à jour.');
+
+        } elseif ($section === 'vertus') {
+            $db->prepare("DELETE FROM plante_vertu WHERE plante_id = ?")->execute([$planteId]);
+            foreach ($_POST['vertus'] ?? [] as $vertuId) {
+                $model->linkVertu($planteId, (int)$vertuId, '');
+            }
+            $this->flash('success', 'Vertus mises à jour.');
+
+        } elseif ($section === 'categories') {
+            $db->prepare("DELETE FROM plante_categorie WHERE plante_id = ?")->execute([$planteId]);
+            foreach ($_POST['categories'] ?? [] as $catId) {
+                $model->linkCategorie($planteId, (int)$catId);
+            }
+            $this->flash('success', 'Catégories mises à jour.');
+
+        } elseif ($section === 'composant_vertu') {
+            $composants = $model->composants($planteId);
+            foreach ($composants as $comp) {
+                $compId = $comp['id'];
+                $db->prepare("DELETE FROM composant_vertu WHERE composant_id = ?")->execute([$compId]);
+                foreach ($_POST['cv'][$compId] ?? [] as $vertuId) {
+                    $model->linkComposantVertu($compId, (int)$vertuId, 'modere');
+                }
+            }
+            $this->flash('success', 'Liens composant → vertu mis à jour.');
+        }
+
+        $this->redirect('/admin/plantes/' . $planteId . '/liens');
+    }
 }

@@ -12,7 +12,7 @@ class Composant extends Model {
     // Liste tous les composants
     public function all(string $orderBy = 'nom', string $dir = 'ASC'): array {
         return $this->query(
-            "SELECT * FROM composants ORDER BY {$orderBy} {$dir}"
+            "SELECT * FROM composants WHERE actif = 1 ORDER BY {$orderBy} {$dir}"
         );
     }
 
