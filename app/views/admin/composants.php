@@ -21,7 +21,7 @@
         <?php endif; ?>
 
         <div class="page-header">
-            <h2>🔬 Composants</h2>
+            <h2><?= icon('composant', 22, 'section-icon composant') ?> Composants</h2>
             <a href="<?= APP_URL ?>/admin/composants/creer" class="btn btn-primary">
                 + Ajouter un composant
             </a>
@@ -56,7 +56,7 @@
                         </td>
                         <td>
                             <a href="<?= APP_URL ?>/admin/composants/<?= $c['id'] ?>/editer"
-                               class="btn btn-sm btn-secondary">✏️ Éditer</a>
+                               class="btn btn-sm btn-secondary"><?= icon('edit', 14) ?> Éditer</a>
                             <form method="POST"
                                   action="<?= APP_URL ?>/admin/composants/<?= $c['id'] ?>/supprimer"
                                   style="display:inline;"

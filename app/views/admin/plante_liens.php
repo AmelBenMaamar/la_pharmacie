@@ -16,7 +16,7 @@
     <main class="admin-main">
 
         <div class="page-header">
-            <h2>🔗 Liens — <?= htmlspecialchars($plante['nom']) ?></h2>
+            <h2><?= icon('lien', 20) ?> Liens — <?= htmlspecialchars($plante['nom']) ?></h2>
             <a href="<?= APP_URL ?>/admin/plantes" class="btn btn-secondary">← Retour aux plantes</a>
         </div>
 
@@ -27,7 +27,7 @@
 
         <!-- ── COMPOSANTS ─────────────────────────────── -->
         <div class="liens-section">
-            <h3>🔬 Composants liés</h3>
+            <h3><?= icon('composant', 16, 'section-icon composant') ?> Composants liés</h3>
 
             <!-- Liste des composants déjà liés -->
             <div class="liens-list">
@@ -45,7 +45,7 @@
                                 <input type="hidden" name="csrf_token" value="<?= $token ?>">
                                 <input type="hidden" name="type" value="composant">
                                 <input type="hidden" name="composant_id" value="<?= $c['id'] ?>">
-                                <button class="lien-remove" title="Supprimer ce lien">✕</button>
+                                <button class="lien-remove" title="Supprimer ce lien"><?= icon('close', 12) ?></button>
                             </form>
                         </div>
                     <?php endforeach; ?>
@@ -79,7 +79,7 @@
 
         <!-- ── VERTUS ──────────────────────────────────── -->
         <div class="liens-section">
-            <h3>✨ Vertus liées</h3>
+            <h3><?= icon('vertu', 16, 'section-icon vertu') ?> Vertus liées</h3>
 
             <!-- Liste des vertus déjà liées -->
             <div class="liens-list">
@@ -97,7 +97,7 @@
                                 <input type="hidden" name="csrf_token" value="<?= $token ?>">
                                 <input type="hidden" name="type" value="vertu">
                                 <input type="hidden" name="vertu_id" value="<?= $v['id'] ?>">
-                                <button class="lien-remove" title="Supprimer ce lien">✕</button>
+                                <button class="lien-remove" title="Supprimer ce lien"><?= icon('close', 12) ?></button>
                             </form>
                         </div>
                     <?php endforeach; ?>
@@ -132,7 +132,7 @@
         
         <!-- ── LIENS COMPOSANT → VERTU ───────────────── -->
         <div class="liens-section">
-            <h3>🔗 Liens Composant → Vertu</h3>
+            <h3><?= icon('lien', 16) ?> Liens Composant → Vertu</h3>
             <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:1rem;">
                 Définit quelles vertus sont portées par quels composants actifs — utilisé par le graphe.
             </p>
@@ -163,7 +163,7 @@
                                 <input type="hidden" name="type" value="composant_vertu">
                                 <input type="hidden" name="composant_id" value="<?= $comp['id'] ?>">
                                 <input type="hidden" name="vertu_id" value="<?= $vc['id'] ?>">
-                                <button class="lien-remove" title="Supprimer ce lien">✕</button>
+                                <button class="lien-remove" title="Supprimer ce lien"><?= icon('close', 12) ?></button>
                             </form>
                         </div>
                         <?php endforeach; ?>
@@ -197,7 +197,7 @@
 
         <!-- ── CATEGORIES ──────────────────────────────── -->
         <div class="liens-section">
-            <h3>📂 Catégories</h3>
+            <h3><?= icon('categorie', 16, 'section-icon') ?> Catégories</h3>
 
             <div class="liens-list">
                 <?php if (empty($categories)): ?>
@@ -212,7 +212,7 @@
                                 <input type="hidden" name="csrf_token" value="<?= $token ?>">
                                 <input type="hidden" name="type" value="categorie">
                                 <input type="hidden" name="categorie_id" value="<?= $cat['id'] ?>">
-                                <button class="lien-remove" title="Supprimer ce lien">✕</button>
+                                <button class="lien-remove" title="Supprimer ce lien"><?= icon('close', 12) ?></button>
                             </form>
                         </div>
                     <?php endforeach; ?>

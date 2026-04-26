@@ -14,7 +14,7 @@
 
         <!-- Logo / Titre -->
         <div class="auth-header">
-            <div class="auth-logo">🌿</div>
+            <div class="auth-logo"><?= icon('plante', 48, 'logo-icon') ?></div>
             <h1 class="auth-title">La Pharmacie</h1>
             <p class="auth-subtitle">Votre herbier interactif</p>
         </div>

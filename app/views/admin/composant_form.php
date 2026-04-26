@@ -16,7 +16,7 @@
     <main class="admin-main">
 
         <div class="page-header">
-            <h2><?= $composant ? '✏️ Éditer : ' . htmlspecialchars($composant['nom']) : '🔬 Nouveau composant' ?></h2>
+            <h2><?= $composant ? icon('edit', 16) . ' Éditer : ' . htmlspecialchars($composant['nom']) : icon('composant', 16) . ' Nouveau composant' ?></h2>
             <a href="<?= APP_URL ?>/admin/composants" class="btn btn-secondary">← Retour</a>
         </div>
 
@@ -59,7 +59,7 @@
 
             <div style="display:flex; gap:1rem; margin-top:1.5rem;">
                 <button type="submit" class="btn btn-primary">
-                    <?= $composant ? '💾 Enregistrer' : '✨ Créer le composant' ?>
+                    <?= $composant ? icon('save', 16) . ' Enregistrer' : icon('composant', 16) . ' Créer le composant' ?>
                 </button>
                 <a href="<?= APP_URL ?>/admin/composants" class="btn btn-secondary">Annuler</a>
             </div>

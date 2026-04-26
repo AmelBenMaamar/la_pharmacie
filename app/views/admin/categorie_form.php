@@ -16,7 +16,7 @@
     <main class="admin-main">
 
         <div class="page-header">
-            <h2><?= $categorie ? '✏️ Éditer : ' . htmlspecialchars($categorie['nom']) : '📂 Nouvelle catégorie' ?></h2>
+            <h2><?= $categorie ? icon('edit', 16) . ' Éditer : ' . htmlspecialchars($categorie['nom']) : icon('categorie', 16) . ' Nouvelle catégorie' ?></h2>
             <a href="<?= APP_URL ?>/admin/categories" class="btn btn-secondary">← Retour</a>
         </div>
 
@@ -56,7 +56,7 @@
 
             <div style="display:flex; gap:1rem; margin-top:1.5rem;">
                 <button type="submit" class="btn btn-primary">
-                    <?= $categorie ? '💾 Enregistrer' : '✨ Créer la catégorie' ?>
+                    <?= $categorie ? icon('save', 16) . ' Enregistrer' : icon('categorie', 16) . ' Créer la catégorie' ?>
                 </button>
                 <a href="<?= APP_URL ?>/admin/categories" class="btn btn-secondary">Annuler</a>
             </div>

@@ -16,7 +16,7 @@
     <main class="admin-main">
 
         <div class="page-header">
-            <h2><?= $plante ? '✏️ Éditer : ' . htmlspecialchars($plante['nom']) : '🌿 Nouvelle plante' ?></h2>
+            <h2><?= $plante ? icon('edit', 16) . ' Éditer : ' . htmlspecialchars($plante['nom']) : icon('plante', 16) . ' Nouvelle plante' ?></h2>
             <a href="<?= APP_URL ?>/admin/plantes" class="btn btn-secondary">← Retour</a>
         </div>
 
@@ -88,7 +88,7 @@
             <!-- Boutons -->
             <div style="display:flex; gap:1rem; margin-top:1.5rem;">
                 <button type="submit" class="btn btn-primary">
-                    <?= $plante ? '💾 Enregistrer les modifications' : '✨ Créer la plante' ?>
+                    <?= $plante ? icon('save', 16) . ' Enregistrer les modifications' : icon('plante', 16) . ' Créer la plante' ?>
                 </button>
                 <a href="<?= APP_URL ?>/admin/plantes" class="btn btn-secondary">Annuler</a>
             </div>

@@ -3,7 +3,7 @@
 <div class="fiche-header">
     <div class="fiche-header-inner">
 
-        <div class="fiche-img-placeholder">✨</div>
+        <div class="fiche-img-placeholder"><?= icon('vertu', 64, 'placeholder-icon') ?></div>
 
         <div>
             <?php if (!empty($vertu['categorie'])): ?>
@@ -27,7 +27,7 @@
 
     <?php if (!empty($plantes)): ?>
     <div class="fiche-section">
-        <h3>🌿 Plantes avec cette vertu <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($plantes) ?></span></h3>
+        <h3><?= icon('plante', 18, 'section-icon plante') ?> Plantes avec cette vertu <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($plantes) ?></span></h3>
         <div class="cards-grid">
             <?php foreach ($plantes as $p): ?>
                 <a href="<?= APP_URL ?>/plantes/<?= htmlspecialchars($p['slug']) ?>" class="public-card">
@@ -36,7 +36,7 @@
                             <img src="<?= APP_URL ?>/uploads/<?= htmlspecialchars($p['image']) ?>"
                                  alt="<?= htmlspecialchars($p['nom']) ?>">
                         <?php else: ?>
-                            <div class="public-card-placeholder">🌿</div>
+                            <div class="public-card-placeholder"><?= icon('plante', 40, 'placeholder-icon') ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="public-card-body">
@@ -53,7 +53,7 @@
 
     <?php if (!empty($composants)): ?>
     <div class="fiche-section">
-        <h3>🔬 Composants actifs impliqués <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($composants) ?></span></h3>
+        <h3><?= icon('composant', 18, 'section-icon composant') ?> Composants actifs impliqués <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($composants) ?></span></h3>
         <div class="tags-cloud">
             <?php foreach ($composants as $c): ?>
                 <a href="<?= APP_URL ?>/composants/<?= htmlspecialchars($c['slug']) ?>"

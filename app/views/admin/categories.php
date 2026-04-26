@@ -21,7 +21,7 @@
         <?php endif; ?>
 
         <div class="page-header">
-            <h2>📂 Catégories</h2>
+            <h2><?= icon('categorie', 22, 'section-icon') ?> Catégories</h2>
             <a href="<?= APP_URL ?>/admin/categories/creer" class="btn btn-primary">
                 + Ajouter une catégorie
             </a>
@@ -60,7 +60,7 @@
                         </td>
                         <td>
                             <a href="<?= APP_URL ?>/admin/categories/<?= $cat['id'] ?>/editer"
-                               class="btn btn-sm btn-secondary">✏️ Éditer</a>
+                               class="btn btn-sm btn-secondary"><?= icon('edit', 14) ?> Éditer</a>
                             <form method="POST"
                                   action="<?= APP_URL ?>/admin/categories/<?= $cat['id'] ?>/supprimer"
                                   style="display:inline;"

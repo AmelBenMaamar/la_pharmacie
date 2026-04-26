@@ -21,7 +21,7 @@
         <?php endif; ?>
 
         <div class="page-header">
-            <h2>✨ Vertus</h2>
+            <h2><?= icon('vertu', 22, 'section-icon vertu') ?> Vertus</h2>
             <a href="<?= APP_URL ?>/admin/vertus/creer" class="btn btn-primary">
                 + Ajouter une vertu
             </a>
@@ -56,7 +56,7 @@
                         </td>
                         <td>
                             <a href="<?= APP_URL ?>/admin/vertus/<?= $v['id'] ?>/editer"
-                               class="btn btn-sm btn-secondary">✏️ Éditer</a>
+                               class="btn btn-sm btn-secondary"><?= icon('edit', 14) ?> Éditer</a>
                             <form method="POST"
                                   action="<?= APP_URL ?>/admin/vertus/<?= $v['id'] ?>/supprimer"
                                   style="display:inline;"

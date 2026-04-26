@@ -16,7 +16,7 @@
     <main class="admin-main">
 
         <div class="page-header">
-            <h2><?= $vertu ? '✏️ Éditer : ' . htmlspecialchars($vertu['nom']) : '✨ Nouvelle vertu' ?></h2>
+            <h2><?= $vertu ? icon('edit', 16) . ' Éditer : ' . htmlspecialchars($vertu['nom']) : icon('vertu', 16) . ' Nouvelle vertu' ?></h2>
             <a href="<?= APP_URL ?>/admin/vertus" class="btn btn-secondary">← Retour</a>
         </div>
 
@@ -59,7 +59,7 @@
 
             <div style="display:flex; gap:1rem; margin-top:1.5rem;">
                 <button type="submit" class="btn btn-primary">
-                    <?= $vertu ? '💾 Enregistrer' : '✨ Créer la vertu' ?>
+                    <?= $vertu ? icon('save', 16) . ' Enregistrer' : icon('vertu', 16) . ' Créer la vertu' ?>
                 </button>
                 <a href="<?= APP_URL ?>/admin/vertus" class="btn btn-secondary">Annuler</a>
             </div>
