@@ -72,11 +72,14 @@ class AdminController extends Controller {
 
     public function planteLiens(string $id): void {
         $this->requireAdmin();
-        $model      = new Plante();
-        $plante     = $model->find((int)$id);
-        $composants = $model->composants((int)$id);
-        $vertus     = $model->vertus((int)$id);
-        $categories = $model->categories((int)$id);
+        $model  = new Plante();
+        /* Supporte slug ET id numerique */
+        $plante = is_numeric($id) ? $model->find((int)$id) : $model->findBySlug($id);
+        if (!$plante) { http_response_code(404); echo 'Plante introuvable'; return; }
+        $realId     = $plante['id'];
+        $composants = $model->composants($realId);
+        $vertus     = $model->vertus($realId);
+        $categories = $model->categories($realId);
         $all_composants = (new Composant())->all();
         $all_vertus     = (new Vertu())->all();
         $this->view('admin/plante_liens', [
@@ -102,6 +105,8 @@ class AdminController extends Controller {
             $model->linkVertu((int)$id, (int)$_POST['vertu_id'], $_POST['source'] ?? '');
         } elseif ($type === 'categorie') {
             $model->linkCategorie((int)$id, (int)$_POST['categorie_id']);
+        } elseif ($type === 'composant_vertu') {
+            $model->linkComposantVertu((int)$_POST['composant_id'], (int)$_POST['vertu_id'], $_POST['niveau'] ?? 'modere');
         }
         $this->flash('success', 'Lien ajouté.');
         $this->redirect('/admin/plantes/' . $id . '/liens');
@@ -117,6 +122,8 @@ class AdminController extends Controller {
             $model->unlinkVertu((int)$id, (int)$_POST['vertu_id']);
         } elseif ($type === 'categorie') {
             $model->unlinkCategorie((int)$id, (int)$_POST['categorie_id']);
+        } elseif ($type === 'composant_vertu') {
+            $model->unlinkComposantVertu((int)$_POST['composant_id'], (int)$_POST['vertu_id']);
         }
         $this->flash('success', 'Lien supprimé.');
         $this->redirect('/admin/plantes/' . $id . '/liens');

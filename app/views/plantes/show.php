@@ -123,78 +123,139 @@ function renderMarkdown(string $text): string {
 
 <script>
 (function () {
-    const APP_URL   = '<?= APP_URL ?>';
-    const planteNom = '<?= addslashes($plante['nom']) ?>';
+    /* ── Données PHP injectées ───────────────────────────────────────── */
+    const APP_URL    = '<?= APP_URL ?>';
+    const planteNom  = '<?= addslashes($plante['nom']) ?>';
     const composants = <?= json_encode(array_map(fn($c) => ['nom'=>$c['nom'],'slug'=>$c['slug']], $composants)) ?>;
     const vertus     = <?= json_encode(array_map(fn($v) => ['nom'=>$v['nom'],'slug'=>$v['slug']], $vertus)) ?>;
+    /* liens_cv : [{composant_slug, vertu_slug}]
+       Si vide, les vertus se rattachent à la plante (fallback) */
+    const liensCv    = <?= json_encode($liens_cv ?? []) ?>;
 
-    const FILL   = { plante:'#DCFCF2', composant:'#E8DCFC', vertu:'#F9FCDC' };
-    const STROKE = { plante:'#a0ead8', composant:'#c4a0e8', vertu:'#d8e8a0' };
+    /* ── Palette ─────────────────────────────────────────────────────── */
+    const FILL   = { plante:'#DCFCF2', composant:'#EDFDFF', vertu:'#F9FCDC' };
+    const STROKE = { plante:'#a0ead8', composant:'#a0d4ea', vertu:'#d8e8a0' };
     const TEXT   = '#044B71';
-    const LINE   = '#D4C8B8';
+    const LINE_C = '#a0d4ea';   /* plante → composant */
+    const LINE_V = '#b8d48a';   /* composant → vertu  */
     const BG     = '#F5F0E8';
+    const ANIM_DUR = 700;       /* ms */
 
+    /* ── Setup canvas ────────────────────────────────────────────────── */
     const canvas  = document.getElementById('graphe-canvas');
     const tooltip = document.getElementById('graphe-tooltip');
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     const dpr = () => window.devicePixelRatio || 1;
-    let nodes = [], hovered = null, W = 0, H = 0;
 
-    /* ─── Resize ──────────────────────────────────────────────────────── */
+    let nodes = [], edges = [], hovered = null, tapped = null;
+    let W = 0, H = 0, animStart = null, progress = 0;
+
+    /* ── Resize ──────────────────────────────────────────────────────── */
     function resize() {
         W = canvas.parentElement.offsetWidth;
-        H = Math.max(460, Math.min(620, W * 0.62));
-
-        /* buffer physique */
-        canvas.width  = Math.round(W * dpr());
-        canvas.height = Math.round(H * dpr());
-
-        /* taille CSS = ce que l'œil voit */
+        H = Math.max(560, Math.min(750, W * 0.72));
+        canvas.width        = Math.round(W * dpr());
+        canvas.height       = Math.round(H * dpr());
         canvas.style.width  = W + 'px';
         canvas.style.height = H + 'px';
-
-        buildNodes();
-        draw();
+        buildGraph();
+        animStart = null;
+        requestAnimationFrame(animate);
     }
 
-    /* ─── Nœuds ───────────────────────────────────────────────────────── */
-    function buildNodes() {
-        nodes = [];
-        // W forcé pair pour éviter cx = X.5
-        if (W % 2 !== 0) W--;
-        if (H % 2 !== 0) H--;
+    /* ── Construction nœuds + arêtes ────────────────────────────────── */
+    function buildGraph() {
+        nodes = []; edges = [];
         const cx = Math.round(W / 2), cy = Math.round(H / 2);
-        const base = Math.min(W, H) * 0.44;
-        const r1 = base * 0.38, r2 = base * 0.80;
-        const rC = Math.max(30, Math.min(44, 180 / Math.max(composants.length, 1)));
-        const rV = Math.max(26, Math.min(38, 180 / Math.max(vertus.length,    1)));
 
-        nodes.push({ nom: planteNom, type:'plante', x:cx, y:cy, r:46, url:null });
+        const nC   = Math.max(composants.length, 1);
+        const nV   = Math.max(vertus.length, 1);
+        const base = Math.min(W, H) * 0.34;
+        const r1   = base;
+        const r2   = base * 1.72;
 
+        const rPlante = 52;
+        const rC = Math.max(34, Math.min(48, 200 / nC));
+        const rV = Math.max(30, Math.min(44, 200 / nV));
+
+        /* Plante centrale */
+        const nPlante = {
+            nom: planteNom, type: 'plante',
+            x: cx, y: cy, r: rPlante, url: null,
+            idx: 0, neighbors: new Set()
+        };
+        nodes.push(nPlante);
+
+        /* Composants — anneau interne */
+        const compNodes = [];
         composants.forEach((c, i) => {
-            const a = 2*Math.PI*i/Math.max(composants.length,1) - Math.PI/2;
-            nodes.push({ ...c, type:'composant',
-                         x: Math.round(cx + r1*Math.cos(a)),
-                         y: Math.round(cy + r1*Math.sin(a)),
-                         r:rC, url: APP_URL+'/composants/'+c.slug });
+            const a = 2 * Math.PI * i / nC - Math.PI / 2;
+            const n = {
+                ...c, type: 'composant',
+                x: Math.round(cx + r1 * Math.cos(a)),
+                y: Math.round(cy + r1 * Math.sin(a)),
+                r: rC, url: APP_URL + '/composants/' + c.slug,
+                idx: 1 + i, neighbors: new Set(), angle: a
+            };
+            nodes.push(n);
+            compNodes.push(n);
+            edges.push({ from: nPlante, to: n, type: 'composant' });
+            nPlante.neighbors.add(n.idx);
+            n.neighbors.add(nPlante.idx);
         });
 
+        const compBySlug = {};
+        compNodes.forEach(n => { compBySlug[n.slug] = n; });
+
+        /* Vertus — anneau externe, UNE bulle par vertu unique
+           Chaque vertu est reliée à TOUS ses composants parents via .filter() */
         vertus.forEach((v, i) => {
-            const a = 2*Math.PI*i/Math.max(vertus.length,1) - Math.PI/2;
-            nodes.push({ ...v, type:'vertu',
-                         x: Math.round(cx + r2*Math.cos(a)),
-                         y: Math.round(cy + r2*Math.sin(a)),
-                         r:rV, url: APP_URL+'/vertus/'+v.slug });
+            const a = 2 * Math.PI * i / nV - Math.PI / 2 + (Math.PI / nV);
+            const nv = {
+                ...v, type: 'vertu',
+                x: Math.round(cx + r2 * Math.cos(a)),
+                y: Math.round(cy + r2 * Math.sin(a)),
+                r: rV, url: APP_URL + '/vertus/' + v.slug,
+                idx: 1 + composants.length + i,
+                neighbors: new Set()
+            };
+            nodes.push(nv);
+
+            /* Tous les composants parents de cette vertu */
+            const parents = liensCv
+                .filter(l => l.vertu_slug === v.slug && compBySlug[l.composant_slug])
+                .map(l => compBySlug[l.composant_slug]);
+
+            const sources = parents.length > 0 ? parents : [nPlante];
+            sources.forEach(parent => {
+                edges.push({ from: parent, to: nv, type: 'vertu' });
+                parent.neighbors.add(nv.idx);
+                nv.neighbors.add(parent.idx);
+            });
+        });
+
+        /* Clamp : rien ne déborde du canvas */
+        const margin = 16;
+        nodes.forEach(n => {
+            n.x = Math.max(n.r + margin, Math.min(W - n.r - margin, n.x));
+            n.y = Math.max(n.r + margin, Math.min(H - n.r - margin, n.y));
         });
     }
 
-    /* ─── Texte multiligne ────────────────────────────────────────────── */
+    /* ── Dégradé radial (V1) ─────────────────────────────────────────── */
+    function makeGradient(n, r) {
+        const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r);
+        g.addColorStop(0,   '#ffffff');
+        g.addColorStop(0.6, FILL[n.type]);
+        g.addColorStop(1,   STROKE[n.type]);
+        return g;
+    }
+
+    /* ── Texte multiligne ────────────────────────────────────────────── */
     function wrapText(text, maxW) {
         const words = text.split(' ');
-        const lines = [];
-        let cur = '';
+        const lines = []; let cur = '';
         words.forEach(w => {
             const t = cur ? cur+' '+w : w;
             if (ctx.measureText(t).width > maxW - 8) { if (cur) lines.push(cur); cur = w; }
@@ -205,106 +266,175 @@ function renderMarkdown(string $text): string {
         return lines;
     }
 
-    /* ─── Draw ────────────────────────────────────────────────────────── */
-    function draw() {
-        /*
-         * setTransform au début de CHAQUE draw()
-         * canvas.width reset le contexte → on doit reposer le scale ici,
-         * pas dans resize() où il serait perdu dès le prochain redraw.
-         */
+    /* ── Draw ────────────────────────────────────────────────────────── */
+    function draw(prog) {
+        prog = (prog === undefined) ? 1 : prog;
         ctx.setTransform(dpr(), 0, 0, dpr(), 0, 0);
         ctx.clearRect(0, 0, W, H);
 
-        /* fond */
+        /* Fond */
         ctx.fillStyle = BG;
         ctx.beginPath(); ctx.roundRect(0, 0, W, H, 14); ctx.fill();
-
         if (!nodes.length) return;
+
         const center = nodes[0];
 
-        /* lignes composants (pleines) */
-        ctx.setLineDash([]);
-        ctx.strokeStyle = LINE;
-        ctx.lineWidth   = 1.5;
-        nodes.slice(1, 1+composants.length).forEach(n => {
-            ctx.beginPath(); ctx.moveTo(center.x, center.y); ctx.lineTo(n.x, n.y); ctx.stroke();
-        });
+        /* ── Arêtes animées (A1) + couleur par type ───────────────────── */
+        edges.forEach(e => {
+            const isComp = (e.type === 'composant');
+            /* Timing décalé : composants 0→0.6, vertus 0.3→1 */
+            const p0 = isComp ? 0   : 0.3;
+            const p1 = isComp ? 0.6 : 1.0;
+            const t  = Math.max(0, Math.min(1, (prog - p0) / (p1 - p0)));
+            if (t <= 0) return;
 
-        /* lignes vertus (pointillés) */
-        ctx.setLineDash([5, 4]);
-        ctx.lineWidth = 1;
-        nodes.slice(1+composants.length).forEach(n => {
-            ctx.beginPath(); ctx.moveTo(center.x, center.y); ctx.lineTo(n.x, n.y); ctx.stroke();
+            /* Point intermédiaire animé */
+            const tx = e.from.x + (e.to.x - e.from.x) * t;
+            const ty = e.from.y + (e.to.y - e.from.y) * t;
+
+            /* I1 : atténue les arêtes hors focus */
+            const dimEdge = hovered && hovered !== e.from && hovered !== e.to;
+            ctx.globalAlpha = dimEdge ? 0.12 : 0.75;
+            ctx.setLineDash(isComp ? [] : [5, 4]);
+            ctx.strokeStyle = isComp ? LINE_C : LINE_V;
+            ctx.lineWidth   = isComp ? 1.5 : 1;
+
+            ctx.beginPath(); ctx.moveTo(e.from.x, e.from.y); ctx.lineTo(tx, ty); ctx.stroke();
+            ctx.globalAlpha = 1;
         });
         ctx.setLineDash([]);
 
-        /* nœuds */
+        /* ── Nœuds animés (A1) ────────────────────────────────────────── */
         nodes.forEach(n => {
-            const hov = hovered === n;
-            const r   = hov ? n.r + 4 : n.r;
+            /* Timing par type */
+            let p0, p1;
+            if      (n.type === 'plante')    { p0=0;   p1=0.25; }
+            else if (n.type === 'composant') { p0=0.1; p1=0.6;  }
+            else                             { p0=0.4; p1=1.0;  }
+            const t = Math.max(0, Math.min(1, (prog - p0) / (p1 - p0)));
+            if (t <= 0) return;
 
-            ctx.shadowColor = hov ? FILL[n.type] : 'transparent';
-            ctx.shadowBlur  = hov ? 16 : 0;
+            /* Position interpolée depuis le centre (A1) */
+            const nx = Math.round(center.x + (n.x - center.x) * t);
+            const ny = Math.round(center.y + (n.y - center.y) * t);
+            const r  = n.r * t;
 
-            ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI*2);
-            ctx.fillStyle   = FILL[n.type]; ctx.fill();
+            /* I1 : opacité selon voisinage */
+            const isNeighbor = hovered && (hovered === n || hovered.neighbors.has(n.idx));
+            const dimmed     = hovered && !isNeighbor;
+            ctx.globalAlpha  = dimmed ? 0.15 : 1;
+
+            const hov    = (hovered === n);
+            const radius = hov ? r + 4 : r;
+
+            /* Shadow hover */
+            ctx.shadowColor = hov ? STROKE[n.type] : 'transparent';
+            ctx.shadowBlur  = hov ? 18 : 0;
+
+            /* Nœud avec dégradé radial (V1) */
+            ctx.beginPath(); ctx.arc(nx, ny, radius, 0, Math.PI*2);
+            ctx.fillStyle   = makeGradient({x:nx, y:ny, type:n.type}, radius);
+            ctx.fill();
             ctx.strokeStyle = STROKE[n.type];
-            ctx.lineWidth   = hov ? 2.5 : 1.5; ctx.stroke();
-            ctx.shadowBlur  = 0;
+            ctx.lineWidth   = hov ? 2.5 : 1.5;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
 
-            /* texte */
-            const fs = n.type === 'plante' ? 12 : 10;
-            ctx.font         = (n.type==='plante'?'600':'500')+' '+fs+'px Inter,sans-serif';
+            /* ── Labels intérieurs pour tous les nœuds ──────────────────── */
+            const isPlante = n.type === 'plante';
+            const fs = isPlante ? 13 : (radius > 38 ? 10 : 9);
+            ctx.font         = (isPlante ? '600' : '500') + ' ' + fs + 'px Inter,sans-serif';
             ctx.fillStyle    = TEXT;
             ctx.textAlign    = 'center';
             ctx.textBaseline = 'middle';
-            const lines = wrapText(n.nom, r*2);
-            const lh    = fs + 3;
-            const sy    = n.y - (lines.length-1)*lh/2;
-            lines.forEach((l, i) => ctx.fillText(l, Math.round(n.x), Math.round(sy+i*lh)));
+
+            /* Largeur max = ~90% du diamètre */
+            const maxW  = radius * 1.8;
+            const words = n.nom.split(' ');
+            const lines = [];
+            let cur = '';
+            words.forEach(w => {
+                const t = cur ? cur + ' ' + w : w;
+                if (ctx.measureText(t).width > maxW && cur) {
+                    lines.push(cur); cur = w;
+                } else { cur = t; }
+            });
+            if (cur) lines.push(cur);
+            /* Max 3 lignes avec troncature */
+            if (lines.length > 3) { lines[2] = lines[2].slice(0, -1) + '…'; lines.length = 3; }
+
+            const lh = fs + 2.5;
+            const sy = ny - (lines.length - 1) * lh / 2;
+            lines.forEach((l, i) => ctx.fillText(l, nx, Math.round(sy + i * lh)));
+            ctx.globalAlpha = 1;
         });
     }
 
-    /* ─── Événements ──────────────────────────────────────────────────── */
-    function hit(ex, ey) {
-        /* ex/ey en CSS px → même espace que nodes */
-        const rect = canvas.getBoundingClientRect();
-        const mx = ex - rect.left, my = ey - rect.top;
-        return nodes.find(n => Math.hypot(mx-n.x, my-n.y) < n.r+6) || null;
+    /* ── Boucle d'animation (A1) — ease-out cubic ────────────────────── */
+    function animate(ts) {
+        if (!animStart) animStart = ts;
+        progress = Math.min((ts - animStart) / ANIM_DUR, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        draw(eased);
+        if (progress < 1) requestAnimationFrame(animate);
     }
 
+    /* ── Hit test ────────────────────────────────────────────────────── */
+    function hit(ex, ey) {
+        const rect = canvas.getBoundingClientRect();
+        const mx = ex - rect.left, my = ey - rect.top;
+        return nodes.find(n => Math.hypot(mx-n.x, my-n.y) < n.r+8) || null;
+    }
+
+    /* ── Tooltip ─────────────────────────────────────────────────────── */
+    function showTooltip(n, cx, cy) {
+        if (!n) { tooltip.style.display='none'; return; }
+        const rect = canvas.getBoundingClientRect();
+        tooltip.textContent   = n.nom;
+        tooltip.style.display = 'block';
+        tooltip.style.left    = (cx - rect.left + 14)+'px';
+        tooltip.style.top     = (cy - rect.top  - 10)+'px';
+    }
+
+    /* ── Événements desktop ──────────────────────────────────────────── */
     canvas.addEventListener('mousemove', e => {
         hovered = hit(e.clientX, e.clientY);
         canvas.style.cursor = hovered?.url ? 'pointer' : 'default';
-        if (hovered) {
-            const rect = canvas.getBoundingClientRect();
-            tooltip.textContent   = hovered.nom;
-            tooltip.style.display = 'block';
-            tooltip.style.left    = (e.clientX - rect.left + 14)+'px';
-            tooltip.style.top     = (e.clientY - rect.top  - 10)+'px';
-        } else {
-            tooltip.style.display = 'none';
-        }
-        draw();
+        showTooltip(hovered, e.clientX, e.clientY);
+        draw(1);
     });
-
     canvas.addEventListener('mouseleave', () => {
-        hovered = null; tooltip.style.display = 'none'; draw();
+        hovered = null;
+        tooltip.style.display = 'none';
+        draw(1);
     });
-
     canvas.addEventListener('click', e => {
         const n = hit(e.clientX, e.clientY);
         if (n?.url) window.location.href = n.url;
     });
 
+    /* ── Événements touch (M1 : 1er tap = tooltip, 2e = navigation) ─── */
     canvas.addEventListener('touchstart', e => {
         e.preventDefault();
         const t = e.touches[0];
         const n = hit(t.clientX, t.clientY);
-        if (n?.url) window.location.href = n.url;
+        if (!n) { tapped = null; tooltip.style.display='none'; draw(1); return; }
+        if (tapped === n && n.url) {
+            window.location.href = n.url;
+        } else {
+            tapped = n; hovered = n;
+            showTooltip(n, t.clientX, t.clientY);
+            draw(1);
+        }
     }, { passive:false });
 
     window.addEventListener('resize', resize);
+    /* Détecte le changement de DPR (zoom navigateur) */
+    const watchDpr = () => {
+        window.matchMedia(`(resolution: ${dpr()}dppx)`)
+              .addEventListener('change', () => { resize(); watchDpr(); }, { once: true });
+    };
+    watchDpr();
     resize();
 })();
 </script>

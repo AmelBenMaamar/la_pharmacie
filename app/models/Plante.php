@@ -27,7 +27,6 @@ class Plante extends Model {
         return $this->lastInsertId();
     }
 
-    // ✅ image incluse dans le UPDATE
     public function update(int $id, array $data): void {
         $slug = $this->slugify($data['nom']);
         $this->execute(
@@ -118,4 +117,46 @@ class Plante extends Model {
             [$planteId, $vertuId]
         );
     }
+
+    /**
+     * Liens composant->vertu pour une plante donnee
+     * Utilise par le graphe interactif (show.php)
+     */
+    public function liensComposantVertu(int $planteId): array {
+        $sql = "SELECT c.slug AS composant_slug, v.slug AS vertu_slug
+                FROM composant_vertu cv
+                JOIN composants c ON c.id = cv.composant_id
+                JOIN vertus     v ON v.id = cv.vertu_id
+                JOIN plante_composant pc ON pc.composant_id = cv.composant_id
+                WHERE pc.plante_id = :plante_id";
+        return $this->query($sql, ['plante_id' => $planteId]);
+    }
+
+    /** Vertus liées à un composant donné */
+    public function vertusDeComposant(int $composantId): array {
+        return $this->query(
+            "SELECT v.*, cv.niveau_evidence FROM vertus v
+             JOIN composant_vertu cv ON cv.vertu_id = v.id
+             WHERE cv.composant_id = :cid ORDER BY v.nom",
+            ['cid' => $composantId]
+        );
+    }
+
+    /** Lier un composant à une vertu */
+    public function linkComposantVertu(int $composantId, int $vertuId, string $niveau = 'modere'): void {
+        $this->execute(
+            "INSERT IGNORE INTO composant_vertu (composant_id, vertu_id, niveau_evidence)
+             VALUES (?, ?, ?)",
+            [$composantId, $vertuId, $niveau]
+        );
+    }
+
+    /** Délier un composant d'une vertu */
+    public function unlinkComposantVertu(int $composantId, int $vertuId): void {
+        $this->execute(
+            "DELETE FROM composant_vertu WHERE composant_id=? AND vertu_id=?",
+            [$composantId, $vertuId]
+        );
+    }
+
 }

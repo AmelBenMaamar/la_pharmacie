@@ -1,12 +1,14 @@
 <?php
-// ================================================
-// ComposantController — fiche publique d'un composant
-// ================================================
-
 class ComposantController extends Controller {
 
+    public function index(): void {
+        $model      = new Composant();
+        $composants = $model->all();
+        $this->view('composants/index', compact('composants'));
+    }
+
     public function show(string $slug): void {
-        $model    = new Composant();
+        $model     = new Composant();
         $composant = $model->findBySlug($slug);
 
         if (!$composant || !$composant['actif']) {
@@ -17,7 +19,6 @@ class ComposantController extends Controller {
 
         $plantes = $model->plantes($composant['id']);
         $vertus  = $model->vertus($composant['id']);
-
         $this->view('composants/show', compact('composant', 'plantes', 'vertus'));
     }
 }

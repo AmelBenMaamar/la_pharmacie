@@ -1,9 +1,11 @@
 <?php
-// ================================================
-// PlanteController — fiche publique d'une plante
-// ================================================
-
 class PlanteController extends Controller {
+
+    public function index(): void {
+        $model   = new Plante();
+        $plantes = $model->all();
+        $this->view('plantes/index', compact('plantes'));
+    }
 
     public function show(string $slug): void {
         $model  = new Plante();
@@ -19,6 +21,7 @@ class PlanteController extends Controller {
         $vertus     = $model->vertus($plante['id']);
         $categories = $model->categories($plante['id']);
 
-        $this->view('plantes/show', compact('plante', 'composants', 'vertus', 'categories'));
+        $liens_cv = $model->liensComposantVertu($plante['id']);
+        $this->view('plantes/show', compact('plante', 'composants', 'vertus', 'categories', 'liens_cv'));
     }
 }

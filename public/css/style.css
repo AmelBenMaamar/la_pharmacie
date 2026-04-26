@@ -629,10 +629,10 @@ a.sidebar-logo:hover h1 {
     display: inline-block;
 }
 .legende-plante::before    { background: #a0ead8; }
-.legende-composant::before { background: #c4a0e8; }
+.legende-composant::before { background: #a0d4ea; }
 .legende-vertu::before     { background: #d8e8a0; }
 .legende-plante    { background: rgba(220,252,242,0.6); color: #2a8a8f; }
-.legende-composant { background: rgba(232,220,252,0.6); color: #6a3a9a; }
+.legende-composant { background: rgba(237,253,255,0.8); color: #7a2a8f; }
 .legende-vertu     { background: rgba(249,252,220,0.6); color: #6a7a2a; }
 
 .graphe-wrap {
@@ -797,3 +797,60 @@ a.sidebar-logo:hover h1 {
 }
 
 /* Légende graphe — couleurs alignées sur le canvas JS */
+
+/* ================================================
+   GRAPHE — améliorations v2
+   ================================================ */
+
+/* Supprime la hauteur fixe héritée si présente */
+#graphe-canvas { border-radius: var(--radius); }
+
+/* Tooltip enrichi */
+.graphe-tooltip {
+    background: var(--brun-dark, #2a1f14);
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    pointer-events: none;
+    display: none;
+    white-space: nowrap;
+    z-index: 10;
+    position: absolute;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: opacity 0.15s;
+}
+.graphe-tooltip.visible { display: block; }
+
+/* Pulse sur le nœud central (via class injectée par JS) */
+@keyframes graphe-pulse {
+    0%   { transform: scale(1);    opacity: 1; }
+    50%  { transform: scale(1.06); opacity: 0.85; }
+    100% { transform: scale(1);    opacity: 1; }
+}
+
+/* ================================================
+   GRAPHE — améliorations v2
+   ================================================ */
+.graphe-tooltip {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transition: opacity 0.12s ease;
+}
+
+/* ── Liens Composant→Vertu (admin) ───────────────── */
+.lien-composant-block {
+    border: 1px solid var(--border, #e5e0d8);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.5);
+}
+.lien-composant-header {
+    margin-bottom: 0.6rem;
+}
+.liens-list-indent {
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border, #e5e0d8);
+    margin-bottom: 0.75rem;
+}
+

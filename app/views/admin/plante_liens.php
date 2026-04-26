@@ -129,6 +129,72 @@
             </form>
         </div>
 
+        
+        <!-- ── LIENS COMPOSANT → VERTU ───────────────── -->
+        <div class="liens-section">
+            <h3>🔗 Liens Composant → Vertu</h3>
+            <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:1rem;">
+                Définit quelles vertus sont portées par quels composants actifs — utilisé par le graphe.
+            </p>
+
+            <?php
+            $model = new Plante();
+            foreach ($composants as $comp):
+                $vertus_comp = $model->vertusDeComposant($comp['id']);
+                $vertus_ids_comp = array_column($vertus_comp, 'id');
+            ?>
+            <div class="lien-composant-block">
+                <div class="lien-composant-header">
+                    <span class="tag tag-composant"><?= htmlspecialchars($comp['nom']) ?></span>
+                </div>
+
+                <!-- Vertus déjà liées à ce composant -->
+                <div class="liens-list liens-list-indent">
+                    <?php if (empty($vertus_comp)): ?>
+                        <p style="font-size:0.82rem; color:var(--texte-light);">Aucune vertu liée à ce composant.</p>
+                    <?php else: ?>
+                        <?php foreach ($vertus_comp as $vc): ?>
+                        <div class="lien-item">
+                            <span class="tag tag-vertu">
+                                <?= htmlspecialchars($vc['nom']) ?>
+                            </span>
+                            <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/supprimer">
+                                <input type="hidden" name="csrf_token" value="<?= $token ?>">
+                                <input type="hidden" name="type" value="composant_vertu">
+                                <input type="hidden" name="composant_id" value="<?= $comp['id'] ?>">
+                                <input type="hidden" name="vertu_id" value="<?= $vc['id'] ?>">
+                                <button class="lien-remove" title="Supprimer ce lien">✕</button>
+                            </form>
+                        </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Ajouter une vertu à ce composant -->
+                <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens"
+                      style="display:flex; gap:0.6rem; flex-wrap:wrap; align-items:flex-end; margin-top:0.5rem;">
+                    <input type="hidden" name="csrf_token" value="<?= $token ?>">
+                    <input type="hidden" name="type" value="composant_vertu">
+                    <input type="hidden" name="composant_id" value="<?= $comp['id'] ?>">
+                    <div class="form-group" style="margin:0; flex:1; min-width:160px;">
+                        <label style="font-size:0.8rem;">Vertu</label>
+                        <select name="vertu_id" required>
+                            <option value="">— Choisir —</option>
+                            <?php foreach ($all_vertus as $av): ?>
+                                <?php $already = in_array($av['id'], $vertus_ids_comp); ?>
+                                <option value="<?= $av['id'] ?>" <?= $already ? 'disabled style="color:#ccc"' : '' ?>>
+                                    <?= htmlspecialchars($av['nom']) ?><?= $already ? ' ✓' : '' ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <input type="hidden" name="niveau" value="modere">
+                    <button type="submit" class="btn btn-primary btn-sm">+ Lier</button>
+                </form>
+            </div>
+            <?php endforeach; ?>
+        </div>
+
         <!-- ── CATEGORIES ──────────────────────────────── -->
         <div class="liens-section">
             <h3>📂 Catégories</h3>
