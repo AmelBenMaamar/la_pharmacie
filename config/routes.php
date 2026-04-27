@@ -26,20 +26,24 @@ $router->post('/admin/plantes/{id}/liens',     'AdminController', 'planteLiensSt
 $router->post('/admin/plantes/{id}/liens/supprimer', 'AdminController', 'planteLiensSupprimer');
 
 // ADMIN — Composants
-$router->get( '/admin/composants',                'AdminController', 'composants');
-$router->get( '/admin/composants/creer',          'AdminController', 'composantCreer');
-$router->post('/admin/composants/creer',          'AdminController', 'composantStorer');
-$router->get( '/admin/composants/{id}/editer',    'AdminController', 'composantEditer');
-$router->post('/admin/composants/{id}/editer',    'AdminController', 'composantUpdater');
-$router->post('/admin/composants/{id}/supprimer', 'AdminController', 'composantSupprimer');
+$router->get( '/admin/composants',                    'AdminController', 'composants');
+$router->get( '/admin/composants/creer',              'AdminController', 'composantCreer');
+$router->post('/admin/composants/creer',              'AdminController', 'composantStorer');
+$router->get( '/admin/composants/{id}/editer',        'AdminController', 'composantEditer');
+$router->post('/admin/composants/{id}/editer',        'AdminController', 'composantUpdater');
+$router->post('/admin/composants/{id}/supprimer',     'AdminController', 'composantSupprimer');
+$router->get( '/admin/composants/{id}/vertus',        'AdminController', 'composantVertus');
+$router->post('/admin/composants/{id}/vertus/bulk',   'AdminController', 'composantVertusStorer');
 
 // ADMIN — Vertus
-$router->get( '/admin/vertus',                'AdminController', 'vertus');
-$router->get( '/admin/vertus/creer',          'AdminController', 'vertuCreer');
-$router->post('/admin/vertus/creer',          'AdminController', 'vertuStorer');
-$router->get( '/admin/vertus/{id}/editer',    'AdminController', 'vertuEditer');
-$router->post('/admin/vertus/{id}/editer',    'AdminController', 'vertuUpdater');
-$router->post('/admin/vertus/{id}/supprimer', 'AdminController', 'vertuSupprimer');
+$router->get( '/admin/vertus',                       'AdminController', 'vertus');
+$router->get( '/admin/vertus/creer',                 'AdminController', 'vertuCreer');
+$router->post('/admin/vertus/creer',                 'AdminController', 'vertuStorer');
+$router->get( '/admin/vertus/{id}/editer',           'AdminController', 'vertuEditer');
+$router->post('/admin/vertus/{id}/editer',           'AdminController', 'vertuUpdater');
+$router->post('/admin/vertus/{id}/supprimer',        'AdminController', 'vertuSupprimer');
+$router->get( '/admin/vertus/{id}/composants',       'AdminController', 'vertuComposants');
+$router->post('/admin/vertus/{id}/composants/bulk',  'AdminController', 'vertuComposantsStorer');
 
 // ADMIN — Catégories
 $router->get( '/admin/categories',                'AdminController', 'categories');

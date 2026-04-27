@@ -63,9 +63,7 @@
                 <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($v['slug']) ?>"
                    class="tag tag-vertu tag-lg">
                     <?= htmlspecialchars($v['nom']) ?>
-                    <?php if (!empty($v['niveau_evidence'])): ?>
-                        <small>Evidence : <?= htmlspecialchars($v['niveau_evidence']) ?></small>
-                    <?php endif; ?>
+
                 </a>
             <?php endforeach; ?>
         </div>

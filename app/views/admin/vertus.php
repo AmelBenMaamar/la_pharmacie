@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../layouts/icons.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,6 +34,7 @@
                     <tr>
                         <th>Nom</th>
                         <th>Catégorie</th>
+                        <th style="text-align:center;">Composants</th>
                         <th>Statut</th>
                         <th>Actions</th>
                     </tr>
@@ -40,7 +42,7 @@
                 <tbody>
                 <?php if (empty($vertus)): ?>
                     <tr>
-                        <td colspan="4" style="text-align:center; color:var(--texte-light); padding:2rem;">
+                        <td colspan="5" style="text-align:center; color:var(--texte-light); padding:2rem;">
                             Aucune vertu — <a href="<?= APP_URL ?>/admin/vertus/creer">Ajouter la première</a>
                         </td>
                     </tr>
@@ -49,12 +51,26 @@
                     <tr>
                         <td><strong><?= htmlspecialchars($v['nom']) ?></strong></td>
                         <td><em style="color:var(--texte-light)"><?= htmlspecialchars($v['categorie'] ?? '') ?></em></td>
+                        <td style="text-align:center;">
+                            <a href="<?= APP_URL ?>/admin/vertus/<?= $v['id'] ?>/composants"
+                               title="Gérer les composants"
+                               style="display:inline-flex; align-items:center; gap:0.3rem; text-decoration:none;">
+                                <span class="badge <?= ($v['nb_composants'] ?? 0) > 0 ? 'badge-actif' : 'badge-inactif' ?>">
+                                    <?= (int)($v['nb_composants'] ?? 0) ?> composant<?= ($v['nb_composants'] ?? 0) > 1 ? 's' : '' ?>
+                                </span>
+                            </a>
+                        </td>
                         <td>
                             <span class="badge <?= $v['actif'] ? 'badge-actif' : 'badge-inactif' ?>">
                                 <?= $v['actif'] ? 'Publié' : 'Masqué' ?>
                             </span>
                         </td>
                         <td>
+                            <a href="<?= APP_URL ?>/admin/vertus/<?= $v['id'] ?>/composants"
+                               class="btn btn-sm btn-secondary"
+                               title="Lier des composants">
+                                <?= icon('lien', 14) ?> Composants
+                            </a>
                             <a href="<?= APP_URL ?>/admin/vertus/<?= $v['id'] ?>/editer"
                                class="btn btn-sm btn-secondary"><?= icon('edit', 14) ?> Éditer</a>
                             <form method="POST"

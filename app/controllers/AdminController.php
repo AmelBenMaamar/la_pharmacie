@@ -131,7 +131,15 @@ class AdminController extends Controller {
 
     public function composants(): void {
         $this->requireAdmin();
-        $composants = (new Composant())->all();
+        $db = Database::getInstance();
+        $composants = $db->query(
+            "SELECT c.*, COUNT(cv.vertu_id) AS nb_vertus
+             FROM composants c
+             LEFT JOIN composant_vertu cv ON cv.composant_id = c.id
+             WHERE c.actif = 1
+             GROUP BY c.id
+             ORDER BY c.nom"
+        )->fetchAll();
         $this->view('admin/composants', ['composants' => $composants, 'user' => $_SESSION['user']]);
     }
 
@@ -162,6 +170,44 @@ class AdminController extends Controller {
         $this->redirect('/admin/composants');
     }
 
+    public function composantVertus(string $id): void {
+        $this->requireAdmin();
+        $model     = new Composant();
+        $composant = $model->find((int)$id);
+        if (!$composant) { http_response_code(404); echo 'Composant introuvable'; return; }
+        $vertus_liees = $model->vertus((int)$id);
+        $all_vertus   = (new Vertu())->all();
+        $this->view('admin/composant_vertus', [
+            'composant'    => $composant,
+            'vertus_liees' => $vertus_liees,
+            'all_vertus'   => $all_vertus,
+            'user'         => $_SESSION['user'],
+            'token'        => $this->csrfToken(),
+        ]);
+    }
+
+    public function composantVertusStorer(string $id): void {
+        $this->requireAdmin();
+        $this->verifyCsrf();
+        $composantId = (int)$id;
+        $model       = new Composant();
+        $db          = Database::getInstance();
+        // On repart de zéro pour ce composant
+        $db->prepare("DELETE FROM composant_vertu WHERE composant_id = ?")->execute([$composantId]);
+        foreach ($_POST['vertus'] ?? [] as $vertuId => $data) {
+            if (!empty($data['actif'])) {
+                $model->linkVertu(
+                    $composantId,
+                    (int)$vertuId,
+                    trim($data['niveau'] ?? 'modere'),
+                    trim($data['notes'] ?? '')
+                );
+            }
+        }
+        $this->flash('success', 'Vertus du composant mises à jour.');
+        $this->redirect('/admin/composants/' . $composantId . '/vertus');
+    }
+
     public function composantSupprimer(string $id): void {
         $this->requireAdmin();
         (new Composant())->delete((int)$id);
@@ -171,8 +217,46 @@ class AdminController extends Controller {
 
     public function vertus(): void {
         $this->requireAdmin();
-        $vertus = (new Vertu())->all();
+        $db = Database::getInstance();
+        $vertus = $db->query(
+            "SELECT v.*, COUNT(cv.composant_id) AS nb_composants
+             FROM vertus v
+             LEFT JOIN composant_vertu cv ON cv.vertu_id = v.id
+             WHERE v.actif = 1
+             GROUP BY v.id
+             ORDER BY v.nom"
+        )->fetchAll();
         $this->view('admin/vertus', ['vertus' => $vertus, 'user' => $_SESSION['user']]);
+    }
+
+    public function vertuComposants(string $id): void {
+        $this->requireAdmin();
+        $vertu = (new Vertu())->find((int)$id);
+        if (!$vertu) { http_response_code(404); echo 'Vertu introuvable'; return; }
+        $composants_lies = (new Vertu())->composants((int)$id);
+        $all_composants  = (new Composant())->all();
+        $this->view('admin/vertu_composants', [
+            'vertu'           => $vertu,
+            'composants_lies' => $composants_lies,
+            'all_composants'  => $all_composants,
+            'user'            => $_SESSION['user'],
+            'token'           => $this->csrfToken(),
+        ]);
+    }
+
+    public function vertuComposantsStorer(string $id): void {
+        $this->requireAdmin();
+        $this->verifyCsrf();
+        $vertuId = (int)$id;
+        $db      = Database::getInstance();
+        $db->prepare("DELETE FROM composant_vertu WHERE vertu_id = ?")->execute([$vertuId]);
+        foreach ($_POST['composants'] ?? [] as $composantId => $data) {
+            if (!empty($data['actif'])) {
+                (new Composant())->linkVertu((int)$composantId, $vertuId, 'modere', '');
+            }
+        }
+        $this->flash('success', 'Composants liés à la vertu mis à jour.');
+        $this->redirect('/admin/vertus/' . $vertuId . '/composants');
     }
 
     public function vertuCreer(): void {
@@ -331,6 +415,28 @@ class AdminController extends Controller {
                 }
             }
             $this->flash('success', 'Liens composant → vertu mis à jour.');
+
+        } elseif ($section === 'all') {
+            // 1. Composants
+            $db->prepare("DELETE FROM plante_composant WHERE plante_id = ?")->execute([$planteId]);
+            foreach ($_POST['composants'] ?? [] as $composantId => $data) {
+                if (!empty($data['actif'])) {
+                    $model->linkComposant($planteId, (int)$composantId, trim($data['concentration'] ?? ''), '');
+                }
+            }
+            // 2. Graphe composant → vertu
+            foreach (array_keys($_POST['cv'] ?? []) as $compId) {
+                $db->prepare("DELETE FROM composant_vertu WHERE composant_id = ?")->execute([(int)$compId]);
+                foreach ($_POST['cv'][(int)$compId] ?? [] as $vertuId) {
+                    $model->linkComposantVertu((int)$compId, (int)$vertuId, 'modere');
+                }
+            }
+            // 3. Catégories
+            $db->prepare("DELETE FROM plante_categorie WHERE plante_id = ?")->execute([$planteId]);
+            foreach ($_POST['categories'] ?? [] as $catId) {
+                $model->linkCategorie($planteId, (int)$catId);
+            }
+            $this->flash('success', 'Tous les liens ont été enregistrés.');
         }
 
         $this->redirect('/admin/plantes/' . $planteId . '/liens');

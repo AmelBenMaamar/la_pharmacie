@@ -99,8 +99,8 @@ function renderMarkdown(string $text): string {
                 <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($v['slug']) ?>"
                    class="tag tag-vertu tag-lg">
                     <?= htmlspecialchars($v['nom']) ?>
-                    <?php if (!empty($v['source'])): ?>
-                        <small><?= htmlspecialchars($v['source']) ?></small>
+                    <?php if (!empty($v['categorie'])): ?>
+                        <small><?= htmlspecialchars($v['categorie']) ?></small>
                     <?php endif; ?>
                 </a>
             <?php endforeach; ?>

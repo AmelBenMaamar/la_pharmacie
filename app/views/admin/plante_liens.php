@@ -44,17 +44,6 @@
             border: 1px solid var(--border); border-radius: var(--radius);
             background: var(--blanc); font-family: var(--font-sans);
         }
-        .save-bar {
-            position: sticky; bottom: 1rem;
-            display: flex; align-items: center; gap: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--blanc);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            box-shadow: 0 4px 20px var(--shadow-md);
-            margin-top: 0.75rem;
-        }
-        .save-bar .count-badge { font-size: 0.82rem; color: var(--texte-light); margin-right: auto; }
         .select-toggle {
             font-size: 0.78rem; color: var(--texte-light);
             background: none; border: none; cursor: pointer;
@@ -80,6 +69,33 @@
         .comp-block { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
         .comp-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .comp-block-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
+        .vertus-auto-notice {
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            padding: 0.75rem 1rem;
+            background: rgba(107,209,214,0.08);
+            border: 1px solid rgba(107,209,214,0.35);
+            border-radius: var(--radius);
+            font-size: 0.83rem; color: var(--texte-light);
+            margin-bottom: 1rem;
+        }
+        .vertus-auto-notice strong { color: var(--brun-dark); }
+        /* Barre globale unique */
+        .global-save-bar {
+            position: sticky; bottom: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: var(--blanc);
+            border-top: 2px solid var(--turquoise);
+            box-shadow: 0 -4px 24px var(--shadow-md);
+            margin-top: 2rem;
+        }
+        .global-save-bar .save-info {
+            font-size: 0.85rem; color: var(--texte-light); margin-right: auto;
+        }
+        .global-save-bar .btn-primary {
+            padding: 0.65rem 1.75rem; font-size: 0.95rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +113,7 @@
             <div class="alert alert-success"><?= htmlspecialchars($flash) ?></div>
         <?php endif; ?>
 
+        <!-- Résumé plante -->
         <div class="plante-resume">
             <?php if (!empty($plante['image'])): ?>
                 <img class="plante-resume-img"
@@ -115,23 +132,26 @@
                     </em>
                 <?php endif; ?>
             </div>
-            <?php $nb_c = count($composants); $nb_v = count($vertus); $nb_cat = count($categories); ?>
+            <?php $nb_c = count($composants); $nb_cat = count($categories); ?>
             <div class="resume-tags">
                 <span class="tag tag-composant"><?= $nb_c ?> composant<?= $nb_c > 1 ? 's' : '' ?></span>
-                <span class="tag tag-vertu"><?= $nb_v ?> vertu<?= $nb_v > 1 ? 's' : '' ?></span>
                 <span class="tag tag-plante"><?= $nb_cat ?> catégorie<?= $nb_cat > 1 ? 's' : '' ?></span>
             </div>
         </div>
 
-        <!-- ══ COMPOSANTS ════════════════════════════ -->
-        <div class="liens-section">
-            <h3><?= icon('composant', 16, 'section-icon composant') ?> Composants actifs</h3>
-            <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:0.75rem;">
-                Coche les composants présents dans cette plante. La concentration s'affiche après avoir coché.
-            </p>
-            <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/bulk">
-                <input type="hidden" name="csrf_token" value="<?= $token ?>">
-                <input type="hidden" name="section" value="composants">
+        <!-- ══ FORMULAIRE UNIQUE ══════════════════════════════ -->
+        <form method="POST"
+              action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/bulk"
+              id="form-liens">
+            <input type="hidden" name="csrf_token" value="<?= $token ?>">
+            <input type="hidden" name="section" value="all">
+
+            <!-- ══ COMPOSANTS ══════════════════════════════════ -->
+            <div class="liens-section">
+                <h3><?= icon('composant', 16, 'section-icon composant') ?> Composants actifs</h3>
+                <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:0.75rem;">
+                    Coche les composants présents dans cette plante. La concentration s'affiche après avoir coché.
+                </p>
                 <?php
                 $composants_ids     = array_column($composants, 'id');
                 $concentrations_map = array_column($composants, 'concentration', 'id');
@@ -164,82 +184,40 @@
                         </label>
                     <?php endforeach; ?>
                 </div>
-                <div class="save-bar">
-                    <span class="count-badge" id="cnt-composants">
-                        <?= $nb_c ?> sélectionné<?= $nb_c > 1 ? 's' : '' ?>
-                    </span>
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        <?= icon('save', 15) ?> Enregistrer les composants
-                    </button>
-                </div>
-            </form>
-        </div>
+                <p style="font-size:0.78rem; color:var(--texte-light); margin-top:0.25rem;">
+                    <span id="cnt-composants"><?= $nb_c ?> sélectionné<?= $nb_c > 1 ? 's' : '' ?></span>
+                </p>
+            </div>
 
-        <!-- ══ VERTUS ════════════════════════════════ -->
-        <div class="liens-section">
-            <h3><?= icon('vertu', 16, 'section-icon vertu') ?> Vertus thérapeutiques</h3>
-            <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:0.75rem;">
-                Coche les vertus associées à cette plante.
-            </p>
-            <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/bulk">
-                <input type="hidden" name="csrf_token" value="<?= $token ?>">
-                <input type="hidden" name="section" value="vertus">
-                <?php $vertus_ids = array_column($vertus, 'id'); ?>
-                <button type="button" class="select-toggle" onclick="toggleAll('grid-vertus')">
-                    Tout sélectionner / désélectionner
-                </button>
-                <div class="check-grid" id="grid-vertus">
-                    <?php foreach ($all_vertus as $v): if (empty($v['nom'])) continue;
-                        $checked = in_array($v['id'], $vertus_ids); ?>
-                        <label class="check-item <?= $checked ? 'is-checked' : '' ?>">
-                            <input type="checkbox"
-                                   name="vertus[]"
-                                   value="<?= $v['id'] ?>"
-                                   <?= $checked ? 'checked' : '' ?>
-                                   onchange="toggleCheck(this); updateCount('grid-vertus', 'cnt-vertus')">
-                            <div style="flex:1; min-width:0;">
-                                <span class="check-label"><?= htmlspecialchars($v['nom']) ?></span>
-                                <?php if (!empty($v['categorie'])): ?>
-                                    <span class="check-sub"><?= htmlspecialchars($v['categorie']) ?></span>
-                                <?php endif; ?>
-                            </div>
-                        </label>
-                    <?php endforeach; ?>
+            <!-- ══ COMPOSANT → VERTU ════════════════════════════ -->
+            <div class="liens-section">
+                <h3><?= icon('lien', 16) ?> Vertus par composant
+                    <small style="font-size:0.78rem; color:var(--texte-light); font-family:var(--font-sans);">les vertus sont portées par les composants</small>
+                </h3>
+                <div class="vertus-auto-notice">
+                    <?= icon('vertu', 15) ?>
+                    <span>Les vertus de cette plante sont <strong>déduites automatiquement</strong> des composants.
+                    Affine ici quelles vertus sont portées par quel composant.
+                    Pour ajouter de nouvelles vertus à un composant, utilise
+                    <a href="<?= APP_URL ?>/admin/composants">la page Composants</a>.</span>
                 </div>
-                <div class="save-bar">
-                    <span class="count-badge" id="cnt-vertus">
-                        <?= $nb_v ?> sélectionnée<?= $nb_v > 1 ? 's' : '' ?>
-                    </span>
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        <?= icon('save', 15) ?> Enregistrer les vertus
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <!-- ══ COMPOSANT → VERTU (graphe) ════════════ -->
-        <?php if (!empty($composants)): ?>
-        <div class="liens-section">
-            <h3><?= icon('lien', 16) ?> Liens Composant → Vertu
-                <small style="font-size:0.78rem; color:var(--texte-light); font-family:var(--font-sans);">graphe</small>
-            </h3>
-            <p style="font-size:0.85rem; color:var(--texte-light); margin-bottom:1rem;">
-                Pour chaque composant, coche les vertus qu'il porte directement.
-            </p>
-            <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/bulk">
-                <input type="hidden" name="csrf_token" value="<?= $token ?>">
-                <input type="hidden" name="section" value="composant_vertu">
                 <?php $model = new Plante();
-                foreach ($composants as $comp):
+                foreach ($all_composants as $comp):
+                    if (empty($comp['nom'])) continue;
+                    $is_active   = in_array($comp['id'], $composants_ids);
                     $vertus_comp = $model->vertusDeComposant($comp['id']);
                     $vids_comp   = array_column($vertus_comp, 'id');
                     $nb_cv       = count($vertus_comp); ?>
-                    <div class="comp-block">
+                    <div class="comp-block" style="<?= !$is_active ? 'opacity:0.4;' : '' ?>">
                         <div class="comp-block-header">
                             <span class="tag tag-composant"><?= htmlspecialchars($comp['nom']) ?></span>
-                            <span style="font-size:0.78rem; color:var(--texte-light);">
-                                <?= $nb_cv ?> vertu<?= $nb_cv > 1 ? 's' : '' ?> liée<?= $nb_cv > 1 ? 's' : '' ?>
-                            </span>
+                            <?php if (!$is_active): ?>
+                                <span style="font-size:0.75rem; color:var(--texte-light); font-style:italic;">non actif sur cette plante</span>
+                            <?php else: ?>
+                                <span style="font-size:0.78rem; color:var(--texte-light);">
+                                    <?= $nb_cv ?> vertu<?= $nb_cv > 1 ? 's' : '' ?> liée<?= $nb_cv > 1 ? 's' : '' ?>
+                                </span>
+                            <?php endif; ?>
                         </div>
                         <div class="check-grid">
                             <?php foreach ($all_vertus as $av): if (empty($av['nom'])) continue;
@@ -251,27 +229,19 @@
                                            <?= $checked ? 'checked' : '' ?>
                                            onchange="toggleCheck(this)">
                                     <span class="check-label"><?= htmlspecialchars($av['nom']) ?></span>
+                                    <?php if (!empty($av['categorie'])): ?>
+                                        <span class="check-sub"><?= htmlspecialchars($av['categorie']) ?></span>
+                                    <?php endif; ?>
                                 </label>
                             <?php endforeach; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <div class="save-bar">
-                    <span class="count-badge">Graphe composant → vertu</span>
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        <?= icon('save', 15) ?> Enregistrer le graphe
-                    </button>
-                </div>
-            </form>
-        </div>
-        <?php endif; ?>
+            </div>
 
-        <!-- ══ CATÉGORIES ════════════════════════════ -->
-        <div class="liens-section">
-            <h3><?= icon('categorie', 16, 'section-icon') ?> Catégories</h3>
-            <form method="POST" action="<?= APP_URL ?>/admin/plantes/<?= $plante['id'] ?>/liens/bulk">
-                <input type="hidden" name="csrf_token" value="<?= $token ?>">
-                <input type="hidden" name="section" value="categories">
+            <!-- ══ CATÉGORIES ══════════════════════════════════ -->
+            <div class="liens-section">
+                <h3><?= icon('categorie', 16, 'section-icon') ?> Catégories</h3>
                 <?php
                 $db       = Database::getInstance();
                 $all_cats = $db->query('SELECT * FROM categories ORDER BY nom')->fetchAll();
@@ -294,14 +264,19 @@
                         </label>
                     <?php endforeach; ?>
                 </div>
-                <div class="save-bar">
-                    <span class="count-badge"><?= $nb_cat ?> catégorie<?= $nb_cat > 1 ? 's' : '' ?> sélectionnée<?= $nb_cat > 1 ? 's' : '' ?></span>
-                    <button type="submit" class="btn btn-primary btn-sm">
-                        <?= icon('save', 15) ?> Enregistrer les catégories
-                    </button>
-                </div>
-            </form>
-        </div>
+            </div>
+
+            <!-- ══ BOUTON GLOBAL UNIQUE ════════════════════════ -->
+            <div class="global-save-bar">
+                <span class="save-info">
+                    Composants, vertus et catégories — tout enregistré en une seule fois.
+                </span>
+                <button type="submit" class="btn btn-primary">
+                    <?= icon('save', 17) ?> Enregistrer tous les liens
+                </button>
+            </div>
+
+        </form>
 
     </main>
 </div>
