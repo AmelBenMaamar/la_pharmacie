@@ -934,3 +934,257 @@ a.sidebar-logo:hover h1 {
         align-self: flex-start;
     }
 }
+
+/* ================================================
+   SOURCES BIBLIOGRAPHIQUES
+   ================================================ */
+
+/* Tag type de source */
+.tag-source {
+    background: rgba(243, 255, 77, 0.2);
+    color: #3a3d00;
+    border-color: #A6AE32;
+}
+.tag-source:hover {
+    background: rgba(243, 255, 77, 0.35);
+    border-color: #7a8020;
+}
+.tag-source small {
+    color: #5a6000;
+}
+
+/* Badges types dans la table admin */
+.badge-source {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.badge-source-etude          { background: rgba(107,148,214,0.12); color: #2a4a8f; }
+.badge-source-meta-analyse   { background: rgba(107,209,214,0.15); color: #1a7a8f; }
+.badge-source-revue          { background: rgba(218,247,218,0.6);  color: #2a6a3a; }
+.badge-source-essai-clinique { background: rgba(214,107,148,0.12); color: #8f2a4a; }
+.badge-source-rapport        { background: rgba(214,190,107,0.15); color: #7a5a10; }
+.badge-source-autre          { background: var(--creme-dark);      color: var(--texte-light); }
+
+/* Carte source (vue publique liste) */
+.source-card:hover {
+    border-color: var(--turquoise) !important;
+    box-shadow: 0 4px 16px var(--shadow);
+}
+
+/* Stat dashboard — icône Sources */
+.stat-svg.source { color: var(--brun); }
+
+/* Sources — pill avec titre tronqué */
+.tag-source-pill {
+    max-width: 240px;
+    align-items: flex-start;
+}
+.tag-source-titre {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 210px;
+}
+/* ═══════════════════════════════════════════════════
+   WIDGET SOURCES SCIENTIFIQUES
+   ═══════════════════════════════════════════════════ */
+
+.sources-section {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  padding: 2rem 2rem 0;
+  border-top: 1px solid rgba(107, 116, 214, 0.2);
+}
+
+.sources-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  color: #4a3f35;
+  margin-bottom: 1.25rem;
+}
+
+.sources-title svg {
+  color: #6B74D6;
+  flex-shrink: 0;
+}
+
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.source-item {
+  background: #FAF8F4;
+  border: 1px solid rgba(107, 116, 214, 0.15);
+  border-left: 3px solid #6B74D6;
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1.1rem;
+}
+
+.source-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.source-type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B74D6;
+  background: rgba(107, 116, 214, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.source-year {
+  font-size: 0.75rem;
+  color: #7c7570;
+  font-weight: 500;
+}
+
+.source-titre {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3a3228;
+  margin: 0 0 0.25rem;
+  line-height: 1.4;
+}
+
+.source-titre a {
+  color: #3a3228;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.source-titre a:hover {
+  color: #6B74D6;
+  text-decoration: underline;
+}
+
+.icon-external {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.source-meta {
+  font-size: 0.8rem;
+  color: #6b5e55;
+  margin: 0 0 0.2rem;
+  line-height: 1.4;
+}
+
+.source-auteurs {
+  font-weight: 500;
+}
+
+.source-journal {
+  color: #7c7570;
+}
+
+.source-doi {
+  font-size: 0.75rem;
+  color: #7c7570;
+  margin: 0.2rem 0 0;
+  font-family: monospace;
+}
+
+.source-doi a {
+  color: #6B74D6;
+  text-decoration: none;
+}
+
+.source-doi a:hover {
+  text-decoration: underline;
+}
+
+/* ── Accordéon sources ───────────────────────────── */
+.source-details { width: 100%; }
+
+.source-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 0;
+}
+.source-summary::-webkit-details-marker { display: none; }
+
+.source-summary-main { flex: 1; min-width: 0; }
+
+.source-chevron {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  color: #6B74D6;
+  transition: transform 0.2s ease;
+}
+.source-details[open] .source-chevron {
+  transform: rotate(180deg);
+}
+
+.source-summary:hover .source-titre { color: #6B74D6; }
+
+.source-body {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(107, 116, 214, 0.2);
+}
+
+.source-resume {
+  font-size: 0.85rem;
+  color: #5a4f45;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  background: rgba(107, 116, 214, 0.08);
+  color: #6B74D6;
+  border: 1px solid rgba(107, 116, 214, 0.2);
+  transition: background 0.15s, color 0.15s;
+}
+.source-link:hover {
+  background: #6B74D6;
+  color: #fff;
+}
+.source-link-doi {
+  background: rgba(107, 180, 100, 0.08);
+  color: #4a7c59;
+  border-color: rgba(74, 124, 89, 0.2);
+}
+.source-link-doi:hover {
+  background: #4a7c59;
+  color: #fff;
+}

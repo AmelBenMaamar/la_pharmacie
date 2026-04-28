@@ -8,6 +8,7 @@ class AdminController extends Controller {
             'plantes'    => $db->query('SELECT COUNT(*) FROM plantes')->fetchColumn(),
             'composants' => $db->query('SELECT COUNT(*) FROM composants')->fetchColumn(),
             'vertus'     => $db->query('SELECT COUNT(*) FROM vertus')->fetchColumn(),
+            'sources'    => $db->query('SELECT COUNT(*) FROM sources WHERE actif = 1')->fetchColumn(),
         ];
         $user = $_SESSION['user'];
         $this->view('admin/dashboard', [

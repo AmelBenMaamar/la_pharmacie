@@ -65,3 +65,18 @@ $router->get('/vertus/{slug}',     'VertusController',    'show');
 
 // ADMIN — Liens bulk
 $router->post('/admin/plantes/{id}/liens/bulk', 'AdminController', 'planteLiensBulk');
+
+// PUBLIC — Sources
+$router->get('/sources',      'SourceController', 'index');
+$router->get('/sources/{id}', 'SourceController', 'show');
+
+// ADMIN — Sources
+$router->get( '/admin/sources',                      'AdminSourceController', 'index');
+$router->get( '/admin/sources/creer',                'AdminSourceController', 'creer');
+$router->post('/admin/sources/creer',                'AdminSourceController', 'storer');
+$router->get( '/admin/sources/{id}/editer',          'AdminSourceController', 'editer');
+$router->post('/admin/sources/{id}/editer',          'AdminSourceController', 'updater');
+$router->post('/admin/sources/{id}/supprimer',       'AdminSourceController', 'supprimer');
+$router->get( '/admin/sources/{id}/liens',           'AdminSourceController', 'liens');
+$router->post('/admin/sources/{id}/liens',           'AdminSourceController', 'liensStorer');
+$router->post('/admin/sources/{id}/liens/supprimer', 'AdminSourceController', 'liensSupprimer');

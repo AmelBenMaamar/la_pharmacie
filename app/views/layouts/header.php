@@ -26,6 +26,7 @@
                 <a href="<?= APP_URL ?>/plantes">Plantes</a>
                 <a href="<?= APP_URL ?>/composants">Composants</a>
                 <a href="<?= APP_URL ?>/vertus">Vertus</a>
+                <a href="<?= APP_URL ?>/sources">Sources</a>
                 <?php $user = $_SESSION['user'] ?? null; ?>
                 <?php if ($user): ?>
                     <?php if ($user['role'] === 'admin'): ?>

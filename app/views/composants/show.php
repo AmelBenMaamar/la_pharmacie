@@ -76,4 +76,5 @@
 
 </div>
 
+<?php require APP_ROOT . '/app/views/layouts/_sources_widget.php'; ?>
 <?php require APP_ROOT . '/app/views/layouts/footer.php'; ?>

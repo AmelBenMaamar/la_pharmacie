@@ -5,6 +5,7 @@ class HomeController extends Controller {
         $plantes    = (new Plante())->all();
         $composants = (new Composant())->all();
         $vertus     = (new Vertu())->all();
+        $sources    = (new Source())->all();
         $categories = $db->query('SELECT * FROM categories ORDER BY nom')->fetchAll();
         $user       = $_SESSION['user'] ?? null;
 
@@ -29,6 +30,7 @@ class HomeController extends Controller {
             'vertus'          => $vertus,
             'categories'      => $categories,
             'cats_par_plante' => $cats_par_plante,
+            'sources'         => $sources,
             'user'            => $user,
             'pageTitle'       => 'Accueil',
         ]);

@@ -116,9 +116,41 @@
                 <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($v['slug']) ?>"
                    class="tag tag-vertu tag-lg">
                     <?= htmlspecialchars($v['nom']) ?>
+                    <?php if (!empty($v['categorie'])): ?>
+                        <small><?= htmlspecialchars($v['categorie']) ?></small>
+                    <?php endif; ?>
                 </a>
             <?php endforeach; ?>
         </div>
+    </section>
+
+    <section id="sources" class="public-section">
+        <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 class="section-icon source" style="color:var(--brun);">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+            Sources
+            <span><?= count($sources) ?></span>
+        </h2>
+        <div class="tags-cloud">
+            <?php foreach ($sources as $s): ?>
+                <?php if (!$s['actif']) continue; ?>
+                <a href="<?= APP_URL ?>/sources/<?= $s['id'] ?>"
+                   class="tag tag-source tag-lg tag-source-pill">
+                    <span class="tag-source-titre">
+                        <?= htmlspecialchars(!empty($s['auteurs']) ? $s['auteurs'] : $s['titre']) ?>
+                    </span>
+                    <small><?= htmlspecialchars(!empty($s['journal']) ? $s['journal'] : $s['type_source']) ?></small>
+                </a>
+            <?php endforeach; ?>
+            <?php if (empty($sources)): ?>
+                <p style="color:var(--texte-light);font-size:0.9rem;">Aucune source publiée pour l'instant.</p>
+            <?php endif; ?>
+        </div>
+
     </section>
 
 </main>

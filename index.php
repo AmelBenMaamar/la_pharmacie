@@ -17,6 +17,7 @@ require_once APP_ROOT . '/app/models/User.php';
 require_once APP_ROOT . '/app/models/Plante.php';
 require_once APP_ROOT . '/app/models/Composant.php';
 require_once APP_ROOT . '/app/models/Vertu.php';
+require_once APP_ROOT . '/app/models/Source.php';
 
 // Contrôleurs
 require_once APP_ROOT . '/app/controllers/AuthController.php';
@@ -25,6 +26,8 @@ require_once APP_ROOT . '/app/controllers/AdminController.php';
 require_once APP_ROOT . '/app/controllers/PlanteController.php';
 require_once APP_ROOT . '/app/controllers/ComposantController.php';
 require_once APP_ROOT . '/app/controllers/VertusController.php';
+require_once APP_ROOT . '/app/controllers/SourceController.php';
+require_once APP_ROOT . '/app/controllers/AdminSourceController.php';
 
 // Routes
 $router = new Router();
