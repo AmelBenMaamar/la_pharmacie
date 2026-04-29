@@ -2,19 +2,26 @@
 // ================================================
 // Vertu — modèle
 // ================================================
+// Gère les vertus et leurs liaisons avec :
+//   - les plantes    (plante_vertu)
+//   - les composants (composant_vertu)
+
 class Vertu extends Model {
     protected string $table = 'vertus';
 
+    // Liste toutes les vertus
     public function all(string $orderBy = 'nom', string $dir = 'ASC'): array {
         return $this->query(
             "SELECT * FROM vertus WHERE actif = 1 ORDER BY {$orderBy} {$dir}"
         );
     }
 
+    // Trouve une vertu par son slug
     public function findBySlug(string $slug): ?array {
         return $this->findBy('slug', $slug);
     }
 
+    // Crée une nouvelle vertu
     public function create(array $data): int {
         $slug = $this->slugify($data['nom']);
         $this->execute(
@@ -31,6 +38,7 @@ class Vertu extends Model {
         return $this->lastInsertId();
     }
 
+    // Met à jour une vertu
     public function update(int $id, array $data): void {
         $slug = $this->slugify($data['nom']);
         $this->execute(
@@ -76,18 +84,19 @@ class Vertu extends Model {
         );
     }
 
+
+
     // Charge le nombre de plantes par vertu en une seule requête
     public function plantesParVertus(array $vertuIds): array {
         if (empty($vertuIds)) return [];
-        $ids = array_values(array_map('intval', $vertuIds));
-        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        $placeholders = implode(',', array_fill(0, count($vertuIds), '?'));
         $rows = $this->query(
             "SELECT pv.vertu_id, COUNT(DISTINCT p.id) AS nb_plantes
              FROM plante_vertu pv
              JOIN plantes p ON p.id = pv.plante_id AND p.actif = 1
              WHERE pv.vertu_id IN ({$placeholders})
              GROUP BY pv.vertu_id",
-            $ids
+            $vertuIds
         );
         $result = [];
         foreach ($rows as $row) {
@@ -96,59 +105,43 @@ class Vertu extends Model {
         return $result;
     }
 
-    // Charge tous les composants + leurs plantes associées (1 seule requête SQL)
+    // Charge tous les composants + leurs plantes associées pour toutes les vertus
     public function composantsParVertus(array $vertuIds): array {
         if (empty($vertuIds)) return [];
-
-        $ids = array_values(array_map('intval', $vertuIds));
-        $ph  = implode(',', array_fill(0, count($ids), '?'));
+        $placeholders = implode(',', array_fill(0, count($vertuIds), '?'));
 
         $rows = $this->query(
-            "SELECT c.id AS composant_id, c.nom AS composant_nom,
-                    c.slug AS composant_slug, c.famille,
-                    cv.vertu_id, cv.niveau_evidence,
-                    p.id AS plante_id, p.nom AS plante_nom,
-                    p.slug AS plante_slug, p.image AS plante_image
+            "SELECT c.id, c.nom, c.slug, c.famille, cv.vertu_id, cv.niveau_evidence
              FROM composants c
              JOIN composant_vertu cv ON c.id = cv.composant_id
-             LEFT JOIN plante_composant pc ON pc.composant_id = c.id
-             LEFT JOIN plantes p ON p.id = pc.plante_id AND p.actif = 1
-             WHERE cv.vertu_id IN ({$ph})
-             ORDER BY cv.vertu_id, c.nom, p.nom",
-            $ids
+             WHERE cv.vertu_id IN ({$placeholders})
+             ORDER BY cv.vertu_id, c.nom",
+            $vertuIds
         );
 
+        // Charger les plantes de chaque composant en 1 requête supplémentaire
+        $composantIds = array_unique(array_column($rows, 'id'));
+        $plantesParComposant = [];
+
+        if (!empty($composantIds)) {
+            $ph2 = implode(',', array_fill(0, count($composantIds), '?'));
+            $planteRows = $this->query(
+                "SELECT pc.composant_id, p.id, p.nom, p.slug, p.image
+                 FROM plantes p
+                 JOIN plante_composant pc ON p.id = pc.plante_id
+                 WHERE pc.composant_id IN ({$ph2}) AND p.actif = 1
+                 ORDER BY p.nom",
+                $composantIds
+            );
+            foreach ($planteRows as $pr) {
+                $plantesParComposant[$pr['composant_id']][] = $pr;
+            }
+        }
+
         $result = [];
-        $seen   = [];
-
         foreach ($rows as $row) {
-            $vid = $row['vertu_id'];
-            $cid = $row['composant_id'];
-
-            if (!isset($seen[$vid][$cid])) {
-                $seen[$vid][$cid] = count($result[$vid] ?? []);
-                $result[$vid][] = [
-                    'id'              => $cid,
-                    'nom'             => $row['composant_nom'],
-                    'slug'            => $row['composant_slug'],
-                    'famille'         => $row['famille'],
-                    'niveau_evidence' => $row['niveau_evidence'],
-                    'plantes'         => [],
-                ];
-            }
-
-            if (!empty($row['plante_id'])) {
-                $idx    = $seen[$vid][$cid];
-                $dejala = array_column($result[$vid][$idx]['plantes'], 'id');
-                if (!in_array($row['plante_id'], $dejala)) {
-                    $result[$vid][$idx]['plantes'][] = [
-                        'id'    => $row['plante_id'],
-                        'nom'   => $row['plante_nom'],
-                        'slug'  => $row['plante_slug'],
-                        'image' => $row['plante_image'],
-                    ];
-                }
-            }
+            $row['plantes'] = $plantesParComposant[$row['id']] ?? [];
+            $result[$row['vertu_id']][] = $row;
         }
         return $result;
     }

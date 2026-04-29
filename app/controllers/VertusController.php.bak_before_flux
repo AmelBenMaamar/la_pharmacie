@@ -2,26 +2,13 @@
 // ================================================
 // VertusController — liste + fiche publique d'une vertu
 // ================================================
+
 class VertusController extends Controller {
 
+    // Liste toutes les vertus → roue interactive
     public function index(): void {
         $model  = new Vertu();
         $vertus = $model->all('nom', 'ASC');
-
-        // Charger les composants de toutes les vertus en 1 requête
-        $vertuIds = array_column($vertus, 'id');
-        $composantsParVertu = $model->composantsParVertus($vertuIds);
-
-        // Charger le nombre de plantes par vertu
-        $plantesParVertu = $model->plantesParVertus($vertuIds);
-
-        // Attacher les composants et le nb de plantes à chaque vertu
-        foreach ($vertus as &$v) {
-            $v['composants']  = $composantsParVertu[$v['id']] ?? [];
-            $v['nb_plantes']  = $plantesParVertu[$v['id']]   ?? 0;
-        }
-        unset($v);
-
         $this->view('vertus/index', compact('vertus') + ['pageTitle' => 'Vertus thérapeutiques']);
     }
 
@@ -35,14 +22,9 @@ class VertusController extends Controller {
             return;
         }
 
+        $plantes    = $model->plantes($vertu['id']);
         $composants = $model->composants($vertu['id']);
-        $composantModel = new Composant();
-        foreach ($composants as &$c) {
-            $c['plantes'] = $composantModel->plantes($c['id']);
-        }
-        unset($c);
 
-        $plantes = $model->plantes($vertu['id']);
         $this->view('vertus/show', compact('vertu', 'plantes', 'composants') + ['pageTitle' => $vertu['nom']]);
     }
 }

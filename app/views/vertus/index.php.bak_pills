@@ -144,47 +144,23 @@ $total_plantes = max(array_column($vertus, 'nb_plantes') ?: [0]);
         <?php endif ?>
       </div>
 
-      <!-- Chips composants + pills plantes -->
+      <!-- Chips composants -->
       <?php if (!empty($composants)): ?>
       <div class="vertu-card-composants">
-        <?php foreach (array_slice($composants, 0, 3) as $c):
+        <?php foreach (array_slice($composants, 0, 4) as $c):
           $ev = $c['niveau_evidence'] ?? '';
           $evClass = match($ev) {
             'fort'   => 'ev-fort',
             'modere' => 'ev-modere',
             default  => '',
           };
-          $plantes_c = $c['plantes'] ?? [];
         ?>
-        <div class="vertu-composant-row">
-          <span class="vertu-mini-chip <?= $evClass ?>">
-            <?= htmlspecialchars($c['nom']) ?>
-          </span>
-          <?php if (!empty($plantes_c)): ?>
-          <div class="vertu-plantes-pills">
-            <?php foreach (array_slice($plantes_c, 0, 3) as $p): ?>
-            <a href="<?= APP_URL ?>/plantes/<?= htmlspecialchars($p['slug']) ?>"
-               class="vertu-plante-pill"
-               title="<?= htmlspecialchars($p['nom']) ?>"
-               onclick="event.stopPropagation()">
-              <?php if (!empty($p['image'])): ?>
-                <img src="<?= APP_URL ?>/uploads/plantes/<?= htmlspecialchars($p['image']) ?>"
-                     alt="" class="vertu-plante-pill-img">
-              <?php else: ?>
-                <span class="vertu-plante-pill-dot"></span>
-              <?php endif ?>
-              <span><?= htmlspecialchars($p['nom']) ?></span>
-            </a>
-            <?php endforeach ?>
-            <?php if (count($plantes_c) > 3): ?>
-            <span class="vertu-plante-pill vertu-plante-more">+<?= count($plantes_c) - 3 ?></span>
-            <?php endif ?>
-          </div>
-          <?php endif ?>
-        </div>
+        <span class="vertu-mini-chip <?= $evClass ?>">
+          <?= htmlspecialchars($c['nom']) ?>
+        </span>
         <?php endforeach ?>
-        <?php if (count($composants) > 3): ?>
-        <span class="vertu-mini-chip vertu-mini-more">+<?= count($composants) - 3 ?> composant<?= count($composants) - 3 > 1 ? 's' : '' ?></span>
+        <?php if (count($composants) > 4): ?>
+        <span class="vertu-mini-chip vertu-mini-more">+<?= count($composants) - 4 ?></span>
         <?php endif ?>
       </div>
       <?php endif ?>

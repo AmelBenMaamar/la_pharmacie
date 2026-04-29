@@ -2731,7 +2731,7 @@
     ],
     "_meta": {
         "projet": "La Pharmacie",
-        "exporte_le": "2026-04-28 05:30:05",
+        "exporte_le": "2026-04-28 19:30:56",
         "version": "1.0",
         "description": "Export complet — à compléter et réimporter via import_seed.php / import_liens.php",
         "totaux": {

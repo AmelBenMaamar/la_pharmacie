@@ -1,0 +1,107 @@
+<?php require APP_ROOT . '/app/views/layouts/header.php'; ?>
+
+<div class="fiche-header">
+    <div style="max-width:900px; margin:0 auto;">
+        <h1 class="fiche-title">Les Vertus</h1>
+        <p style="color:var(--texte-light); margin-top:0.5rem;">
+            Explore les propriétés thérapeutiques des plantes
+        </p>
+    </div>
+</div>
+
+<div class="fiche-body">
+
+<?php if (empty($vertus)): ?>
+    <p style="color:var(--texte-light); text-align:center; padding:3rem 0;">
+        Aucune vertu enregistrée pour le moment.
+    </p>
+<?php else: ?>
+
+<?php
+$palette = [
+    'Immunité'               => ['fill' => '#6BD1D6', 'text' => '#1a5558', 'bg' => '#edfafa'],
+    'Infections'             => ['fill' => '#82C88A', 'text' => '#1a4a20', 'bg' => '#edfaf0'],
+    'Métabolisme'            => ['fill' => '#6B94D6', 'text' => '#1a2d5a', 'bg' => '#eef2fd'],
+    'Fonction physiologique' => ['fill' => '#9B8FD4', 'text' => '#2d1f6e', 'bg' => '#f2f0fc'],
+    'Protection cellulaire'  => ['fill' => '#B5D9A0', 'text' => '#1e4a10', 'bg' => '#f2faee'],
+    'Digestion'              => ['fill' => '#F5C97A', 'text' => '#6b3a00', 'bg' => '#fdf8ee'],
+    'Cardiovasculaire'       => ['fill' => '#F4A0A0', 'text' => '#6a1010', 'bg' => '#fdf0f0'],
+    'Détoxification'         => ['fill' => '#A0D4F4', 'text' => '#0e3a6a', 'bg' => '#eef7fd'],
+    'Système nerveux'        => ['fill' => '#C4A8D4', 'text' => '#3d1a5a', 'bg' => '#f7f0fc'],
+    'Système respiratoire'   => ['fill' => '#A8D4C4', 'text' => '#1a3d35', 'bg' => '#eefaf6'],
+    'Os et articulations'    => ['fill' => '#D4C4A8', 'text' => '#5a3d1a', 'bg' => '#faf6ee'],
+    'Microbiote'             => ['fill' => '#A8C4D4', 'text' => '#1a3d5a', 'bg' => '#eef6fa'],
+    'Peau'                   => ['fill' => '#D4A8C4', 'text' => '#5a1a3d', 'bg' => '#faeef6'],
+    'default'                => ['fill' => '#B8D4C8', 'text' => '#1a4a35', 'bg' => '#f0f7f4'],
+];
+
+// Grouper par catégorie
+$grouped = [];
+foreach ($vertus as $v) {
+    if (!$v['actif']) continue;
+    $cat = $v['categorie'] ?: 'Autres';
+    $grouped[$cat][] = $v;
+}
+ksort($grouped);
+?>
+
+<!-- Filtres par catégorie -->
+<div class="vertus-filtres">
+    <button class="vertu-filtre-btn active" data-cat="tous">Toutes</button>
+    <?php foreach (array_keys($grouped) as $cat): ?>
+        <button class="vertu-filtre-btn" data-cat="<?= htmlspecialchars($cat) ?>">
+            <?= htmlspecialchars($cat) ?>
+        </button>
+    <?php endforeach; ?>
+</div>
+
+<!-- Grille par catégorie -->
+<?php foreach ($grouped as $cat => $items):
+    $colors = $palette[$cat] ?? $palette['default'];
+?>
+<div class="vertus-groupe" data-cat="<?= htmlspecialchars($cat) ?>">
+    <h2 class="vertus-groupe-titre">
+        <span class="vertus-groupe-dot" style="background:<?= $colors['fill'] ?>"></span>
+        <?= htmlspecialchars($cat) ?>
+        <span class="vertus-groupe-count"><?= count($items) ?></span>
+    </h2>
+    <div class="vertus-cards-grid">
+        <?php foreach ($items as $v): ?>
+        <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($v['slug']) ?>"
+           class="vertu-card"
+           style="--vertu-color:<?= $colors['fill'] ?>; --vertu-bg:<?= $colors['bg'] ?>; --vertu-text:<?= $colors['text'] ?>;">
+            <div class="vertu-card-icon">
+                <?= icon('vertu', 28, '') ?>
+            </div>
+            <div class="vertu-card-body">
+                <h3 class="vertu-card-nom"><?= htmlspecialchars($v['nom']) ?></h3>
+                <?php if (!empty($v['description'])): ?>
+                    <p class="vertu-card-desc">
+                        <?= htmlspecialchars(mb_substr(strip_tags($v['description']), 0, 80)) ?>…
+                    </p>
+                <?php endif; ?>
+            </div>
+            <span class="vertu-card-arrow">→</span>
+        </a>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php endforeach; ?>
+
+<script>
+document.querySelectorAll('.vertu-filtre-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.vertu-filtre-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('.vertus-groupe').forEach(g => {
+            g.style.display = (cat === 'tous' || g.dataset.cat === cat) ? '' : 'none';
+        });
+    });
+});
+</script>
+
+<?php endif; ?>
+</div>
+
+<?php require APP_ROOT . '/app/views/layouts/footer.php'; ?>
