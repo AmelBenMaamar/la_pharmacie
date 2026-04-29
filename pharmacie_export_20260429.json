@@ -1,0 +1,2518 @@
+{
+    "plantes": [
+        {
+            "id": 2,
+            "nom": "La pêche",
+            "nom_latin": "Prunus persica",
+            "slug": "la-peche",
+            "description": "",
+            "image": "plantes\/69ea4caf8d878.png",
+            "actif": 1,
+            "created_at": "2026-04-23 18:45:35",
+            "updated_at": "2026-04-23 21:30:08"
+        },
+        {
+            "id": 4,
+            "nom": "La Grenade",
+            "nom_latin": "Punica granatum",
+            "slug": "la-grenade",
+            "description": "Punica granatum\r\n\r\nFruit ancestral au carrefour de l'histoire et de la nutrition, la grenade (*Punica granatum*) est aujourd'hui l'un des \"super-aliments\" les plus étudiés par la recherche biomédicale.\r\n\r\nLa grenade est le fruit du grenadier, un arbre originaire de la région s'étendant de l'Iran jusqu'à l'Himalaya. Elle se caractérise par une écorce épaisse et coriace renfermant des centaines d'arilles: de petites graines croquantes entourées d'une pulpe juteuse et rouge rubis.\r\n\r\nComposition nutritionnelle remarquable\r\nCe qui distingue la grenade des autres fruits est sa concentration exceptionnelle en composés phénoliques, notamment :\r\n*Les Punicalagines : Des antioxydants extrêmement puissants présents dans le jus et l'écorce.\r\n* L'Acide Punicique : Un acide gras polyinsaturé (oméga-5) unique présent dans l'huile de pépins.",
+            "image": "plantes\/img_69ea72bcd04fe7.20106672.png",
+            "actif": 1,
+            "created_at": "2026-04-23 21:27:56",
+            "updated_at": "2026-04-23 21:27:56"
+        },
+        {
+            "id": 7,
+            "nom": "La Prune",
+            "nom_latin": "Prunus domestica",
+            "slug": "la-prune",
+            "description": "La prune, fruit du prunier (Prunus domestica), est appréciée autant pour sa saveur que pour ses bienfaits.\r\nRiche en eau, elle participe à une bonne hydratation de l’organisme.\r\nElle contient des fibres, notamment des pectines, qui favorisent un transit intestinal régulier.\r\nSa teneur en sorbitol renforce cet effet en douceur, surtout lorsqu’elle est consommée en pruneau.\r\nLa prune est également une source intéressante d’antioxydants, comme les polyphénols.\r\nCes composés aident à lutter contre le stress oxydatif et le vieillissement cellulaire.\r\nElle apporte de la vitamine C, utile pour l’immunité et la santé de la peau.\r\nSa vitamine K contribue au bon fonctionnement de la coagulation sanguine.\r\nLe potassium qu’elle contient soutient l’équilibre nerveux et la régulation de la tension.\r\nConsommée fraîche, elle est légère, rafraîchissante et peu calorique.\r\nSous forme de pruneau, elle devient plus concentrée en nutriments et en énergie.\r\nElle est alors particulièrement efficace pour stimuler le transit intestinal.\r\nDes études suggèrent aussi un effet bénéfique sur la santé osseuse.\r\nSon index glycémique reste modéré malgré sa saveur sucrée.\r\nToutefois, une consommation excessive peut entraîner des inconforts digestifs.",
+            "image": "plantes\/img_69eb1e577a68d5.72517908.png",
+            "actif": 1,
+            "created_at": "2026-04-24 09:36:28",
+            "updated_at": "2026-04-24 09:40:07"
+        },
+        {
+            "id": 8,
+            "nom": "Pomme",
+            "nom_latin": "Malus domestica",
+            "slug": "pomme",
+            "description": "La pomme (*Malus domestica*) est un fruit largement consommé, reconnu pour sa richesse en composés bénéfiques pour la santé. Elle contient des **fibres solubles**, notamment la pectine, qui contribuent à réguler le transit intestinal et à nourrir le microbiote ¹. Cette fibre joue également un rôle dans la réduction du cholestérol sanguin en limitant son absorption ². La pomme est aussi une source importante de **polyphénols**, comme la quercétine et les catéchines, connus pour leur puissant effet antioxydant ³. Ces composés aident à neutraliser les radicaux libres et à protéger les cellules contre le stress oxydatif ⁴. La **quercétine**, particulièrement concentrée dans la peau, possède des propriétés anti-inflammatoires et soutient le système immunitaire ⁵.\r\n\r\nPar ailleurs, la pomme apporte de la **vitamine C**, qui participe à la synthèse du collagène et renforce les défenses de l’organisme ⁶. Elle contient également du **potassium**, un minéral essentiel à l’équilibre hydrique, à la régulation de la pression artérielle et au bon fonctionnement nerveux et musculaire ⁷. Les **acides organiques**, notamment l’acide malique, contribuent à stimuler la digestion et à soutenir la production d’énergie cellulaire ⁸. Enfin, les **sucres naturels** comme le fructose fournissent une énergie progressive, adaptée aux besoins quotidiens ⁹.\r\n\r\nAinsi, grâce à cette synergie de nutriments et de composés bioactifs, la pomme s’inscrit comme un aliment clé dans une alimentation équilibrée, contribuant à la santé digestive, cardiovasculaire et immunitaire.\r\n\r\n\r\n\r\n### Sources\r\n\r\n¹ ANSES – Table CIQUAL (composition nutritionnelle des aliments)\r\n² EFSA – Effets des fibres solubles sur le cholestérol\r\n³ USDA – Database for the Flavonoid Content of Selected Foods\r\n⁴ National Institutes of Health – Antioxidants and oxidative stress\r\n⁵ PubMed – Études sur la quercétine et ses effets anti-inflammatoires\r\n⁶ World Health Organization – Rôle de la vitamine C\r\n⁷ European Food Information Council – Rôle du potassium dans l’organisme\r\n⁸ National Library of Medicine – Métabolisme de l’acide malique\r\n⁹ Harvard T.H. Chan School of Public Health – Glucides et énergie",
+            "image": "plantes\/img_69eee9cdb7f7a9.79025645.jpg",
+            "actif": 1,
+            "created_at": "2026-04-27 06:45:01",
+            "updated_at": "2026-04-27 06:55:53"
+        },
+        {
+            "id": 9,
+            "nom": "Lavande officinale",
+            "nom_latin": "Lavandula angustifolia",
+            "slug": "lavande-officinale",
+            "description": "La lavande officinale est une plante vivace emblématique du bassin méditerranéen, cultivée depuis l'Antiquité pour ses propriétés thérapeutiques et son parfum. Ses fleurs violettes en épis concentrent des huiles essentielles riches en linalol et en acétate de linalyle. Traditionnellement utilisée pour ses effets calmants sur le système nerveux, elle est aujourd'hui l'une des plantes médicinales les plus étudiées en phytothérapie européenne.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 10,
+            "nom": "Romarin",
+            "nom_latin": "Salvia rosmarinus",
+            "slug": "romarin",
+            "description": "Le romarin est un arbuste aromatique méditerranéen aux feuilles persistantes en aiguilles. Riche en acide rosmarinique, en camphre et en 1,8-cinéole, il est reconnu pour ses propriétés antioxydantes puissantes et son action stimulante sur la circulation. Utilisé en cuisine comme en phytothérapie, il soutient la digestion, protège le foie et stimule la mémoire.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 11,
+            "nom": "Thym commun",
+            "nom_latin": "Thymus vulgaris",
+            "slug": "thym-commun",
+            "description": "Le thym est l'une des plantes aromatiques les plus anciennes et les plus utilisées en médecine traditionnelle méditerranéenne. Son huile essentielle riche en thymol et carvacrol lui confère des propriétés antibactériennes et antifongiques remarquables. Il est particulièrement indiqué pour les infections respiratoires, la toux et les troubles digestifs.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 12,
+            "nom": "Menthe poivrée",
+            "nom_latin": "Mentha × piperita",
+            "slug": "menthe-poivree",
+            "description": "Hybride naturel entre la menthe aquatique et la menthe verte, la menthe poivrée est l'une des plantes médicinales les plus répandues dans le monde. Son principe actif principal, le menthol, lui confère une action fraîchissante, antispasmodique et analgésique. Elle est traditionnellement utilisée pour soulager les maux de tête, les nausées et les troubles digestifs fonctionnels.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 13,
+            "nom": "Sauge officinale",
+            "nom_latin": "Salvia officinalis",
+            "slug": "sauge-officinale",
+            "description": "La sauge officinale est une plante médicinale de premier plan dans la tradition herboriste européenne. Son nom latin 'Salvia' vient du latin 'salvare', sauver — testament de sa réputation ancestrale. Riche en thuyone, en acide rosmarinique et en flavonoïdes, elle agit comme régulateur hormonal naturel, antisudorifique et antibactérien. Particulièrement étudiée pour son action lors de la ménopause.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 14,
+            "nom": "Camomille matricaire",
+            "nom_latin": "Matricaria chamomilla",
+            "slug": "camomille-matricaire",
+            "description": "La camomille matricaire, reconnaissable à ses petites fleurs blanches au cœur jaune, est l'une des plantes médicinales les plus utilisées dans le monde depuis l'Antiquité. Elle contient de l'alpha-bisabolol et du chamazulène, deux composants aux puissantes propriétés anti-inflammatoires et apaisantes. Indiquée pour les troubles digestifs, l'anxiété légère et les inflammations cutanées.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 15,
+            "nom": "Calendula",
+            "nom_latin": "Calendula officinalis",
+            "slug": "calendula",
+            "description": "Le calendula, aussi appelé souci officinal, est une fleur orangée aux vertus cicatrisantes et anti-inflammatoires exceptionnelles. Ses pétales contiennent des flavonoïdes (quercétine, isorhamnétine), des triterpenoïdes et des polysaccharides immunostimulants. Utilisé en macérât huileux ou en infusion, il favorise la régénération cutanée et renforce les défenses immunitaires locales.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 16,
+            "nom": "Sureau noir",
+            "nom_latin": "Sambucus nigra",
+            "slug": "sureau-noir",
+            "description": "Le sureau noir est un arbuste européen dont les fleurs blanches et les baies noires sont toutes deux utilisées en médecine traditionnelle. Ses fleurs en ombelles sont riches en flavonoïdes et en acides phénoliques aux propriétés antivirales et immunostimulantes. Très utilisé en prévention des infections ORL hivernales, il est aujourd'hui l'objet de nombreuses études cliniques.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 17,
+            "nom": "Rose sauvage (Églantier)",
+            "nom_latin": "Rosa canina",
+            "slug": "rose-eglantier",
+            "description": "L'églantier est le rosier sauvage d'Europe, dont les cynorhodons (pseudo-fruits) constituent l'une des sources végétales les plus concentrées en vitamine C. En plus de cette richesse en acide ascorbique, il contient des flavonoïdes, des caroténoïdes et des polyphénols aux propriétés antioxydantes et anti-inflammatoires. Son extrait est particulièrement étudié pour ses effets bénéfiques sur l'arthrose.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 18,
+            "nom": "Ail cultivé",
+            "nom_latin": "Allium sativum",
+            "slug": "ail-cultive",
+            "description": "L'ail (*Allium sativum*) est un condiment utilisé depuis l'Antiquité, reconnu pour ses nombreuses propriétés bénéfiques sur la santé. Son principal composé actif est l'allicine, un organosulfuré qui n'existe pas dans la gousse intacte : l'ail renferme de l'alliine, substance quasiment inodore, qui se transforme en allicine sous l'action d'une enzyme, l'alliinase, dès que les gousses sont coupées ou écrasées ¹. L'allicine étant détruite par la chaleur, il est préférable de consommer l'ail cru, ou de l'ajouter en fin de cuisson pour préserver ses effets. Pour maximiser sa formation, il est recommandé de laisser reposer l'ail haché ou écrasé environ dix minutes avant utilisation ¹.\r\n\r\nL'allicine possède des propriétés antibactériennes et antifongiques remarquables, lui permettant de lutter contre une variété de micro-organismes pathogènes ². L'OMS reconnaît d'ailleurs l'usage traditionnel de l'ail dans le traitement des infections respiratoires, des troubles digestifs et des vers intestinaux, et considère comme cliniquement établi son usage adjuvant pour diminuer les taux de lipides sanguins ³.\r\n\r\nSur le plan cardiovasculaire, les effets de l'ail sont documentés mais doivent être nuancés. Les méta-analyses disponibles indiquent que la consommation quotidienne d'ail ne réduit les taux de cholestérol total et de cholestérol LDL que de 4 à 6 %, et que ses effets sur la pression artérielle restent modestes à doses alimentaires courantes ⁴. Néanmoins, une méta-analyse de plus de cent essais cliniques randomisés portant sur plus de 7 000 participants confirme que la supplémentation en ail améliore de manière significative plusieurs facteurs de risque cardiovasculaire, incluant la pression artérielle, la glycémie, la résistance à l'insuline et les lipides, notamment chez les populations à risque ⁵.\r\n\r\nL'ail est également une source intéressante de micronutriments. Il renferme plusieurs vitamines du groupe B, dont la vitamine B6 — impliquée dans le métabolisme des acides aminés — ainsi que de la vitamine B1, de la vitamine B9 et de la vitamine C. Il contient du manganèse, du cuivre, du potassium, du zinc et du sélénium, ce dernier étant un oligoélément rare dans l'alimentation courante ⁶. Au-delà des composés soufrés, l'ail contient des flavonoïdes comme la quercétine et des composés phénoliques aux propriétés antioxydantes, qui contribuent à neutraliser les radicaux libres et à réduire l'inflammation chronique ⁷.\r\n\r\nAinsi, l'ail s'impose comme un aliment fonctionnel aux propriétés multiples — antimicrobiennes, antioxydantes et cardiovasculaires — dont les effets, bien que modérés dans le cadre d'une alimentation ordinaire, sont étayés par un corpus scientifique solide, à condition de le consommer cru ou peu cuit.\r\n\r\n---\r\n\r\n**Sources**\r\n\r\n¹ Vidal.fr – Phytothérapie : Ail (*Allium sativum*) — mécanisme de l'alliine\/allicine et effets de la chaleur\r\n\r\n² Cavallito C.J. & Bailey J.H. (1944) – Première isolation et caractérisation de l'allicine ; Wikipedia FR – Allicine\r\n\r\n³ OMS – *WHO Monographs on Selected Medicinal Plants*, Vol. 1 : *Bulbus Alii Sativi* (1999) — usage cliniquement établi et usage traditionnel reconnu\r\n\r\n⁴ Vidal.fr – Synthèse des méta-analyses sur l'ail et le cholestérol\/hypertension (effets de 4 à 6 %)\r\n\r\n⁵ Behrouz V. et al. (2025) – *Effects of Garlic Supplementation on Cardiovascular Risk Factors in Adults: A Comprehensive Updated Systematic Review and Meta-Analysis of Randomized Controlled Trials*, Nutrition Reviews, doi: 10.1093\/nutrit\/nuaf090\r\n\r\n⁶ ANSES – Table CIQUAL ; USDA – National Nutrient Database (*Allium sativum*, raw)\r\n\r\n⁷ Nutripure.fr – Composition en polyphénols et flavonoïdes de l'ail ; PMC9650110 – *Traditional uses, phytochemistry, pharmacology and toxicology of garlic*, NIH\/PubMed (2022)",
+            "image": "plantes\/img_69f1ae7ad907a2.78078124.png",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-29 09:08:42"
+        },
+        {
+            "id": 19,
+            "nom": "Oignon commun",
+            "nom_latin": "Allium cepa",
+            "slug": "oignon-commun",
+            "description": "L'oignon est l'un des légumes les plus riches en quercétine, un flavonoïde aux puissantes propriétés antioxydantes et anti-inflammatoires. Il contient également des composés soufrés, des fructo-oligosaccharides prébiotiques et du chrome participant à la régulation de la glycémie. Sa consommation régulière est associée à une réduction du risque cardiovasculaire dans de nombreuses études épidémiologiques.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 20,
+            "nom": "Brocoli",
+            "nom_latin": "Brassica oleracea var. italica",
+            "slug": "brocoli",
+            "description": "Le brocoli est l'un des légumes les plus étudiés pour ses propriétés anticancéreuses. Il est particulièrement riche en sulforaphane, un isothiocyanate activé lors de la mastication qui stimule les enzymes de détoxification hépatique et inhibe la prolifération des cellules tumorales. Il contient également de la vitamine K, du folate, du calcium et des caroténoïdes.",
+            "image": "plantes\/img_69f030689d7891.35412385.png",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-28 05:58:32"
+        },
+        {
+            "id": 21,
+            "nom": "Carotte",
+            "nom_latin": "Daucus carota",
+            "slug": "carotte",
+            "description": "La carotte est l'une des principales sources alimentaires de bêta-carotène, précurseur de la vitamine A essentielle à la vision, à l'immunité et à l'intégrité des muqueuses. Elle contient également de la lutéine, de la zéaxanthine et des fibres solubles (pectines) bénéfiques pour le microbiote. Sa biodisponibilité en caroténoïdes est améliorée par une cuisson légère et l'ajout de matière grasse.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 22,
+            "nom": "Épinard",
+            "nom_latin": "Spinacia oleracea",
+            "slug": "epinard",
+            "description": "L'épinard est un légume à feuilles exceptionnellement riche en nutriments : fer, magnésium, vitamine K, folates, lutéine et zéaxanthine. Contrairement aux idées reçues, son fer non-héminique est moins bien absorbé que le fer animal, mais son association avec la vitamine C améliore son assimilation. Il contient également de l'acide alpha-lipoïque, un antioxydant puissant aux effets neuroprotecteurs.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 23,
+            "nom": "Grenadier",
+            "nom_latin": "Punica granatum",
+            "slug": "grenadier",
+            "description": "Le grenadier est un arbre fruitier originaire d'Asie centrale dont le fruit est parmi les plus riches en antioxydants du règne végétal. La grenade concentre des punicosides (ellagitanins), de l'acide punicique (oméga-5 unique), des anthocyanes et de la punicalagine. Ses propriétés anti-inflammatoires, cardioprotectrices et potentiellement anticancéreuses sont l'objet d'une recherche scientifique intense.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 24,
+            "nom": "Myrtillier",
+            "nom_latin": "Vaccinium myrtillus",
+            "slug": "myrtillier",
+            "description": "La myrtille sauvage est l'un des petits fruits les plus denses en anthocyanines, des pigments bleus aux propriétés antioxydantes, anti-inflammatoires et neuroprotectrices. Elle améliore la circulation sanguine, en particulier la microcirculation rétinienne, et renforce l'acuité visuelle. Des études récentes s'intéressent à son rôle dans la prévention du déclin cognitif et la modulation du microbiote.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 25,
+            "nom": "Citronnier",
+            "nom_latin": "Citrus limon",
+            "slug": "citronnier",
+            "description": "Le citron est un fruit exceptionnellement polyvalent en phytothérapie. Sa pulpe est riche en vitamine C, flavonoïdes (hespéridine, naringénine) et acides organiques. Son zeste contient du limonène et de nombreux flavonoïdes à forte activité antioxydante. Il alcalinise l'organisme malgré son acidité, favorise l'absorption du fer non-héminique et soutient le système immunitaire et hépatique.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 26,
+            "nom": "Noyer commun",
+            "nom_latin": "Juglans regia",
+            "slug": "noyer-commun",
+            "description": "La noix est le fruit à coque le plus riche en acides gras oméga-3 de type ALA (acide alpha-linolénique), essentiel pour l'équilibre de la réponse inflammatoire. Elle contient également de la juglone (dans les feuilles et la coque verte), des polyphénols, de la mélatonine et de la vitamine E. Sa consommation régulière est associée à une réduction du risque cardiovasculaire.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 27,
+            "nom": "Olivier",
+            "nom_latin": "Olea europaea",
+            "slug": "olivier",
+            "description": "L'olivier est l'arbre emblématique du bassin méditerranéen, symbole de longévité. Ses feuilles contiennent de l'oleuropéine, un polyphénol aux puissantes propriétés antihypertensives, antioxydantes et antivirales. Son huile, riche en acide oléique (oméga-9) et en polyphénols, est l'un des fondements protecteurs du régime méditerranéen et son effet cardiovasculaire est l'un des mieux documentés.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 28,
+            "nom": "Lentille verte",
+            "nom_latin": "Lens culinaris",
+            "slug": "lentille-verte",
+            "description": "La lentille est l'une des légumineuses les plus anciennes cultivées par l'humanité. Exceptionnellement riche en protéines végétales, en fer non-héminique, en folates et en fibres solubles, elle contribue à la santé cardiovasculaire, à la régulation glycémique et à la santé du microbiote. Sa faible empreinte écologique et son rôle dans la fixation de l'azote atmosphérique en font un pilier de l'agriculture durable.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 29,
+            "nom": "Pois chiche",
+            "nom_latin": "Cicer arietinum",
+            "slug": "pois-chiche",
+            "description": "Le pois chiche est une légumineuse emblématique de la cuisine méditerranéenne et proche-orientale. Riche en protéines complètes, en fibres prébiotiques, en magnésium et en isoflavones, il contribue à l'équilibre hormonal, à la santé osseuse et à la satiété durable. Ses fibres alimentent le microbiote intestinal et participent à la régulation du cholestérol et de la glycémie.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 30,
+            "nom": "Fève",
+            "nom_latin": "Vicia faba",
+            "slug": "feve",
+            "description": "La fève est l'une des légumineuses les plus anciennes cultivées en Europe et au Proche-Orient. Riche en protéines végétales, en L-DOPA (précurseur de la dopamine), en vitamine B9 et en fibres, elle constitue un aliment de base de haute valeur nutritionnelle. Plante fixatrice d'azote, elle améliore la fertilité du sol et s'intègre parfaitement dans les systèmes d'agriculture régénérative.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 31,
+            "nom": "Haricot noir",
+            "nom_latin": "Phaseolus vulgaris",
+            "slug": "haricot-noir",
+            "description": "Le haricot noir est parmi les légumineuses les plus riches en anthocyanines, lui conférant sa couleur sombre caractéristique et de puissantes propriétés antioxydantes. Il associe protéines végétales complètes, fibres solubles, fer, magnésium et polyphénols. Sa consommation régulière est associée à une meilleure sensibilité à l'insuline et à une réduction du risque de maladies métaboliques.",
+            "image": null,
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        }
+    ],
+    "composants": [
+        {
+            "id": 1,
+            "nom": "Acide punicique",
+            "slug": "acide-punicique",
+            "famille": "Oméga-5",
+            "description": "L’acide punicique est un acide gras rare et précieux, naturellement présent dans les graines de la grenade (Punica granatum). Appartenant à la famille des oméga-5, il se distingue par sa structure conjuguée qui lui confère une forte activité biologique.\r\n\r\nReconnu pour ses propriétés anti-inflammatoires, il participe à la régulation des réactions inflammatoires de l’organisme, souvent impliquées dans les déséquilibres métaboliques modernes (¹)(²). Il agit également comme **antioxydant**, contribuant à protéger les cellules contre le stress oxydatif et le vieillissement prématuré (¹)(³).\r\n\r\nSur le plan cardiovasculaire, l’acide punicique est étudié pour sa capacité à améliorer l’équilibre lipidique et à limiter l’oxydation du cholestérol LDL (²)(⁴). Il suscite aussi un intérêt croissant dans le domaine du métabolisme, notamment pour son rôle potentiel dans la régulation du stockage des graisses et de la sensibilité à l’insuline (²)(⁵).\r\n\r\nBien que les recherches soient encore en cours, notamment chez l’humain, cet acide gras s’impose déjà comme un actif prometteur, à la croisée de la nutrition et de la prévention. Concentré principalement dans l’huile de pépins de grenade, il illustre parfaitement la richesse fonctionnelle des plantes et leur potentiel pour soutenir l’équilibre global de l’organisme. \r\n\r\n\r\n Sources\r\n\r\n1. Lansky, E.P., Newman, R.A. (2007). *Punica granatum (pomegranate) and its potential for prevention and treatment of inflammation and cancer*. Journal of Ethnopharmacology.\r\n2. Jurenka, J.S. (2008). *Therapeutic applications of pomegranate (Punica granatum L.)*. Alternative Medicine Review.\r\n3. Aviram, M. et al. (2000). *Pomegranate juice consumption reduces oxidative stress*. American Journal of Clinical Nutrition.\r\n4. Arao, K. et al. (2004). *Dietary effect of pomegranate seed oil rich in punicic acid on lipid metabolism*. Lipids.\r\n5. Hontecillas, R. et al. (2009). *Dietary punicic acid ameliorates obesity-related inflammation*. Journal of Nutritional Biochemistry.",
+            "actif": 1,
+            "created_at": "2026-04-22 13:55:23",
+            "updated_at": "2026-04-23 14:35:07"
+        },
+        {
+            "id": 2,
+            "nom": "Potassium",
+            "slug": "potassium",
+            "famille": "Minéral",
+            "description": "Le potassium est un minéral essentiel largement présent dans l’alimentation, notamment dans les fruits, légumes et légumineuses. Il joue un rôle clé dans l’équilibre électrolytique de l’organisme et le bon fonctionnement des cellules.\r\n\r\nIndispensable à la fonction musculaire, il participe à la contraction des muscles, y compris celle du cœur, en régulant les échanges entre sodium et potassium à travers les membranes cellulaires (¹)(²). Il contribue également à la transmission nerveuse, permettant la propagation des influx nerveux nécessaires à la communication entre les cellules (¹)(³).\r\n\r\nSur le plan cardiovasculaire, le potassium aide à réguler la pression artérielle, notamment en favorisant l’élimination du sodium et en relaxant les parois des vaisseaux sanguins (²)(⁴). Un apport adéquat est ainsi associé à une réduction du risque d’hypertension et d’accidents cardiovasculaires.\r\n\r\nLe potassium intervient aussi dans le maintien de l’équilibre acido-basique et soutient de nombreuses réactions enzymatiques impliquées dans le métabolisme énergétique (¹)(⁵).\r\n\r\nBien qu’essentiel, son équilibre avec le sodium est fondamental : un apport insuffisant ou excessif peut perturber les fonctions cardiaques et neuromusculaires. Une alimentation riche en végétaux permet généralement de couvrir les besoins de manière naturelle. \r\n\r\n\r\n\r\nSources \r\n\r\n1. ANSES (2021). Apports nutritionnels de référence en vitamines et minéraux.\r\n2. World Health Organization (2012). Guideline: Potassium intake for adults and children.\r\n3. National Institutes of Health (NIH). Potassium Fact Sheet for Health Professionals.\r\n4. Aburto, N.J. et al. (2013). Effect of increased potassium intake on cardiovascular risk factors. BMJ.\r\n5. Weaver, C.M. (2013). Potassium and health. Advances in Nutrition.",
+            "actif": 1,
+            "created_at": "2026-04-22 14:04:58",
+            "updated_at": "2026-04-22 14:04:58"
+        },
+        {
+            "id": 3,
+            "nom": "Vitamine C",
+            "slug": "vitamine-c",
+            "famille": "Vitamines hydrosolubles",
+            "description": "La vitamine C, ou acide ascorbique, appartient à la famille des vitamines hydrosolubles.\r\nElle est essentielle au bon fonctionnement de l’organisme et doit être apportée par l’alimentation.\r\nPuissant antioxydant, elle protège les cellules contre le stress oxydatif.\r\nElle joue un rôle clé dans la synthèse du collagène, important pour la peau, les os et les vaisseaux.\r\nElle contribue également au bon fonctionnement du système immunitaire.\r\nLa vitamine C améliore l’absorption du fer d’origine végétale dans l’intestin.\r\nFragile, elle est sensible à la chaleur, à l’air et à la lumière, ce qui peut réduire sa teneur dans les aliments.",
+            "actif": 1,
+            "created_at": "2026-04-24 08:30:26",
+            "updated_at": "2026-04-24 08:30:26"
+        },
+        {
+            "id": 4,
+            "nom": "Vitamine K",
+            "slug": "vitamine-k",
+            "famille": "Vitamines liposolubles",
+            "description": "La vitamine K appartient à la famille des vitamines liposolubles.\r\nElle est essentielle à la coagulation sanguine en participant à l’activation de certaines protéines.\r\nElle joue aussi un rôle important dans la santé osseuse en contribuant à la fixation du calcium.\r\nOn distingue principalement la vitamine K1 (phylloquinone), d’origine végétale, et la K2 (ménaquinone), produite par certaines bactéries.\r\nElle est présente dans les légumes verts à feuilles, les huiles végétales et certains aliments fermentés.\r\nUne carence peut entraîner des troubles de la coagulation et une fragilité osseuse.\r\nSon absorption est favorisée par la présence de lipides dans l’alimentation.",
+            "actif": 1,
+            "created_at": "2026-04-24 08:31:17",
+            "updated_at": "2026-04-24 08:31:17"
+        },
+        {
+            "id": 5,
+            "nom": "Les polyphénols",
+            "slug": "les-polyphenols",
+            "famille": "Micronutriments",
+            "description": "Les polyphénols appartiennent à la famille des composés phytochimiques (micronutriments non essentiels).\r\nIls sont naturellement présents dans de nombreux végétaux comme les fruits, légumes, thé et cacao.\r\nPuissants antioxydants, ils aident à neutraliser les radicaux libres et à protéger les cellules.\r\nIls possèdent également des propriétés anti-inflammatoires intéressantes pour l’organisme.\r\nCertains polyphénols, comme les flavonoïdes ou les anthocyanes, contribuent à la santé cardiovasculaire.\r\nIls peuvent aussi soutenir le microbiote intestinal en favorisant les bonnes bactéries.\r\nLeur biodisponibilité varie selon les aliments et les modes de consommation.",
+            "actif": 1,
+            "created_at": "2026-04-24 08:33:48",
+            "updated_at": "2026-04-24 08:33:48"
+        },
+        {
+            "id": 6,
+            "nom": "amour",
+            "slug": "amour",
+            "famille": "infini",
+            "description": "je t'aime merci merci je t'aime",
+            "actif": 1,
+            "created_at": "2026-04-27 09:01:01",
+            "updated_at": "2026-04-27 09:01:01"
+        },
+        {
+            "id": 7,
+            "nom": "Quercétine",
+            "slug": "quercetine",
+            "famille": "Flavonoïde",
+            "description": "La quercétine est l'un des flavonoïdes les plus répandus dans le règne végétal et les mieux étudiés scientifiquement. Puissant antioxydant, elle inhibe les enzymes pro-inflammatoires (COX-1, COX-2, 5-LOX), stabilise les mastocytes et module les voies de signalisation NF-κB. On la trouve en abondance dans les oignons, les câpres, les pommes, le brocoli et les baies.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 8,
+            "nom": "Linalol",
+            "slug": "linalol",
+            "famille": "Terpène",
+            "description": "Le linalol est un alcool terpénique présent dans plus de 200 plantes, notamment la lavande, la coriandre et le basilic. Il agit sur les récepteurs GABA-A du système nerveux central, produisant des effets anxiolytiques, sédatifs et analgésiques démontrés dans plusieurs études précliniques et cliniques. Il possède également des propriétés antibactériennes et anti-inflammatoires.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 9,
+            "nom": "Acide rosmarinique",
+            "slug": "acide-rosmarinique",
+            "famille": "Acide phénolique",
+            "description": "L'acide rosmarinique est un ester d'acide caféique présent en grande quantité dans le romarin, la sauge, le basilic et la menthe. Il inhibe la production de leucotriènes pro-inflammatoires, protège les cellules contre le stress oxydatif et possède des effets neuroprotecteurs et antiviraux. C'est également un inhibiteur de la hyaluronidase, contribuant à l'intégrité des tissus conjonctifs.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 10,
+            "nom": "Thymol",
+            "slug": "thymol",
+            "famille": "Phénol terpénique",
+            "description": "Le thymol est le composé phénolique majeur de l'huile essentielle de thym. Il exerce une activité antibactérienne puissante en perturbant les membranes des bactéries Gram+ et Gram-, incluant des souches résistantes aux antibiotiques. Il possède également des propriétés antifongiques, expectorantes et antioxydantes. Approuvé par l'EMA et l'ESCOP pour les infections des voies respiratoires.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 11,
+            "nom": "Menthol",
+            "slug": "menthol",
+            "famille": "Terpène",
+            "description": "Le menthol est l'alcool terpénique dominant de la menthe poivrée, responsable de la sensation de fraîcheur par activation des récepteurs TRPM8. Il agit comme analgésique topique, antispasmodique musculaire et décongestionnant nasal. À usage interne, il soulage les spasmes du côlon irritable et les nausées. Largement utilisé en pharmacopée officielle européenne.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 12,
+            "nom": "Allicine",
+            "slug": "allicine",
+            "famille": "Composé soufré",
+            "description": "L'allicine est le principal composé bioactif de l'ail, formé enzymatiquement par l'alliinase lors du broyage ou de la mastication. Elle est hautement instable mais extrêmement active : antibactérienne, antifongique, antiparasitaire et cardioprotectrice. Elle réduit la pression artérielle, inhibe l'agrégation plaquettaire et présente un potentiel anticancéreux dans de nombreuses études in vitro et animales.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 13,
+            "nom": "Sulforaphane",
+            "slug": "sulforaphane",
+            "famille": "Isothiocyanate",
+            "description": "Le sulforaphane est un composé soufré formé lors de la mastication des crucifères (brocoli, chou, roquette) par hydrolyse enzymatique de la glucoraphanine. Il active puissamment la voie Nrf2, master régulateur des défenses antioxydantes cellulaires, et induit les enzymes de détoxification de phase II. Il fait l'objet d'une recherche intense pour ses propriétés anticancéreuses, neuroprotectrices et antidiabétiques.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 14,
+            "nom": "Bêta-carotène",
+            "slug": "beta-carotene",
+            "famille": "Caroténoïde",
+            "description": "Le bêta-carotène est le précurseur végétal de la vitamine A le plus efficacement converti par l'organisme. Puissant antioxydant liposoluble, il protège les membranes cellulaires contre le stress oxydatif, soutient l'immunité innée et est essentiel à l'intégrité des muqueuses et à la vision en conditions de faible luminosité. Sa biodisponibilité est augmentée par la cuisson et l'association à des graisses.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 15,
+            "nom": "Anthocyanines",
+            "slug": "anthocyanines",
+            "famille": "Flavonoïde",
+            "description": "Les anthocyanines sont des pigments hydrosolubles responsables des couleurs rouge, violette et bleue de nombreux fruits et légumes (myrtilles, haricots noirs, grenade, mûres). Ce sont des antioxydants exceptionnellement puissants qui inhibent la peroxydation lipidique, protègent les neurones, améliorent la microcirculation et présentent des effets anti-inflammatoires par inhibition de NF-κB.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 16,
+            "nom": "Oleuropéine",
+            "slug": "oleuropeine",
+            "famille": "Sécoiridoïde",
+            "description": "L'oleuropéine est le polyphénol caractéristique des feuilles et de l'huile d'olive. Elle est responsable du goût amer de l'huile d'olive extra vierge de qualité. Elle exerce des propriétés antihypertensives, anti-athérosclérotiques, antivirales et antimicrobiennes démontrées. Son métabolite, l'hydroxytyrosol, est l'un des antioxydants les plus puissants identifiés dans les aliments.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 17,
+            "nom": "Acide alpha-linolénique (ALA)",
+            "slug": "acide-alpha-linolenique",
+            "famille": "Oméga-3",
+            "description": "L'ALA est l'acide gras oméga-3 essentiel d'origine végétale, précurseur des oméga-3 à longue chaîne EPA et DHA. Il est concentré dans les noix, les graines de lin, le chanvre et certaines huiles végétales. Bien que son taux de conversion en EPA\/DHA soit limité, l'ALA contribue à l'équilibre du ratio oméga-6\/oméga-3, crucial dans la régulation de l'inflammation chronique.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 18,
+            "nom": "Isoflavones",
+            "slug": "isoflavones",
+            "famille": "Phytoestrogène",
+            "description": "Les isoflavones (génistéine, daidzéine, formononétine) sont des composés phénoliques présents principalement dans les légumineuses. Elles mimient faiblement l'action des œstrogènes en se liant aux récepteurs ER-bêta. Leur consommation régulière est associée à une réduction des bouffées de chaleur, une amélioration de la densité osseuse et un possible effet protecteur contre certains cancers hormono-dépendants.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 19,
+            "nom": "Chamazulène",
+            "slug": "chamazulene",
+            "famille": "Terpène",
+            "description": "Le chamazulène est un sesquiterpène à la couleur bleu intense, formé lors de la distillation de la camomille matricaire. Il n'est pas présent dans la plante fraîche mais résulte de la décomposition thermique de la matricine. Il exerce de puissantes propriétés anti-inflammatoires en inhibant la formation de leucotriènes et la peroxydation lipidique. C'est le composant responsable de la couleur bleue caractéristique de l'huile essentielle de camomille.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 20,
+            "nom": "Lutéoline",
+            "slug": "luteoline",
+            "famille": "Flavonoïde",
+            "description": "La lutéoline est un flavone présente dans le thym, la sauge, le romarin et de nombreuses plantes aromatiques. Elle présente des propriétés anti-inflammatoires, antioxydantes et neuroprotectrices. Elle inhibe la production de cytokines pro-inflammatoires (TNF-α, IL-6) et le système NF-κB. Des études récentes s'intéressent à son rôle dans la modulation du microbiome et dans la prévention des maladies neurodégénératives.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 21,
+            "nom": "Vitamine B6 (pyridoxine)",
+            "slug": "vitamine-b6",
+            "famille": "vitamine",
+            "description": "Coenzyme impliquee dans le metabolisme des acides amines, la synthese des neurotransmetteurs et la regulation hormonale. AJR : 1,4 mg (EFSA 2019).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 22,
+            "nom": "Vitamine B1 (thiamine)",
+            "slug": "vitamine-b1",
+            "famille": "vitamine",
+            "description": "Intervient dans le metabolisme des glucides et le fonctionnement du systeme nerveux. AJR : 1,1 mg (EFSA 2019).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 23,
+            "nom": "Vitamine B9 (folate)",
+            "slug": "vitamine-b9",
+            "famille": "vitamine",
+            "description": "Indispensable a la synthese de l'ADN et a la division cellulaire. AJR : 200 µg (EFSA 2019).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 24,
+            "nom": "Manganese",
+            "slug": "manganese",
+            "famille": "mineral",
+            "description": "Cofacteur enzymatique implique dans le metabolisme osseux et la defense antioxydante (MnSOD). AJR : 2,3 mg (EFSA 2013).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 25,
+            "nom": "Cuivre",
+            "slug": "cuivre",
+            "famille": "mineral",
+            "description": "Cofacteur d'enzymes antioxydantes (Cu\/Zn SOD), intervient dans la formation du tissu conjonctif. AJR : 1,0 mg (EFSA 2015).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 26,
+            "nom": "Zinc",
+            "slug": "zinc",
+            "famille": "mineral",
+            "description": "Cofacteur de plus de 300 enzymes. Role cle dans l'immunite, la cicatrisation et la synthese proteique. AJR : 10 mg (EFSA 2014).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        },
+        {
+            "id": 27,
+            "nom": "Selenium",
+            "slug": "selenium",
+            "famille": "mineral",
+            "description": "Oligoelement rare dans l'alimentation. Composant des selenoproteines (glutathion peroxydase). AJR : 55 µg (EFSA 2014).",
+            "actif": 1,
+            "created_at": "2026-04-29 10:48:44",
+            "updated_at": "2026-04-29 10:48:44"
+        }
+    ],
+    "vertus": [
+        {
+            "id": 1,
+            "nom": "Anti-inflammatoire",
+            "slug": "anti-inflammatoire",
+            "categorie": "Immunité",
+            "description": "Neutralise les radicaux libres, réduisant le stress oxydatif responsable du vieillissement cellulaire, des dommages à l’ADN et des maladies chroniques.",
+            "actif": 1,
+            "created_at": "2026-04-23 14:36:09",
+            "updated_at": "2026-04-23 15:09:15"
+        },
+        {
+            "id": 5,
+            "nom": "L'équilibre hydrique",
+            "slug": "l-equilibre-hydrique",
+            "categorie": "Métabolisme",
+            "description": "L’équilibre hydrique correspond à la bonne répartition de l’eau entre les cellules et les tissus.\r\nLe potassium joue un rôle clé en régulant les échanges d’eau et d’électrolytes à travers les membranes cellulaires.\r\nIl agit en synergie avec le sodium pour maintenir une hydratation optimale de l’organisme.\r\nUn bon équilibre hydrique est essentiel au fonctionnement cellulaire, à la circulation et à la régulation de la pression.\r\nL’équilibre hydrique est une fonction physiologique de l’organisme.\r\nPlus précisément, il relève de la catégorie équilibre hydro-électrolytique.\r\nCette catégorie regroupe les mécanismes qui régulent l’eau et les électrolytes (comme le potassium et le sodium).\r\nElle est essentielle au bon fonctionnement des cellules, des organes et des échanges internes.\r\nOn peut aussi le rattacher plus largement au métabolisme et à l’homéostasie (maintien des équilibres internes).",
+            "actif": 1,
+            "created_at": "2026-04-24 08:38:56",
+            "updated_at": "2026-04-24 08:38:56"
+        },
+        {
+            "id": 6,
+            "nom": "Système nerveux",
+            "slug": "systeme-nerveux",
+            "categorie": "Fonction physiologique",
+            "description": "Le bon fonctionnement du système nerveux repose sur la transmission efficace des influx nerveux.\r\nDes minéraux comme le potassium et le sodium jouent un rôle clé dans cette communication entre les neurones.\r\nIls permettent la propagation des signaux électriques indispensables aux réactions du corps.\r\nCet équilibre est essentiel pour la coordination, la concentration et les fonctions cognitives.",
+            "actif": 1,
+            "created_at": "2026-04-24 08:42:43",
+            "updated_at": "2026-04-24 08:42:43"
+        },
+        {
+            "id": 7,
+            "nom": "Système musculaire",
+            "slug": "systeme-musculaire",
+            "categorie": "Fonction physiologique",
+            "description": "La contraction musculaire permet le mouvement du corps et le bon fonctionnement des organes.\r\nElle repose sur des échanges d’ions, notamment le potassium, le calcium et le sodium.\r\nCes électrolytes déclenchent et régulent la contraction et le relâchement des fibres musculaires.\r\nCe mécanisme est essentiel pour l’activité physique, la posture et le rythme cardiaque.",
+            "actif": 1,
+            "created_at": "2026-04-24 08:43:51",
+            "updated_at": "2026-04-24 08:43:51"
+        },
+        {
+            "id": 8,
+            "nom": "Antioxydant",
+            "slug": "antioxydant",
+            "categorie": "Protection cellulaire",
+            "description": "Protège les cellules contre les dommages causés par les radicaux libres et le stress oxydatif, participant à la prévention du vieillissement prématuré et des maladies chroniques (cancer, maladies cardiovasculaires, neurodégénérescence).",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:55",
+            "updated_at": "2026-04-27 13:58:55"
+        },
+        {
+            "id": 9,
+            "nom": "Immunostimulant",
+            "slug": "immunostimulant",
+            "categorie": "Immunité",
+            "description": "Renforce les défenses naturelles de l'organisme en activant les cellules immunitaires (lymphocytes, macrophages, cellules NK), stimulant la production d'anticorps et améliorant la réponse aux agents infectieux.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 10,
+            "nom": "Antibactérien",
+            "slug": "antibacterien",
+            "categorie": "Infections",
+            "description": "Inhibe la croissance ou détruit les bactéries pathogènes par différents mécanismes : perturbation de la membrane bactérienne, inhibition d'enzymes essentielles, blocage de la réplication de l'ADN bactérien. Utilisé pour traiter ou prévenir les infections bactériennes sans nécessairement recourir aux antibiotiques de synthèse.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 11,
+            "nom": "Antifongique",
+            "slug": "antifongique",
+            "categorie": "Infections",
+            "description": "Combat les infections fongiques en perturbant la membrane ou la paroi cellulaire des champignons pathogènes (Candida albicans, dermatophytes). Particulièrement utile dans les mycoses cutanées, buccales et digestives, souvent associées à un déséquilibre du microbiote.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 12,
+            "nom": "Antiviral",
+            "slug": "antiviral",
+            "categorie": "Infections",
+            "description": "Inhibe la réplication des virus ou stimule les défenses de l'hôte contre les infections virales. Certaines plantes exercent une action directe sur la capside virale, d'autres stimulent la production d'interférons ou de cellules NK. Particulièrement étudié pour les infections ORL hivernales, l'herpès et certains virus respiratoires.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 13,
+            "nom": "Digestif",
+            "slug": "digestif",
+            "categorie": "Digestion",
+            "description": "Facilite la digestion par différents mécanismes : stimulation de la sécrétion de sucs gastriques et biliaires, réduction des spasmes intestinaux, équilibre du microbiote, accélération du transit ou soulagement des ballonnements et de la fermentation excessive.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 14,
+            "nom": "Antispasmodique",
+            "slug": "antispasmodique",
+            "categorie": "Digestion",
+            "description": "Réduit les contractions musculaires involontaires et douloureuses, notamment au niveau du tube digestif et des voies urinaires. Agit en relaxant la musculature lisse, soulagant les crampes abdominales, les coliques, les spasmes du côlon irritable et les douleurs menstruelles.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 15,
+            "nom": "Anxiolytique",
+            "slug": "anxiolytique",
+            "categorie": "Système nerveux",
+            "description": "Réduit l'anxiété, la tension nerveuse et le stress en modulant les neurotransmetteurs inhibiteurs (GABA, sérotonine) ou en régulant l'axe HPA (hypothalamo-hypophyso-surrénalien). Ces plantes adaptogènes et calmantes favorisent un état de détente sans sédation excessive.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 16,
+            "nom": "Sédatif \/ Calmant",
+            "slug": "sedatif-calmant",
+            "categorie": "Système nerveux",
+            "description": "Favorise le calme, la relaxation et le sommeil en réduisant l'activité du système nerveux central. Contrairement aux sédatifs pharmaceutiques, les plantes agissent généralement de manière douce et progressive, sans effets de dépendance ni de rebond.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 17,
+            "nom": "Cardioprotecteur",
+            "slug": "cardioprotecteur",
+            "categorie": "Cardiovasculaire",
+            "description": "Protège le système cardiovasculaire en agissant sur plusieurs facteurs de risque : réduction du cholestérol LDL, amélioration de la fluidité sanguine, protection des parois artérielles contre l'oxydation, régulation de la pression artérielle et réduction de l'agrégation plaquettaire.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 18,
+            "nom": "Hypoglycémiant",
+            "slug": "hypoglycemiant",
+            "categorie": "Métabolisme",
+            "description": "Contribue à la régulation de la glycémie en améliorant la sensibilité à l'insuline, en ralentissant l'absorption intestinale des sucres, en stimulant l'utilisation cellulaire du glucose ou en réduisant la production hépatique de glucose. Particulièrement pertinent dans la prévention et le soutien du diabète de type 2.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 19,
+            "nom": "Hépatoprotecteur",
+            "slug": "hepatoprotecteur",
+            "categorie": "Détoxification",
+            "description": "Protège les cellules hépatiques contre les dommages toxiques, oxydatifs ou inflammatoires. Certains composés stimulent la régénération des hépatocytes, d'autres activent les enzymes de détoxification hépatique (voies de phase I et II), facilitant l'élimination des toxines endogènes et exogènes.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 20,
+            "nom": "Cicatrisant",
+            "slug": "cicatrisant",
+            "categorie": "Peau",
+            "description": "Accélère la régénération des tissus cutanés endommagés en stimulant la prolifération des fibroblastes, la synthèse du collagène et l'angiogenèse. Réduit le risque d'infection des plaies par son activité antimicrobienne et diminue l'inflammation locale pour favoriser une cicatrisation nette.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 21,
+            "nom": "Neuroprotecteur",
+            "slug": "neuroprotecteur",
+            "categorie": "Système nerveux",
+            "description": "Protège les neurones contre les dommages oxydatifs, inflammatoires ou excitotoxiques associés au vieillissement cérébral et aux maladies neurodégénératives. Peut stimuler la neurogenèse, renforcer la barrière hémato-encéphalique ou moduler la neuroinflammation.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 22,
+            "nom": "Antihypertenseur",
+            "slug": "antihypertenseur",
+            "categorie": "Cardiovasculaire",
+            "description": "Contribue à la réduction de la pression artérielle élevée par vasodilatation (relaxation des parois des vaisseaux), inhibition de l'enzyme de conversion de l'angiotensine (ECA), ou réduction de la rétention sodée. Utilisé en prévention et en soutien des traitements conventionnels.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 23,
+            "nom": "Prébiotique \/ Fibres",
+            "slug": "prebiotique",
+            "categorie": "Microbiote",
+            "description": "Nourrit sélectivement les bactéries bénéfiques du microbiote intestinal (Bifidobacterium, Lactobacillus), favorisant un écosystème microbien diversifié et équilibré. Un microbiote sain influence l'immunité, l'inflammation systémique, la santé mentale et la régulation métabolique.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 24,
+            "nom": "Reminéralisant",
+            "slug": "remineralisant",
+            "categorie": "Os et articulations",
+            "description": "Apporte des minéraux essentiels (calcium, magnésium, silice, zinc, fer) nécessaires au maintien de la densité osseuse, à la contraction musculaire, à la conduction nerveuse et à de nombreuses réactions enzymatiques. Particulièrement utile dans les périodes de croissance, de grossesse, de ménopause ou de carences.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 25,
+            "nom": "Expectorant",
+            "slug": "expectorant",
+            "categorie": "Système respiratoire",
+            "description": "Facilite l'expulsion des sécrétions bronchiques en fluidifiant le mucus et en stimulant l'activité ciliaire des voies aériennes. Utilisé dans les infections respiratoires, la bronchite, la toux grasse et les affections ORL hivernales.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 26,
+            "nom": "Anticancéreux (préventif)",
+            "slug": "anticancereux-preventif",
+            "categorie": "Protection cellulaire",
+            "description": "Réduit le risque de développement de cellules cancéreuses par différents mécanismes : activation des enzymes de détoxification, inhibition de l'angiogenèse tumorale, induction de l'apoptose des cellules anormales, protection de l'ADN contre les mutations. Ces effets, démontrés en études précliniques, nécessitent une consommation régulière dans le cadre d'une alimentation équilibrée.",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "nom": "Aromatiques",
+            "slug": "aromatiques",
+            "description": "Plantes aromatiques et medicinales",
+            "couleur": "#a4aed6",
+            "created_at": "2026-04-22 08:13:58"
+        },
+        {
+            "id": 2,
+            "nom": "Potager",
+            "slug": "potager",
+            "description": "Legumes et plantes potageres",
+            "couleur": "#71bc87",
+            "created_at": "2026-04-22 08:13:58"
+        },
+        {
+            "id": 3,
+            "nom": "Verger",
+            "slug": "verger",
+            "description": "Arbres fruitiers et petits fruits",
+            "couleur": "#ce9292",
+            "created_at": "2026-04-22 08:13:58"
+        },
+        {
+            "id": 4,
+            "nom": "Fleurs",
+            "slug": "fleurs",
+            "description": "Plantes a fleurs comestibles ou medicinales",
+            "couleur": "#d080b8",
+            "created_at": "2026-04-22 08:13:58"
+        },
+        {
+            "id": 5,
+            "nom": "Legumineuses",
+            "slug": "legumineuses",
+            "description": "Legumineuses et plantes fixatrices d azote",
+            "couleur": "#72a9bb",
+            "created_at": "2026-04-22 08:13:58"
+        }
+    ],
+    "sources": [
+        {
+            "id": 1,
+            "titre": "Table de composition nutritionnelle CIQUAL",
+            "auteurs": "ANSES",
+            "journal": "ANSES – CIQUAL",
+            "annee": "2025",
+            "url": "https:\/\/ciqual.anses.fr",
+            "doi": "",
+            "resume": "Base de référence française fournissant la composition nutritionnelle détaillée de milliers d’aliments (macronutriments, vitamines, minéraux). Utilisée par les professionnels de santé et les chercheurs pour évaluer les apports alimentaires.",
+            "type_source": "meta-analyse",
+            "actif": 1,
+            "created_at": "2026-04-27 12:27:59",
+            "updated_at": "2026-04-27 12:45:26"
+        },
+        {
+            "id": 2,
+            "titre": "Beta-glucans and maintenance of normal blood cholesterol levels",
+            "auteurs": "EFSA Panel NDA",
+            "journal": "EFSA Journal",
+            "annee": "2010",
+            "url": "https:\/\/www.efsa.europa.eu",
+            "doi": "10.2903\/j.efsa.2010.1752",
+            "resume": "Les fibres solubles (notamment bêta-glucanes) contribuent à la réduction du cholestérol sanguin en limitant son absorption intestinale et en améliorant le profil lipidique.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 12:50:51",
+            "updated_at": "2026-04-27 12:50:51"
+        },
+        {
+            "id": 3,
+            "titre": "Antioxidants and oxidative stress",
+            "auteurs": "National Institutes of Health",
+            "journal": "NIH \/ NLM",
+            "annee": null,
+            "url": "https:\/\/www.ncbi.nlm.nih.gov",
+            "doi": "",
+            "resume": "Les antioxydants neutralisent les radicaux libres et protègent les cellules contre les dommages oxydatifs impliqués dans le vieillissement et de nombreuses maladies.",
+            "type_source": "revue",
+            "actif": 1,
+            "created_at": "2026-04-27 12:52:37",
+            "updated_at": "2026-04-27 12:52:37"
+        },
+        {
+            "id": 4,
+            "titre": "Monographies de phytothérapie de l'EMA (HMPC)",
+            "auteurs": "European Medicines Agency – Committee on Herbal Medicinal Products",
+            "journal": "EMA \/ HMPC",
+            "annee": "2024",
+            "url": "https:\/\/www.ema.europa.eu\/en\/committees\/committee-herbal-medicinal-products-hmpc",
+            "doi": null,
+            "resume": "Monographies officielles de l'Agence européenne des médicaments sur les plantes médicinales. Évaluations scientifiques basées sur l'usage traditionnel documenté et les études cliniques disponibles. Référence réglementaire pour les médicaments à base de plantes en Europe.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 5,
+            "titre": "ESCOP Monographs – The Scientific Foundation for Herbal Medicinal Products",
+            "auteurs": "European Scientific Cooperative on Phytotherapy",
+            "journal": "ESCOP Publications",
+            "annee": "2023",
+            "url": "https:\/\/www.escop.com\/escop-products\/online-monographs\/",
+            "doi": null,
+            "resume": "Recueil de monographies scientifiques sur les plantes médicinales élaborées par la coopérative scientifique européenne de phytothérapie. Synthèse rigoureuse des données cliniques, pharmacologiques et toxicologiques disponibles pour chaque plante.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-28 05:32:39"
+        },
+        {
+            "id": 6,
+            "titre": "PubMed Central – Base de données de littérature biomédicale",
+            "auteurs": "National Library of Medicine (NIH)",
+            "journal": "NIH \/ NLM",
+            "annee": "2025",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov",
+            "doi": null,
+            "resume": "Base de données bibliographique gratuite de la Bibliothèque nationale de médecine américaine, donnant accès à plus de 35 millions d'articles biomédicaux. Référence internationale pour la recherche clinique et préclinique en phytothérapie et nutrition.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 7,
+            "titre": "WHO Monographs on Selected Medicinal Plants",
+            "auteurs": "Organisation mondiale de la santé",
+            "journal": "OMS \/ WHO",
+            "annee": "2022",
+            "url": "https:\/\/www.who.int\/publications\/i\/item\/medicinal-plants",
+            "doi": null,
+            "resume": "Monographies officielles de l'OMS sur les plantes médicinales sélectionnées pour leur usage traditionnel établi. Ces publications fournissent des informations sur la botanique, la composition chimique, les usages médicinaux documentés, les données cliniques et les précautions d'emploi.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 8,
+            "titre": "Broccoli sprouts: An exceptionally rich source of inducers of enzymes that protect against chemical carcinogens",
+            "auteurs": "Fahey JW, Zhang Y, Talalay P",
+            "journal": "Proceedings of the National Academy of Sciences",
+            "annee": "1997",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/9294217\/",
+            "doi": "10.1073\/pnas.94.19.10367",
+            "resume": "Étude fondatrice ayant identifié le sulforaphane comme principal agent chimioprotecteur du brocoli. Démontre son rôle dans l'induction des enzymes de détoxification de phase II via la voie Nrf2. Article de référence cité dans la grande majorité des études ultérieures sur les crucifères.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-28 05:32:39"
+        },
+        {
+            "id": 9,
+            "titre": "Allicin bioavailability and bioequivalence from garlic supplements and garlic foods",
+            "auteurs": "Lawson LD, Hunsaker SM",
+            "journal": "Nutrients",
+            "annee": "2018",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/29937536\/",
+            "doi": "10.3390\/nu10070812",
+            "resume": "Revue complète sur la chimie et la pharmacologie des composés organosoufrés de l'ail, notamment l'allicine, l'ajoène et les thiosulfinates. Analyse des conditions de formation, de la stabilité et de l'activité biologique de ces composés en fonction des modes de préparation.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-28 05:32:39"
+        },
+        {
+            "id": 10,
+            "titre": "Quercetin: A Flavonoid with Great Pharmacological Potential",
+            "auteurs": "Anand David AV et al.",
+            "journal": "Antioxidants",
+            "annee": "2016",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/26904034\/",
+            "doi": "10.3390\/antiox5010003",
+            "resume": "Revue systématique des propriétés pharmacologiques de la quercétine, couvrant ses effets antioxydants, anti-inflammatoires, antiviraux, anticancéreux et cardioprotecteurs. Analyse de sa biodisponibilité, ses interactions médicamenteuses et ses applications thérapeutiques potentielles.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 11,
+            "titre": "Lavender and the Nervous System",
+            "auteurs": "Koulivand PH, Khaleghi Ghadiri M, Gorji A",
+            "journal": "Evidence-Based Complementary and Alternative Medicine",
+            "annee": "2013",
+            "url": "https:\/\/pubmed.ncbi.nlm.nih.gov\/23573142\/",
+            "doi": "10.1155\/2013\/681304",
+            "resume": "Revue systématique des effets de la lavande sur le système nerveux central, analysant les études sur l'anxiété, la dépression, les troubles du sommeil et les douleurs neuropathiques. Évalue les mécanismes d'action du linalol et de l'acétate de linalyle sur les récepteurs GABA-A.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        },
+        {
+            "id": 12,
+            "titre": "Phytothérapie – Les données de l'évaluation",
+            "auteurs": "Bruneton J",
+            "journal": "Lavoisier – Tec & Doc",
+            "annee": "2016",
+            "url": null,
+            "doi": null,
+            "resume": "Ouvrage de référence en langue française sur la phytothérapie basée sur les preuves. Présente de manière rigoureuse les données botaniques, chimiques, pharmacologiques et cliniques des principales plantes médicinales utilisées en Europe. Référence académique incontournable pour les professionnels de santé.",
+            "type_source": "etude",
+            "actif": 1,
+            "created_at": "2026-04-27 13:58:56",
+            "updated_at": "2026-04-27 13:58:56"
+        }
+    ],
+    "plante_composant": [
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "allicine",
+            "concentration": "0,1-0,3%",
+            "notes": "Formée enzymatiquement lors du broyage des gousses. Instable, se transforme rapidement en sulfures secondaires"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "cuivre",
+            "concentration": "0,299 mg\/100g",
+            "notes": "USDA FoodData Central — AJR 30%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "les-polyphenols",
+            "concentration": "~72 mg\/100g",
+            "notes": "PMC9650110 — polyphenols totaux estimes"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "manganese",
+            "concentration": "1,672 mg\/100g",
+            "notes": "USDA FoodData Central — AJR 73%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "potassium",
+            "concentration": "401 mg\/100g",
+            "notes": "CIQUAL 2020 — AJR 20%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "quercetine",
+            "concentration": "~47 mg\/100g",
+            "notes": "PMC9650110 — flavonoides totaux"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "selenium",
+            "concentration": "14,2 µg\/100g",
+            "notes": "USDA FoodData Central — AJR 26%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "vitamine-b1",
+            "concentration": "0,200 mg\/100g",
+            "notes": "CIQUAL 2020 — AJR 18%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "vitamine-b6",
+            "concentration": "1,235 mg\/100g",
+            "notes": "CIQUAL 2020 \/ USDA — AJR 88%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "vitamine-b9",
+            "concentration": "3,0 µg\/100g",
+            "notes": "CIQUAL 2020 — teneur modeste, AJR 1,5%"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "vitamine-c",
+            "concentration": "31,2 mg\/100g",
+            "notes": "CIQUAL 2020 — AJR 39%, variable selon fraicheur"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "composant_slug": "zinc",
+            "concentration": "1,160 mg\/100g",
+            "notes": "USDA FoodData Central — AJR 12%"
+        },
+        {
+            "plante_slug": "brocoli",
+            "composant_slug": "beta-carotene",
+            "concentration": "0,4mg\/100g",
+            "notes": "Caroténoïde lipophile, biodisponibilité améliorée par cuisson légère"
+        },
+        {
+            "plante_slug": "brocoli",
+            "composant_slug": "sulforaphane",
+            "concentration": "0,1-0,5%",
+            "notes": "Activé lors de la mastication par hydrolyse de la glucoraphanine. Cuisson à la vapeur douce préserve l'enzyme myrosinase"
+        },
+        {
+            "plante_slug": "brocoli",
+            "composant_slug": "vitamine-c",
+            "concentration": "89mg\/100g",
+            "notes": "Teneur élevée, mais sensible à la chaleur — privilégier la cuisson vapeur courte"
+        },
+        {
+            "plante_slug": "calendula",
+            "composant_slug": "quercetine",
+            "concentration": "0,5-2%",
+            "notes": "Flavonoïde majeur des pétales, contribue à l'activité anti-inflammatoire et cicatrisante"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "composant_slug": "chamazulene",
+            "concentration": "1-15%",
+            "notes": "Formé lors de la distillation, absent dans la plante fraîche. Responsable de la couleur bleue de l'HE"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "composant_slug": "quercetine",
+            "concentration": "0,3-1%",
+            "notes": "Présent dans les fleurs, contribue à l'activité anti-inflammatoire et antihistaminique"
+        },
+        {
+            "plante_slug": "carotte",
+            "composant_slug": "beta-carotene",
+            "concentration": "5-12mg\/100g",
+            "notes": "Source principale de bêta-carotène alimentaire. Biodisponibilité multipliée par 5 avec une matière grasse"
+        },
+        {
+            "plante_slug": "citronnier",
+            "composant_slug": "quercetine",
+            "concentration": "0,1-0,5%",
+            "notes": "Présente dans le zeste et la pulpe, synergie avec la vitamine C pour l'activité antioxydante"
+        },
+        {
+            "plante_slug": "citronnier",
+            "composant_slug": "vitamine-c",
+            "concentration": "50mg\/100g",
+            "notes": "Présente dans la pulpe ; le zeste en contient également mais en moindre quantité"
+        },
+        {
+            "plante_slug": "epinard",
+            "composant_slug": "beta-carotene",
+            "concentration": "4mg\/100g",
+            "notes": "Précurseur de la vitamine A, important pour la vision et l'immunité"
+        },
+        {
+            "plante_slug": "epinard",
+            "composant_slug": "quercetine",
+            "concentration": "0,3-0,5%",
+            "notes": "Flavonoïde contribuant à l'activité anti-inflammatoire et antiproliférative"
+        },
+        {
+            "plante_slug": "epinard",
+            "composant_slug": "vitamine-c",
+            "concentration": "28mg\/100g",
+            "notes": "Favorise l'absorption du fer non-héminique présent dans l'épinard"
+        },
+        {
+            "plante_slug": "feve",
+            "composant_slug": "isoflavones",
+            "concentration": "0,05-0,2%",
+            "notes": "Teneur modérée, associée à d'autres polyphénols synergiques"
+        },
+        {
+            "plante_slug": "grenadier",
+            "composant_slug": "acide-punicique",
+            "concentration": "65-80% des AG des pépins",
+            "notes": "Acide gras unique de la famille des oméga-5, exclusif aux pépins de grenade"
+        },
+        {
+            "plante_slug": "grenadier",
+            "composant_slug": "anthocyanines",
+            "concentration": "150-280mg\/100g jus",
+            "notes": "Responsables de la couleur rouge intense, très concentrées dans le jus et les arilles"
+        },
+        {
+            "plante_slug": "haricot-noir",
+            "composant_slug": "anthocyanines",
+            "concentration": "214mg\/100g",
+            "notes": "Delphinidin et petunidin dans le tégument, responsables de la couleur noire intense"
+        },
+        {
+            "plante_slug": "haricot-noir",
+            "composant_slug": "isoflavones",
+            "concentration": "0,05-0,15%",
+            "notes": "Phytoestrogènes contribuant à la régulation métabolique"
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "acide-punicique",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "amour",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "les-polyphenols",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "potassium",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "vitamine-c",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "composant_slug": "vitamine-k",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "composant_slug": "acide-punicique",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "composant_slug": "les-polyphenols",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "composant_slug": "potassium",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "composant_slug": "vitamine-c",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "composant_slug": "vitamine-k",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "composant_slug": "acide-punicique",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "composant_slug": "les-polyphenols",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "composant_slug": "potassium",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "composant_slug": "vitamine-c",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "composant_slug": "vitamine-k",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "lavande-officinale",
+            "composant_slug": "acide-rosmarinique",
+            "concentration": "traces",
+            "notes": "Présent dans les parties aériennes, contribue à l'activité antioxydante"
+        },
+        {
+            "plante_slug": "lavande-officinale",
+            "composant_slug": "linalol",
+            "concentration": "25-40%",
+            "notes": "Composant majoritaire de l'HE de lavande fine, responsable des effets calmants"
+        },
+        {
+            "plante_slug": "lentille-verte",
+            "composant_slug": "isoflavones",
+            "concentration": "0,1-0,3%",
+            "notes": "Phytoestrogènes à activité modulatrice hormonale douce"
+        },
+        {
+            "plante_slug": "menthe-poivree",
+            "composant_slug": "menthol",
+            "concentration": "35-60%",
+            "notes": "Alcool terpénique majoritaire, responsable de la sensation de fraîcheur et des effets antispasmodiques"
+        },
+        {
+            "plante_slug": "myrtillier",
+            "composant_slug": "anthocyanines",
+            "concentration": "160-350mg\/100g",
+            "notes": "La myrtille sauvage est l'une des sources les plus concentrées en anthocyanines de type délphinidine et cyanidine"
+        },
+        {
+            "plante_slug": "noyer-commun",
+            "composant_slug": "acide-alpha-linolenique",
+            "concentration": "8-12g\/100g",
+            "notes": "La noix est la meilleure source végétale d'ALA parmi les fruits à coque"
+        },
+        {
+            "plante_slug": "oignon-commun",
+            "composant_slug": "quercetine",
+            "concentration": "14-100mg\/100g",
+            "notes": "L'une des sources alimentaires les plus riches en quercétine, surtout dans les oignons rouges et jaunes"
+        },
+        {
+            "plante_slug": "olivier",
+            "composant_slug": "acide-rosmarinique",
+            "concentration": "traces",
+            "notes": "Retrouvé dans les feuilles d'olivier, contribue à l'activité antioxydante globale"
+        },
+        {
+            "plante_slug": "olivier",
+            "composant_slug": "oleuropeine",
+            "concentration": "14-30g\/kg feuilles sèches",
+            "notes": "Très concentrée dans les feuilles, présente en moindre quantité dans l'huile vierge extra"
+        },
+        {
+            "plante_slug": "pois-chiche",
+            "composant_slug": "isoflavones",
+            "concentration": "0,1-0,5%",
+            "notes": "Formononétine et biochanine A, précurseurs de la daidzéine et de la génistéine"
+        },
+        {
+            "plante_slug": "pomme",
+            "composant_slug": "les-polyphenols",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "pomme",
+            "composant_slug": "potassium",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "pomme",
+            "composant_slug": "vitamine-c",
+            "concentration": "",
+            "notes": ""
+        },
+        {
+            "plante_slug": "romarin",
+            "composant_slug": "acide-rosmarinique",
+            "concentration": "3-7%",
+            "notes": "Marqueur chimique du romarin, très concentré dans les feuilles fraîches"
+        },
+        {
+            "plante_slug": "romarin",
+            "composant_slug": "luteoline",
+            "concentration": "0,1-0,5%",
+            "notes": "Flavone contribuant à l'activité anti-inflammatoire et neuroprotectrice"
+        },
+        {
+            "plante_slug": "rose-eglantier",
+            "composant_slug": "quercetine",
+            "concentration": "0,2-1%",
+            "notes": "Flavonoïde antioxydant contribuant à la protection vasculaire"
+        },
+        {
+            "plante_slug": "rose-eglantier",
+            "composant_slug": "vitamine-c",
+            "concentration": "400-800mg\/100g",
+            "notes": "L'une des sources végétales les plus concentrées en vitamine C, surtout dans les cynorhodons séchés"
+        },
+        {
+            "plante_slug": "sauge-officinale",
+            "composant_slug": "acide-rosmarinique",
+            "concentration": "1-4%",
+            "notes": "Concentré dans les feuilles, contribue à l'activité antioxydante et anti-inflammatoire"
+        },
+        {
+            "plante_slug": "sauge-officinale",
+            "composant_slug": "luteoline",
+            "concentration": "0,1-0,4%",
+            "notes": "Contribue à l'activité hormonale modulatrice de la sauge"
+        },
+        {
+            "plante_slug": "sureau-noir",
+            "composant_slug": "quercetine",
+            "concentration": "1-3%",
+            "notes": "Concentré dans les fleurs et les baies, activité antivirale et immunostimulante"
+        },
+        {
+            "plante_slug": "sureau-noir",
+            "composant_slug": "vitamine-c",
+            "concentration": "36mg\/100g",
+            "notes": "Présente dans les baies fraîches, soutient l'immunité hivernale"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "composant_slug": "linalol",
+            "concentration": "5-15%",
+            "notes": "Présent dans le thym doux (chémotype linalol), plus doux que le thymol"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "composant_slug": "luteoline",
+            "concentration": "0,2-0,8%",
+            "notes": "Flavonoïde contribuant à l'activité anti-inflammatoire systémique"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "composant_slug": "thymol",
+            "concentration": "30-55%",
+            "notes": "Phénol dominant de l'HE de thym, responsable de l'activité antibactérienne"
+        }
+    ],
+    "composant_vertu": [
+        {
+            "composant_slug": "acide-alpha-linolenique",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Précurseur des eicosanoïdes anti-inflammatoires. Réduit le ratio oméga-6\/oméga-3 pro-inflammatoire"
+        },
+        {
+            "composant_slug": "acide-alpha-linolenique",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "fort",
+            "notes": "Réduit la mortalité cardiovasculaire. Études épidémiologiques et essais cliniques convergents"
+        },
+        {
+            "composant_slug": "acide-alpha-linolenique",
+            "vertu_slug": "neuroprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Précurseur du DHA nécessaire à la structure membranaire neuronale et à la transmission synaptique"
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": ""
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la prolifération de cellules cancéreuses mammaires et coliques dans les études in vitro"
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Réduit l'oxydation des LDL et améliore le profil lipidique dans les études sur modèles animaux"
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": ""
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": ""
+        },
+        {
+            "composant_slug": "acide-punicique",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": ""
+        },
+        {
+            "composant_slug": "acide-rosmarinique",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe la 5-lipoxygénase et réduit la production de leucotriènes LTB4. Validé dans plusieurs modèles inflammatoires"
+        },
+        {
+            "composant_slug": "acide-rosmarinique",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Capacité antioxydante supérieure à la vitamine E in vitro. Protège les lipides membranaires contre la peroxydation"
+        },
+        {
+            "composant_slug": "acide-rosmarinique",
+            "vertu_slug": "antiviral",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la neuraminidase du virus influenza. Actif contre le VIH et le virus de l'herpès simplex in vitro"
+        },
+        {
+            "composant_slug": "acide-rosmarinique",
+            "vertu_slug": "hepatoprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Protège les hépatocytes contre les dommages oxydatifs induits par les toxines. Études sur modèles murins"
+        },
+        {
+            "composant_slug": "acide-rosmarinique",
+            "vertu_slug": "neuroprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la formation de plaques bêta-amyloïdes et protège les neurones contre le stress oxydatif"
+        },
+        {
+            "composant_slug": "allicine",
+            "vertu_slug": "antibacterien",
+            "niveau_evidence": "fort",
+            "notes": "Perturbe la membrane bactérienne. Actif contre H. pylori et staphylocoques résistants à la pénicilline"
+        },
+        {
+            "composant_slug": "allicine",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la prolifération cellulaire et induit l'apoptose dans plusieurs lignées cancéreuses. Données épidémiologiques positives"
+        },
+        {
+            "composant_slug": "allicine",
+            "vertu_slug": "antifongique",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe la synthèse des stérols fongiques. Actif contre Candida, Aspergillus et Cryptococcus"
+        },
+        {
+            "composant_slug": "allicine",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "fort",
+            "notes": "Réduit la tension artérielle, l'agrégation plaquettaire et le cholestérol LDL. Nombreux essais cliniques"
+        },
+        {
+            "composant_slug": "allicine",
+            "vertu_slug": "hypoglycemiant",
+            "niveau_evidence": "modere",
+            "notes": "Améliore la sensibilité à l'insuline et réduit la glycémie à jeun dans plusieurs études cliniques"
+        },
+        {
+            "composant_slug": "amour",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "amour",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "amour",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "amour",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "anthocyanines",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibent NF-κB et réduisent COX-2. Méta-analyses montrant réduction de la CRP chez les humains"
+        },
+        {
+            "composant_slug": "anthocyanines",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Capacité antioxydante ORAC parmi les plus élevées des composés alimentaires. Neutralise ROS et RNS"
+        },
+        {
+            "composant_slug": "anthocyanines",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "fort",
+            "notes": "Améliorent la fonction endothéliale, réduisent la pression artérielle et l'agrégation plaquettaire"
+        },
+        {
+            "composant_slug": "anthocyanines",
+            "vertu_slug": "hypoglycemiant",
+            "niveau_evidence": "modere",
+            "notes": "Inhibent l'alpha-glucosidase intestinale, ralentissant l'absorption des sucres"
+        },
+        {
+            "composant_slug": "anthocyanines",
+            "vertu_slug": "neuroprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Traversent la barrière hémato-encéphalique. Améliorent la mémoire et la cognition dans plusieurs essais cliniques"
+        },
+        {
+            "composant_slug": "beta-carotene",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Études épidémiologiques associant consommation élevée à réduction du risque de cancers épithéliaux"
+        },
+        {
+            "composant_slug": "beta-carotene",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Protège les membranes cellulaires lipidiques contre la peroxydation. Piégeur de singulet d'oxygène"
+        },
+        {
+            "composant_slug": "beta-carotene",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "fort",
+            "notes": "Précurseur de la vitamine A essentielle à la maturation des lymphocytes T et à l'intégrité des muqueuses"
+        },
+        {
+            "composant_slug": "chamazulene",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe la 5-lipoxygénase et réduit la production de leucotriènes LTB4. Validé dans des essais cliniques cutanés"
+        },
+        {
+            "composant_slug": "chamazulene",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "modere",
+            "notes": "Sesquiterpène aux propriétés antioxydantes synergiques avec l'alpha-bisabolol"
+        },
+        {
+            "composant_slug": "chamazulene",
+            "vertu_slug": "antispasmodique",
+            "niveau_evidence": "modere",
+            "notes": "Réduit les spasmes de la musculature lisse digestive. Usage traditionnel bien documenté et validé"
+        },
+        {
+            "composant_slug": "chamazulene",
+            "vertu_slug": "cicatrisant",
+            "niveau_evidence": "fort",
+            "notes": "Accélère la régénération épithéliale et réduit l'inflammation locale. Intégré dans de nombreuses préparations dermiques"
+        },
+        {
+            "composant_slug": "cuivre",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "modere",
+            "notes": "Cofacteur de la Cu\/Zn superoxyde dismutase."
+        },
+        {
+            "composant_slug": "cuivre",
+            "vertu_slug": "cicatrisant",
+            "niveau_evidence": "modere",
+            "notes": "Necessaire a la lysyl oxydase, enzyme de reticulation du collagene."
+        },
+        {
+            "composant_slug": "isoflavones",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Données épidémiologiques positives pour cancers du sein et de la prostate hormono-dépendants"
+        },
+        {
+            "composant_slug": "isoflavones",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Réduisent le cholestérol LDL et améliorent la fonction vasculaire. Méta-analyses positives"
+        },
+        {
+            "composant_slug": "isoflavones",
+            "vertu_slug": "hypoglycemiant",
+            "niveau_evidence": "modere",
+            "notes": "Améliorent la sensibilité à l'insuline et le métabolisme glucidique dans plusieurs essais cliniques"
+        },
+        {
+            "composant_slug": "isoflavones",
+            "vertu_slug": "remineralisant",
+            "niveau_evidence": "modere",
+            "notes": "Effets estrogéniques faibles contribuant à la préservation de la densité osseuse post-ménopausique"
+        },
+        {
+            "composant_slug": "les-polyphenols",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "les-polyphenols",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "les-polyphenols",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "les-polyphenols",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "linalol",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la production de PGE2 et réduit l'œdème dans les modèles animaux d'inflammation"
+        },
+        {
+            "composant_slug": "linalol",
+            "vertu_slug": "antibacterien",
+            "niveau_evidence": "modere",
+            "notes": "Actif contre Staphylococcus aureus, E. coli et plusieurs pathogènes courants. CMI mesurées in vitro"
+        },
+        {
+            "composant_slug": "linalol",
+            "vertu_slug": "anxiolytique",
+            "niveau_evidence": "fort",
+            "notes": "Modulation des récepteurs GABA-A démontrée. Essais cliniques sur l'anxiété pré-opératoire et le stress"
+        },
+        {
+            "composant_slug": "linalol",
+            "vertu_slug": "sedatif-calmant",
+            "niveau_evidence": "fort",
+            "notes": "Réduit la latence d'endormissement et améliore la qualité du sommeil. Monographies EMA sur Lavandula angustifolia"
+        },
+        {
+            "composant_slug": "luteoline",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe NF-κB, AP-1 et réduit TNF-α, IL-1β, IL-6. L'une des flavones les plus actives sur les voies inflammatoires"
+        },
+        {
+            "composant_slug": "luteoline",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Induit l'apoptose et inhibe l'angiogenèse dans plusieurs lignées cancéreuses"
+        },
+        {
+            "composant_slug": "luteoline",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Structure catéchol dans le cycle B conférant une haute capacité chélatante des métaux et piégeuse de radicaux"
+        },
+        {
+            "composant_slug": "luteoline",
+            "vertu_slug": "neuroprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Réduit la neuroinflammation médiée par la microglie. Études sur Alzheimer, Parkinson et autisme"
+        },
+        {
+            "composant_slug": "manganese",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Composant de la MnSOD, principale enzyme antioxydante mitochondriale."
+        },
+        {
+            "composant_slug": "manganese",
+            "vertu_slug": "remineralisant",
+            "niveau_evidence": "fort",
+            "notes": "Cofacteur des enzymes de la matrice osseuse (glycosyltransferases)."
+        },
+        {
+            "composant_slug": "menthol",
+            "vertu_slug": "antispasmodique",
+            "niveau_evidence": "fort",
+            "notes": "Relâche la musculature lisse intestinale. Méta-analyses positives sur le syndrome de l'intestin irritable"
+        },
+        {
+            "composant_slug": "menthol",
+            "vertu_slug": "digestif",
+            "niveau_evidence": "fort",
+            "notes": "Stimule la sécrétion biliaire et réduit les nausées. Inclus dans la pharmacopée européenne pour ces indications"
+        },
+        {
+            "composant_slug": "menthol",
+            "vertu_slug": "expectorant",
+            "niveau_evidence": "modere",
+            "notes": "Décongestionnant nasal par activation des récepteurs TRPM8. Usage traditionnel bien documenté"
+        },
+        {
+            "composant_slug": "oleuropeine",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe la synthèse des leucotriènes et des prostaglandines pro-inflammatoires"
+        },
+        {
+            "composant_slug": "oleuropeine",
+            "vertu_slug": "antibacterien",
+            "niveau_evidence": "modere",
+            "notes": "Actif contre H. pylori, E. coli et Staphylococcus aureus. Mécanisme : dénaturation des protéines bactériennes"
+        },
+        {
+            "composant_slug": "oleuropeine",
+            "vertu_slug": "antihypertenseur",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe l'enzyme de conversion de l'angiotensine. Essais cliniques montrant réduction de 13\/5 mmHg"
+        },
+        {
+            "composant_slug": "oleuropeine",
+            "vertu_slug": "antiviral",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la réplication de nombreux virus en perturbant leur capside. Actif contre influenza et herpès"
+        },
+        {
+            "composant_slug": "oleuropeine",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "fort",
+            "notes": "Réduit l'oxydation des LDL, l'agrégation plaquettaire et améliore la vasodilatation endothéliale"
+        },
+        {
+            "composant_slug": "potassium",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "potassium",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "potassium",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "potassium",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "fort",
+            "notes": "Inhibe COX-1, COX-2 et 5-LOX. Méta-analyses montrant une réduction significative des marqueurs inflammatoires (CRP, IL-6)"
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "modere",
+            "notes": "Induit l'apoptose dans plusieurs lignées cellulaires cancéreuses et inhibe l'angiogenèse tumorale"
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Neutralise les radicaux superoxydes et hydroxyles. ORAC très élevé mesuré in vitro et confirmé in vivo"
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "antiviral",
+            "niveau_evidence": "modere",
+            "notes": "Inhibe la réplication de nombreux virus (influenza, rhinovirus) en bloquant l'entrée cellulaire et la protéase virale"
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Réduit l'agrégation plaquettaire et protège les LDL contre l'oxydation. Études épidémiologiques positives"
+        },
+        {
+            "composant_slug": "quercetine",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "modere",
+            "notes": "Stabilise les mastocytes, régule les cytokines pro-inflammatoires et module la réponse immunitaire adaptative"
+        },
+        {
+            "composant_slug": "selenium",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Composant de la glutathion peroxydase, principale enzyme antioxydante."
+        },
+        {
+            "composant_slug": "selenium",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "fort",
+            "notes": "Regule la reponse immunitaire adaptative via les selenoproteines."
+        },
+        {
+            "composant_slug": "sulforaphane",
+            "vertu_slug": "anticancereux-preventif",
+            "niveau_evidence": "fort",
+            "notes": "Activation Nrf2 démontrée in vivo. Essais cliniques sur cancer de la prostate, du sein et du côlon"
+        },
+        {
+            "composant_slug": "sulforaphane",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Inducteur indirect via Nrf2, plus puissant que les antioxydants directs car stimule la production endogène"
+        },
+        {
+            "composant_slug": "sulforaphane",
+            "vertu_slug": "hepatoprotecteur",
+            "niveau_evidence": "fort",
+            "notes": "Induit les enzymes de détoxification de phase II. Réduit les lésions hépatiques dans les modèles toxiques"
+        },
+        {
+            "composant_slug": "sulforaphane",
+            "vertu_slug": "hypoglycemiant",
+            "niveau_evidence": "modere",
+            "notes": "Améliore la sensibilité à l'insuline et réduit la gluconéogenèse hépatique"
+        },
+        {
+            "composant_slug": "sulforaphane",
+            "vertu_slug": "neuroprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Traverse la barrière hémato-encéphalique, réduit la neuroinflammation. Études sur autisme et Alzheimer"
+        },
+        {
+            "composant_slug": "thymol",
+            "vertu_slug": "antibacterien",
+            "niveau_evidence": "fort",
+            "notes": "Approuvé EMA\/ESCOP pour infections respiratoires. Actif contre SARM et souches multirésistantes"
+        },
+        {
+            "composant_slug": "thymol",
+            "vertu_slug": "antifongique",
+            "niveau_evidence": "fort",
+            "notes": "Actif contre Candida albicans et dermatophytes. CMI très basses, effet synergique avec les antifongiques conventionnels"
+        },
+        {
+            "composant_slug": "thymol",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "modere",
+            "notes": "Phénol aux propriétés antioxydantes significatives, piégeur de radicaux libres"
+        },
+        {
+            "composant_slug": "thymol",
+            "vertu_slug": "expectorant",
+            "niveau_evidence": "fort",
+            "notes": "Stimule la sécrétion bronchique et l'activité ciliaire. Inclus dans de nombreux médicaments OTC à base de plantes"
+        },
+        {
+            "composant_slug": "vitamine-b1",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": "Soutien de la contraction musculaire via la production d'ATP."
+        },
+        {
+            "composant_slug": "vitamine-b1",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "fort",
+            "notes": "Indispensable au metabolisme energetique des neurones."
+        },
+        {
+            "composant_slug": "vitamine-b6",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Impliquee dans le metabolisme de l'homocysteine."
+        },
+        {
+            "composant_slug": "vitamine-b6",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "fort",
+            "notes": "Coenzyme des aminotransferases. Influence la proliferation des lymphocytes T."
+        },
+        {
+            "composant_slug": "vitamine-b6",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": "Role dans la synthese des neurotransmetteurs."
+        },
+        {
+            "composant_slug": "vitamine-b9",
+            "vertu_slug": "cardioprotecteur",
+            "niveau_evidence": "modere",
+            "notes": "Reduction de l'homocysteine, facteur de risque cardiovasculaire."
+        },
+        {
+            "composant_slug": "vitamine-b9",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "modere",
+            "notes": "Soutien de la proliferation des cellules immunitaires."
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "fort",
+            "notes": "Piégeur majeur de radicaux libres dans les compartiments aqueux. Régénère la vitamine E oxydée"
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "cicatrisant",
+            "niveau_evidence": "fort",
+            "notes": "Cofacteur indispensable de la synthèse du collagène. Carence = cicatrisation déficiente (scorbut)"
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "fort",
+            "notes": "Stimule la production et l'activité des phagocytes. Réduit la durée et la sévérité du rhume commun"
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "remineralisant",
+            "niveau_evidence": "fort",
+            "notes": "Améliore l'absorption du fer non-héminique de 2 à 4 fois selon les études"
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-c",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-k",
+            "vertu_slug": "anti-inflammatoire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-k",
+            "vertu_slug": "l-equilibre-hydrique",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-k",
+            "vertu_slug": "systeme-musculaire",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "vitamine-k",
+            "vertu_slug": "systeme-nerveux",
+            "niveau_evidence": "modere",
+            "notes": null
+        },
+        {
+            "composant_slug": "zinc",
+            "vertu_slug": "antioxydant",
+            "niveau_evidence": "modere",
+            "notes": "Composant de la Cu\/Zn superoxyde dismutase."
+        },
+        {
+            "composant_slug": "zinc",
+            "vertu_slug": "cicatrisant",
+            "niveau_evidence": "fort",
+            "notes": "Cofacteur indispensable a la cicatrisation tissulaire."
+        },
+        {
+            "composant_slug": "zinc",
+            "vertu_slug": "immunostimulant",
+            "niveau_evidence": "fort",
+            "notes": "Indispensable a la maturation des lymphocytes T et au signal des cytokines."
+        }
+    ],
+    "plante_vertu": [
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "Behrouz et al. 2025 — reduction marqueurs inflammatoires"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "antibacterien",
+            "source": "OMS monographies vol.1"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "anticancereux-preventif",
+            "source": "PMC9650110 — proprietes antiproliferatives in vitro"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "antifongique",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "antioxydant",
+            "source": "PMC9650110 \/ Nutripure — quercetine et polyphenols"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "cardioprotecteur",
+            "source": "OMS monographies vol.1"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "hypoglycemiant",
+            "source": "PubMed PMC4103721"
+        },
+        {
+            "plante_slug": "ail-cultive",
+            "vertu_slug": "immunostimulant",
+            "source": "OMS — usage traditionnel reconnu, infections respiratoires et digestives"
+        },
+        {
+            "plante_slug": "brocoli",
+            "vertu_slug": "anticancereux-preventif",
+            "source": "Fahey et al. PNAS 1997"
+        },
+        {
+            "plante_slug": "brocoli",
+            "vertu_slug": "antioxydant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "brocoli",
+            "vertu_slug": "hepatoprotecteur",
+            "source": "PubMed PMC4432495"
+        },
+        {
+            "plante_slug": "calendula",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "EMA HMPC 2008"
+        },
+        {
+            "plante_slug": "calendula",
+            "vertu_slug": "cicatrisant",
+            "source": "EMA HMPC 2008"
+        },
+        {
+            "plante_slug": "calendula",
+            "vertu_slug": "immunostimulant",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "EMA HMPC 2015"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "vertu_slug": "antispasmodique",
+            "source": "EMA HMPC 2015"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "vertu_slug": "anxiolytique",
+            "source": "PubMed PMC2995283"
+        },
+        {
+            "plante_slug": "camomille-matricaire",
+            "vertu_slug": "cicatrisant",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "carotte",
+            "vertu_slug": "antioxydant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "carotte",
+            "vertu_slug": "immunostimulant",
+            "source": "Bruneton 2016"
+        },
+        {
+            "plante_slug": "citronnier",
+            "vertu_slug": "antioxydant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "citronnier",
+            "vertu_slug": "immunostimulant",
+            "source": "Pharmacopée européenne"
+        },
+        {
+            "plante_slug": "epinard",
+            "vertu_slug": "antioxydant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "epinard",
+            "vertu_slug": "remineralisant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "feve",
+            "vertu_slug": "prebiotique",
+            "source": "PubMed PMC6356098"
+        },
+        {
+            "plante_slug": "feve",
+            "vertu_slug": "remineralisant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "grenadier",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "PubMed PMC4007340"
+        },
+        {
+            "plante_slug": "grenadier",
+            "vertu_slug": "anticancereux-preventif",
+            "source": "PubMed PMC3671682"
+        },
+        {
+            "plante_slug": "grenadier",
+            "vertu_slug": "antioxydant",
+            "source": "PubMed PMC4007340"
+        },
+        {
+            "plante_slug": "grenadier",
+            "vertu_slug": "cardioprotecteur",
+            "source": "PubMed PMC3678830"
+        },
+        {
+            "plante_slug": "haricot-noir",
+            "vertu_slug": "antioxydant",
+            "source": "PubMed PMC4016088"
+        },
+        {
+            "plante_slug": "haricot-noir",
+            "vertu_slug": "cardioprotecteur",
+            "source": "PubMed PMC4016088"
+        },
+        {
+            "plante_slug": "haricot-noir",
+            "vertu_slug": "prebiotique",
+            "source": "PubMed PMC6356098"
+        },
+        {
+            "plante_slug": "la-grenade",
+            "vertu_slug": "anti-inflammatoire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "vertu_slug": "l-equilibre-hydrique",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "vertu_slug": "systeme-musculaire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-grenade",
+            "vertu_slug": "systeme-nerveux",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "vertu_slug": "anti-inflammatoire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "vertu_slug": "l-equilibre-hydrique",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "vertu_slug": "systeme-musculaire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-peche",
+            "vertu_slug": "systeme-nerveux",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "vertu_slug": "anti-inflammatoire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "vertu_slug": "l-equilibre-hydrique",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "vertu_slug": "systeme-musculaire",
+            "source": ""
+        },
+        {
+            "plante_slug": "la-prune",
+            "vertu_slug": "systeme-nerveux",
+            "source": ""
+        },
+        {
+            "plante_slug": "lavande-officinale",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "lavande-officinale",
+            "vertu_slug": "anxiolytique",
+            "source": "EMA HMPC 2012"
+        },
+        {
+            "plante_slug": "lavande-officinale",
+            "vertu_slug": "sedatif-calmant",
+            "source": "EMA HMPC 2012"
+        },
+        {
+            "plante_slug": "lentille-verte",
+            "vertu_slug": "hypoglycemiant",
+            "source": "PubMed PMC4939539"
+        },
+        {
+            "plante_slug": "lentille-verte",
+            "vertu_slug": "prebiotique",
+            "source": "PubMed PMC6356098"
+        },
+        {
+            "plante_slug": "lentille-verte",
+            "vertu_slug": "remineralisant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "menthe-poivree",
+            "vertu_slug": "antispasmodique",
+            "source": "EMA HMPC 2008"
+        },
+        {
+            "plante_slug": "menthe-poivree",
+            "vertu_slug": "digestif",
+            "source": "EMA HMPC 2008"
+        },
+        {
+            "plante_slug": "menthe-poivree",
+            "vertu_slug": "expectorant",
+            "source": "Pharmacopée européenne"
+        },
+        {
+            "plante_slug": "myrtillier",
+            "vertu_slug": "antioxydant",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "myrtillier",
+            "vertu_slug": "cardioprotecteur",
+            "source": "PubMed PMC5187542"
+        },
+        {
+            "plante_slug": "myrtillier",
+            "vertu_slug": "neuroprotecteur",
+            "source": "PubMed PMC4192974"
+        },
+        {
+            "plante_slug": "noyer-commun",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "PubMed PMC5946253"
+        },
+        {
+            "plante_slug": "noyer-commun",
+            "vertu_slug": "cardioprotecteur",
+            "source": "PubMed PMC5946253"
+        },
+        {
+            "plante_slug": "noyer-commun",
+            "vertu_slug": "neuroprotecteur",
+            "source": "PubMed PMC6213248"
+        },
+        {
+            "plante_slug": "oignon-commun",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "Bruneton 2016"
+        },
+        {
+            "plante_slug": "oignon-commun",
+            "vertu_slug": "antioxydant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "oignon-commun",
+            "vertu_slug": "prebiotique",
+            "source": "PubMed PMC6041804"
+        },
+        {
+            "plante_slug": "olivier",
+            "vertu_slug": "antihypertenseur",
+            "source": "EMA HMPC 2011"
+        },
+        {
+            "plante_slug": "olivier",
+            "vertu_slug": "antiviral",
+            "source": "PubMed PMC4227229"
+        },
+        {
+            "plante_slug": "olivier",
+            "vertu_slug": "cardioprotecteur",
+            "source": "EMA HMPC 2011"
+        },
+        {
+            "plante_slug": "pois-chiche",
+            "vertu_slug": "hypoglycemiant",
+            "source": "PubMed PMC4015609"
+        },
+        {
+            "plante_slug": "pois-chiche",
+            "vertu_slug": "prebiotique",
+            "source": "PubMed PMC6356098"
+        },
+        {
+            "plante_slug": "pois-chiche",
+            "vertu_slug": "remineralisant",
+            "source": "CIQUAL 2025"
+        },
+        {
+            "plante_slug": "pomme",
+            "vertu_slug": "anti-inflammatoire",
+            "source": ""
+        },
+        {
+            "plante_slug": "pomme",
+            "vertu_slug": "l-equilibre-hydrique",
+            "source": ""
+        },
+        {
+            "plante_slug": "pomme",
+            "vertu_slug": "systeme-musculaire",
+            "source": ""
+        },
+        {
+            "plante_slug": "pomme",
+            "vertu_slug": "systeme-nerveux",
+            "source": ""
+        },
+        {
+            "plante_slug": "romarin",
+            "vertu_slug": "antioxydant",
+            "source": "Bruneton 2016"
+        },
+        {
+            "plante_slug": "romarin",
+            "vertu_slug": "digestif",
+            "source": "Pharmacopée européenne"
+        },
+        {
+            "plante_slug": "romarin",
+            "vertu_slug": "hepatoprotecteur",
+            "source": "EMA HMPC 2010"
+        },
+        {
+            "plante_slug": "romarin",
+            "vertu_slug": "neuroprotecteur",
+            "source": "PubMed PMC3736918"
+        },
+        {
+            "plante_slug": "rose-eglantier",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "PubMed PMC3683155"
+        },
+        {
+            "plante_slug": "rose-eglantier",
+            "vertu_slug": "antioxydant",
+            "source": "Bruneton 2016"
+        },
+        {
+            "plante_slug": "rose-eglantier",
+            "vertu_slug": "immunostimulant",
+            "source": "Pharmacopée européenne"
+        },
+        {
+            "plante_slug": "sauge-officinale",
+            "vertu_slug": "anti-inflammatoire",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "sauge-officinale",
+            "vertu_slug": "antibacterien",
+            "source": "EMA HMPC 2016"
+        },
+        {
+            "plante_slug": "sauge-officinale",
+            "vertu_slug": "digestif",
+            "source": "EMA HMPC 2016"
+        },
+        {
+            "plante_slug": "sureau-noir",
+            "vertu_slug": "antiviral",
+            "source": "PubMed PMC4848651"
+        },
+        {
+            "plante_slug": "sureau-noir",
+            "vertu_slug": "immunostimulant",
+            "source": "EMA HMPC 2018"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "vertu_slug": "antibacterien",
+            "source": "ESCOP 2023"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "vertu_slug": "antifongique",
+            "source": "Bruneton 2016"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "vertu_slug": "digestif",
+            "source": "Pharmacopée européenne"
+        },
+        {
+            "plante_slug": "thym-commun",
+            "vertu_slug": "expectorant",
+            "source": "EMA HMPC 2013"
+        }
+    ]
+}
