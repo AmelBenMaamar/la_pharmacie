@@ -11,7 +11,7 @@
             <?php endif; ?>
             <h1 class="fiche-title"><?= htmlspecialchars($vertu['nom']) ?></h1>
             <?php if (!empty($vertu['description'])): ?>
-                <p style="color:var(--texte-light); line-height:1.7; margin-top:0.75rem;">
+                <p style="line-height:1.7; margin-top:0.75rem;">
                     <?= nl2br(htmlspecialchars($vertu['description'])) ?>
                 </p>
             <?php endif; ?>
@@ -99,7 +99,7 @@
 <?php endif; ?>
 
     <p style="margin-top:2rem;">
-        <a href="<?= APP_URL ?>/vertus" class="btn btn-secondary btn-sm">← Toutes les vertus</a>
+        <a href="<?= APP_URL ?>/vertus" class="btn-retour-vertus">← Toutes les vertus</a>
     </p>
 
 </div>
