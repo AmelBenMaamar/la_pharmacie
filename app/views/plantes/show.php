@@ -75,36 +75,56 @@ function renderMarkdown(string $text): string {
         <h3><?= icon('composant', 18, 'section-icon composant') ?> Composants actifs
             <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($composants) ?></span>
         </h3>
-        <div class="tags-cloud">
-            <?php foreach ($composants as $c): ?>
-                <a href="<?= APP_URL ?>/composants/<?= htmlspecialchars($c['slug']) ?>"
-                   class="tag tag-composant tag-lg">
-                    <?= htmlspecialchars($c['nom']) ?>
-                    <?php if (!empty($c['famille'])): ?>
-                        <small><?= htmlspecialchars($c['famille']) ?></small>
-                    <?php endif; ?>
-                </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    <?php endif; ?>
 
-    <?php if (!empty($vertus)): ?>
-    <div class="fiche-section">
-        <h3><?= icon('vertu', 18, 'section-icon vertu') ?> Vertus thérapeutiques
-            <span style="font-size:0.8rem;color:var(--texte-light);font-family:var(--font-sans);font-weight:400;"><?= count($vertus) ?></span>
-        </h3>
-        <div class="tags-cloud">
-            <?php foreach ($vertus as $v): ?>
-                <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($v['slug']) ?>"
-                   class="tag tag-vertu tag-lg">
-                    <?= htmlspecialchars($v['nom']) ?>
-                    <?php if (!empty($v['categorie'])): ?>
-                        <small><?= htmlspecialchars($v['categorie']) ?></small>
+        <?php
+        /* Indexer liens_cv par composant_slug pour accès rapide */
+        $cv_par_composant = [];
+        foreach ($liens_cv as $lien) {
+            $cv_par_composant[$lien['composant_slug']][] = $lien;
+        }
+        ?>
+
+        <div class="composants-table">
+            <div class="composants-table-header">
+                <span>Composant</span>
+                <span>Concentration</span>
+                <span>AJR</span>
+                <span>Vertus associées</span>
+            </div>
+            <?php foreach ($composants as $c):
+                /* Extraire AJR depuis notes : cherche un pattern "AJR X%" */
+                $ajr = '';
+                $conc = $c['concentration'] ?? '';
+                if (preg_match('/AJR\s*([\d,\.]+\s*%)/i', $c['notes'] ?? '', $m)) {
+                    $ajr = $m[1];
+                }
+                $vertus_comp = $cv_par_composant[$c['slug']] ?? [];
+            ?>
+            <div class="composants-table-row">
+                <div class="comp-cell-nom">
+                    <a href="<?= APP_URL ?>/composants/<?= htmlspecialchars($c['slug']) ?>" class="comp-link">
+                        <?= htmlspecialchars($c['nom']) ?>
+                    </a>
+                    <?php if (!empty($c['famille'])): ?>
+                        <span class="comp-famille"><?= htmlspecialchars($c['famille']) ?></span>
                     <?php endif; ?>
-                </a>
+                </div>
+                <div class="comp-cell-conc"><?= htmlspecialchars($conc) ?></div>
+                <div class="comp-cell-ajr <?= $ajr ? (floatval(str_replace(',','.', $ajr)) >= 50 ? 'ajr-high' : (floatval(str_replace(',','.', $ajr)) >= 15 ? 'ajr-mid' : 'ajr-low')) : 'ajr-none' ?>">
+                    <?= $ajr ?: '—' ?>
+                </div>
+                <div class="comp-cell-vertus">
+                    <?php foreach ($vertus_comp as $lv): ?>
+                        <a href="<?= APP_URL ?>/vertus/<?= htmlspecialchars($lv['vertu_slug']) ?>"
+                           class="tag-vertu-inline niveau-<?= htmlspecialchars($lv['niveau_evidence']) ?>">
+                            <?= htmlspecialchars($lv['vertu_slug']) ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
             <?php endforeach; ?>
         </div>
+        <p class="ajr-note">AJR : apport journalier de référence pour un adulte (EFSA). Les composés phytochimiques n'ont pas d'AJR établi (—).</p>
     </div>
     <?php endif; ?>
 

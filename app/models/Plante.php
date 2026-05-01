@@ -123,7 +123,8 @@ class Plante extends Model {
      * Utilise par le graphe interactif (show.php)
      */
     public function liensComposantVertu(int $planteId): array {
-        $sql = "SELECT c.slug AS composant_slug, v.slug AS vertu_slug
+        $sql = "SELECT c.slug AS composant_slug, v.slug AS vertu_slug,
+                       cv.niveau_evidence
                 FROM composant_vertu cv
                 JOIN composants c ON c.id = cv.composant_id
                 JOIN vertus     v ON v.id = cv.vertu_id
